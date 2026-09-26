@@ -34,7 +34,7 @@ export function GamesSection() {
             </Link>
           ))}
         </div>
-        <Link href="/#games" className="mt-10 inline-flex rounded-full border-2 border-[var(--navy)] px-6 py-3 text-sm font-bold transition hover:bg-[var(--navy)] hover:text-white">See all games</Link>
+        <Link href="/play" className="mt-10 inline-flex rounded-full border-2 border-[var(--navy)] px-6 py-3 text-sm font-bold transition hover:bg-[var(--navy)] hover:text-white">See all games</Link>
       </div>
     </section>
   );

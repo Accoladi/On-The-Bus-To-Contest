@@ -8,8 +8,8 @@ const links = [
   { label: "The Ride", href: "/the-ride" },
   { label: "Read", href: "/read" },
   { label: "Listen", href: "/listen" },
-  { label: "Play", href: "/#games" },
-  { label: "Create", href: "/#activities" },
+  { label: "Play", href: "/play" },
+  { label: "Create", href: "/activities" },
 ];
 
 function ArrowIcon() {
@@ -31,15 +31,15 @@ function BusMark() {
   );
 }
 
-export function SiteNav() {
+export function SiteNav({ light = false }: { light?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="absolute inset-x-0 top-0 z-20 border-b border-white/15 bg-[rgba(7,26,47,0.22)] backdrop-blur-[2px]" aria-label="Main navigation">
+    <nav className={`absolute inset-x-0 top-0 z-20 border-b backdrop-blur-[2px] ${light ? "border-[var(--navy)]/10 bg-[rgba(247,243,234,0.78)]" : "border-white/15 bg-[rgba(7,26,47,0.22)]"}`} aria-label="Main navigation">
       <div className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-6 lg:px-[54px]">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <BusMark />
-          <span className="font-display text-[clamp(1.15rem,2vw,1.75rem)] leading-none text-white">
+          <span className={`font-display text-[clamp(1.15rem,2vw,1.75rem)] leading-none ${light ? "text-[var(--navy)]" : "text-white"}`}>
             On the Bus to Contest
           </span>
         </Link>
@@ -49,7 +49,7 @@ export function SiteNav() {
             <Link
               key={link.label}
               href={link.href}
-              className={`relative py-7 text-[15px] font-semibold transition-colors hover:text-[var(--champagne)] ${index === 0 ? "text-[var(--gold)] after:absolute after:bottom-[12px] after:left-1/2 after:h-[3px] after:w-6 after:-translate-x-1/2 after:rounded-full after:bg-[var(--gold)]" : "text-white/90"}`}
+              className={`relative py-7 text-[15px] font-semibold transition-colors hover:text-[var(--purple)] ${index === 0 ? "text-[var(--gold)] after:absolute after:bottom-[12px] after:left-1/2 after:h-[3px] after:w-6 after:-translate-x-1/2 after:rounded-full after:bg-[var(--gold)]" : light ? "text-[var(--navy)]/80" : "text-white/90"}`}
             >
               {link.label}
             </Link>
@@ -67,7 +67,7 @@ export function SiteNav() {
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          className="rounded-full border border-white/25 p-2 text-white lg:hidden"
+          className={`rounded-full border p-2 lg:hidden ${light ? "border-[var(--navy)]/25 text-[var(--navy)]" : "border-white/25 text-white"}`}
           onClick={() => setOpen((current) => !current)}
         >
           <svg aria-hidden="true" className="h-6 w-6" viewBox="0 0 24 24" fill="none">
@@ -77,10 +77,10 @@ export function SiteNav() {
       </div>
 
       {open && (
-        <div id="mobile-navigation" className="border-t border-white/15 bg-[var(--navy)] px-6 py-5 lg:hidden">
+        <div id="mobile-navigation" className={`border-t px-6 py-5 lg:hidden ${light ? "border-[var(--navy)]/10 bg-[var(--cream)]" : "border-white/15 bg-[var(--navy)]"}`}>
           <div className="mx-auto flex max-w-3xl flex-col gap-1">
             {links.map((link) => (
-              <Link key={link.label} href={link.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-white/90 hover:bg-white/10 hover:text-[var(--gold)]">
+              <Link key={link.label} href={link.href} onClick={() => setOpen(false)} className={`rounded-lg px-3 py-3 hover:bg-[var(--purple)]/10 hover:text-[var(--purple)] ${light ? "text-[var(--navy)]/90" : "text-white/90"}`}>
                 {link.label}
               </Link>
             ))}

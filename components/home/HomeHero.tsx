@@ -9,10 +9,6 @@ function ArrowIcon() {
   );
 }
 
-function BusIcon() {
-  return <span aria-hidden="true" className="text-lg">▰</span>;
-}
-
 export function HomeHero() {
   return (
     <section className="relative isolate min-h-[760px] overflow-hidden bg-[var(--navy)] text-white lg:min-h-screen" aria-labelledby="hero-title">
@@ -46,13 +42,6 @@ export function HomeHero() {
             </Link>
           </div>
 
-          <div className="mt-9 flex max-w-[655px] flex-wrap items-center gap-x-5 gap-y-3 rounded-[22px] border border-white/20 bg-[rgba(7,26,47,0.52)] px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-md sm:gap-x-5 sm:rounded-full sm:px-6">
-            <span className="flex items-center gap-3"><BusIcon /> Bus ride mode</span>
-            <span className="hidden h-5 w-px bg-white/25 sm:block" />
-            <span className="flex items-center gap-3"><span className="text-lg text-[var(--gold)]">◷</span> 47 minutes to go</span>
-            <span className="hidden h-5 w-px bg-white/25 sm:block" />
-            <span className="flex items-center gap-3"><span className="text-lg text-[var(--gold)]">≋</span> Pick what you need</span>
-          </div>
         </div>
       </div>
     </section>
