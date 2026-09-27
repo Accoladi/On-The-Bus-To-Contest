@@ -1,0 +1,23 @@
+export type ArticleSummary = {
+  slug: string;
+  category: string;
+  title: string;
+  description: string;
+  readingTime: string;
+  date: string;
+  image: string;
+  featured?: boolean;
+};
+
+export const articleCatalog: ArticleSummary[] = [
+  { slug: "calm-your-mind", category: "Mindset", title: "7 Ways to Calm Your Mind Before the Contest", description: "Seven simple exercises you can do while you are still on the bus, before the bus door opens and the performance begins.", readingTime: "5 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/calm-your-mind.png", featured: true },
+  { slug: "job-not-perfect", category: "Confidence", title: "Your Job Is Not to Be Perfect", description: "Fear before a performance does not mean you are unprepared. It usually means you care.", readingTime: "6 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/job-not-perfect.png" },
+  { slug: "person-beside-you", category: "People", title: "The Person Beside You May Need You", description: "A kind word, a specific question, or simply an invitation can make a difficult contest day feel less lonely.", readingTime: "6 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/person-needs-you.png" },
+  { slug: "director-seems-different", category: "Directors", title: "Your Director Seems Different Today—There’s a Reason", description: "Contest day is a big day for directors too. They are carrying more of the day than students may ever see.", readingTime: "5 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/director-seems-different.png" },
+  { slug: "quiet-before-first-note", category: "Mindset", title: "The Quiet Before the First Note: What Meditation Can Give You Before a Marching Band Contest", description: "On the bus, meditation can be simple: be still, breathe, listen, notice, and let your mind settle.", readingTime: "7 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/meditation.png" },
+  { slug: "laughter-best-medicine", category: "Wellbeing", title: "Laughter May Be the Best Medicine for a Nervous Condition Before You Perform", description: "A little laughter can release tension, reconnect the band, and give nervous energy somewhere useful to go.", readingTime: "7 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/laughter-being-medicine.png" },
+  { slug: "your-season-in-your-pocket", category: "Stories", title: "Your Season in Your Pocket: A Band-Bus Diary for the Ride to Contest", description: "A short diary can turn rehearsals, people, worries, and small victories into memories you can carry with you.", readingTime: "6 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/busband-diary.png" },
+  { slug: "who-are-these-people", category: "People", title: "Who Are These People Riding the Band Bus With Me?", description: "Look around the bus and discover the remarkable people, futures, and friendships riding with you.", readingTime: "6 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/who-are-these-people.png" },
+  { slug: "all-bands-look-different", category: "Band Culture", title: "Why Do All These Bands Look So Different?", description: "From military precision to theatrical productions, every band brings its own personality to the field.", readingTime: "7 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/all-bands-look-different.png" },
+  { slug: "flute-to-old-guard", category: "Stories", title: "Could My Flute Take Me to the Old Guard?", description: "One contest-day discovery opens a student’s eyes to military music and the possibilities ahead.", readingTime: "6 min read", date: "On the Bus to Contest", image: "/images/articles/article-title-pics/old-gaurd.png" },
+];

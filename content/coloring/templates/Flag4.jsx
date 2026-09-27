@@ -1,0 +1,170 @@
+import React, { useState } from 'react'
+
+const Flag4 = ({ onPathClick, selectedColor, selectedStroke }) => {
+
+    const [isClicked, setIsClicked] = useState(new Array(11).fill(false));
+
+    const handleClick = (event, index) => {
+        onPathClick(event);
+
+
+        setIsClicked((prevIsClicked) =>
+            prevIsClicked.map((clicked, i) => (i === index ? !clicked : clicked))
+        );
+    };
+
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 561.55 441.48"
+            className='svg-temp'
+        >
+            <defs>
+                <style>
+                    {
+                        `
+.b,.c,.d,.e{stroke:${selectedStroke}}.b,.c,.e{stroke-miterlimit:10;}.b{stroke-width:5.28px;}.c{stroke-width:5.07px;}.d{stroke-linecap:round;stroke-linejoin:round;stroke-width:5px;}.e{stroke-width:5.17px;}
+            `
+                    }
+
+                </style>
+            </defs>
+            <path
+                className="a"
+                d="M123,431.43H109V110.64l14-.92Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M625.22,165.19l0,.63.35.12-.39-5.94-1.3,5.37,1.34.45Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path className="a"
+                d="M399.25,113.56l2-3-2.69,1.92.48,1.07Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M398.6,112.48l-1.29.93,1.77.14Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M400.88,113.69l.41-3.13-2,3Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a" d="M647.76,497.69v.07l1,14Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M552.86,459.5l.09-.36-.29-.1Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path className="a" d="M399.08,113.55l.07.16.1-.15Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M316.53,110.5q-46.84.09-93.76.06l-87.62,72.11v119l262.16-188.3C370.52,111.33,343.57,110.44,316.53,110.5Z" transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[0] ? selectedColor : 'white'}
+            />
+            <path
+                className="a"
+                d="M135.15,110.52v72.15l87.62-72.11Q179.08,110.54,135.15,110.52Z"
+                transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[1] ? selectedColor : 'white'}
+            />
+            <path
+                className="a"
+                d="M399.15,113.71l1.34,3,.39-3-1.63-.13Z"
+                transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M359.59,433.19q27.59.71,55.14,1.84c47,2,93.44,9.13,137.93,24L400.49,116.73Z"
+                transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[2] ? selectedColor : 'white'}
+            />
+            <path
+                className="a"
+                d="M623.92,165.37,553,459.14a397,397,0,0,1,45.66,18.49c16.34,7.84,31.75,17.62,48.34,26.93.24-2.37.54-4.62.8-6.8L625.26,165.82Z" transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[3] ? selectedColor : 'white'}
+            />
+            <path
+                className="a"
+                d="M648.28,490.59q.21-153.15.42-306.29c0-8.5-4.08-12-11.27-14.4q-5.91-2-11.82-4l22.15,331.75A61.83,61.83,0,0,0,648.28,490.59Z" transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[4] ? selectedColor : 'white'}
+            />
+            <path
+                className="a"
+                d="M625.61,165.94l-.35-.12,22.49,331.94v-.07Z" transform="translate(-99.09 -94.55)"
+
+            />
+            <path
+                className="a"
+                d="M539.59,137.67c-45.61-12.62-91.93-20.15-138.71-24l-.39,3L552.66,459l.29.1,71-293.77C595.9,155.81,568.07,145.55,539.59,137.67Z" transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[5] ? selectedColor : 'white'}
+            />
+            <path className="a" d="M399.15,113.71l-215,317c58.48.74,117,.95,175.43,2.44l40.9-316.46Z"
+                transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[6] ? selectedColor : 'white'}
+            />
+            <path
+                className="a"
+                d="M399.08,113.55l-1.77-.14L135.15,301.71V430.42c9.57,0,18.1-.12,26.62,0q11.19.18,22.39.32l215-317Z" transform="translate(-99.09 -94.55)"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[7] ? selectedColor : 'white'}
+            />
+            <polygon
+                className="a"
+                points="9.91 16.09 23.95 15.17 23.95 336.89 9.91 336.89 9.91 16.09"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[8] ? selectedColor : 'white'}
+            />
+            <line className="b" x1="126.58" y1="13.62" x2="33.1" y2="90.57" />
+            <polyline className="c" points="33.1 209.29 302.2 16.01 259.82 343.92"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[9] ? selectedColor : 'white'}
+            />
+            <polyline className="d" points="297.6 13.62 453.77 364.95 526.13 65.45 549.61 417.17 526.13 70.64"
+                onClick={handleClick}
+                style={{ pointerEvents: 'all' }}
+                fill={isClicked[10] ? selectedColor : 'white'}
+            />
+            <line className="e" x1="302.2" y1="16.01" x2="79.84" y2="343.92" />
+            <path d="M99.09,445.34V94.65c29.41,0,58.26-.27,87.09.06,56.63.66,113.26,1.16,169.86,2.63a815.9,815.9,0,0,1,212.48,33.41c27.2,8.11,53.66,18.71,80.47,28.17,7.41,2.61,11.68,6.55,11.65,15.69q-.51,177.56-.34,355.1c0,1.33-.34,2.66-.84,6.32-7.34-6-13.67-11.23-20.1-16.35C592.9,482.77,538.29,464.93,480.93,457c-48.31-6.65-97.32-9.84-146.1-11-73.47-1.82-147-.57-220.54-.63Zm36.06-334.82v319.9c9.57,0,18.1-.12,26.62,0,84.33,1.33,168.73,1,253,4.6,63.49,2.71,125.84,14.72,183.88,42.6,16.34,7.84,31.75,17.62,48.34,26.93.5-5,1.32-9.5,1.33-14q.21-153.15.42-306.29c0-8.5-4.08-12-11.27-14.4-32.62-10.73-64.78-23.08-97.84-32.23C466.71,117.5,392,110.33,316.53,110.5,256.23,110.63,195.93,110.52,135.15,110.52ZM123,431.43V109.72l-14,.92V431.43Z" transform="translate(-99.09 -94.55)"
+                fill={selectedStroke}
+            />
+        </svg>
+    )
+}
+
+export default Flag4
