@@ -10,16 +10,15 @@ const games = [
 export function GamesSection() {
   return (
     <section id="games" className="scroll-mt-8 bg-[var(--cream)] px-6 py-20 text-[var(--navy)] sm:px-10 lg:px-16 lg:py-28">
-      <div className="mx-auto max-w-[1320px]">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
+      <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.72fr_1.9fr] lg:items-end lg:gap-12 xl:gap-16">
+        <div className="max-w-[360px]">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--purple)]">Make the miles fly</p>
-            <h2 className="mt-4 text-5xl leading-[0.96] sm:text-6xl lg:text-7xl">Play something.</h2>
-          </div>
-          <p className="max-w-md text-base leading-7 text-[var(--slate)]">Quick games, friendly competition, and just enough marching-band trivia to settle the debate across the aisle.</p>
+            <h2 className="mt-4 text-5xl leading-[0.96] sm:text-6xl lg:text-[4.6rem]">Beat boredom.<br />Bring the band.</h2>
+            <p className="mt-7 max-w-md text-base leading-7 text-[var(--slate)]">Quick games, friendly competition, and just enough marching-band trivia to settle the debate across the aisle.</p>
+            <Link href="/play" className="mt-8 inline-flex items-center gap-3 rounded-full border-2 border-[var(--navy)] px-6 py-3 text-sm font-bold transition hover:bg-[var(--navy)] hover:text-white">See all games <span aria-hidden="true">→</span></Link>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {games.map((game, index) => (
             <Link key={game.title} href={game.href} className="group overflow-hidden rounded-[24px] bg-white shadow-[0_16px_40px_rgba(7,26,47,0.1)] transition hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(7,26,47,0.16)]">
               <div className={`relative aspect-[1.25] overflow-hidden ${game.tone}`}>
@@ -34,7 +33,6 @@ export function GamesSection() {
             </Link>
           ))}
         </div>
-        <Link href="/play" className="mt-10 inline-flex rounded-full border-2 border-[var(--navy)] px-6 py-3 text-sm font-bold transition hover:bg-[var(--navy)] hover:text-white">See all games</Link>
       </div>
     </section>
   );

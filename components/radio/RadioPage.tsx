@@ -29,9 +29,10 @@ function filterSongs(songs: RadioSong[]) {
   return songs.filter((song) => song?.title && song.status !== "draft" && !song.isRestricted);
 }
 
-function TrackCard({ song, index, active, playing, liked, onPlay, onLike, onShare }: { song: RadioSong; index: number; active: boolean; playing: boolean; liked: boolean; onPlay: () => void; onLike: () => void; onShare: () => void }) {
+function TrackCard({ song, index, active, playing, liked, displayDuration, onDuration, onPlay, onLike, onShare }: { song: RadioSong; index: number; active: boolean; playing: boolean; liked: boolean; displayDuration?: number; onDuration: (duration: number) => void; onPlay: () => void; onLike: () => void; onShare: () => void }) {
   return (
     <article className={`group flex h-full flex-col overflow-hidden rounded-[22px] border bg-white shadow-[0_12px_32px_rgba(7,26,47,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(7,26,47,0.14)] ${active ? "border-[var(--gold)] ring-2 ring-[var(--gold)]/25" : "border-[var(--navy)]/8"}`}>
+      {song.audioUrl && <audio src={song.audioUrl} preload="metadata" className="hidden" onLoadedMetadata={(event) => { const nextDuration = event.currentTarget.duration; if (Number.isFinite(nextDuration)) onDuration(nextDuration); }} />}
       <button type="button" onClick={onPlay} className="relative aspect-[16/10] overflow-hidden bg-[var(--navy)] text-left">
         <Image src={song.coverImageUrl || "/content/images/radio-cover.jpg"} alt={`${song.title} cover`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,26,47,.8)] via-transparent to-transparent" />
@@ -43,7 +44,7 @@ function TrackCard({ song, index, active, playing, liked, onPlay, onLike, onShar
         <h3 className="line-clamp-2 text-xl leading-tight text-[var(--navy)]">{song.title}</h3>
         <p className="mt-1 text-sm text-[var(--slate)]">{song.artist || "Contest day radio"}</p>
         <div className="mt-auto flex items-center justify-between pt-5">
-          <span className="text-xs font-semibold text-[var(--slate)]">{formatTime(song.durationSeconds || 0)}</span>
+          <span className="text-xs font-semibold text-[var(--slate)]">{formatTime(displayDuration || song.durationSeconds || 0)}</span>
           <div className="flex gap-1">
             <button type="button" onClick={onLike} aria-label={liked ? "Unlike song" : "Like song"} className={`rounded-full p-2 transition hover:bg-[var(--cream)] ${liked ? "text-[#bd4d63]" : "text-[var(--slate)]/40 hover:text-[#bd4d63]"}`}><Icon name="heart" size={18} fill={liked ? "currentColor" : "none"} /></button>
             <button type="button" onClick={onShare} aria-label="Share song" className="rounded-full p-2 text-[var(--slate)]/40 transition hover:bg-[var(--cream)] hover:text-[var(--purple)]"><Icon name="share" size={18} /></button>
@@ -73,6 +74,7 @@ export function RadioPage() {
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [durations, setDurations] = useState<Record<string, number>>({});
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -91,11 +93,33 @@ export function RadioPage() {
   }, [volume]);
 
   useEffect(() => {
+    if (!songs.length) return;
+    const metadataPlayers = songs
+      .filter((song) => song.audioUrl && !durations[song.id])
+      .map((song) => {
+        const metadataAudio = new Audio();
+        metadataAudio.preload = "metadata";
+        const onMetadata = () => {
+          if (Number.isFinite(metadataAudio.duration)) {
+            setDurations((previous) => ({ ...previous, [song.id]: metadataAudio.duration }));
+          }
+        };
+        metadataAudio.addEventListener("loadedmetadata", onMetadata);
+        metadataAudio.src = song.audioUrl || "";
+        return { metadataAudio, onMetadata };
+      });
+    return () => metadataPlayers.forEach(({ metadataAudio, onMetadata }) => {
+      metadataAudio.removeEventListener("loadedmetadata", onMetadata);
+      metadataAudio.src = "";
+    });
+  }, [songs, durations]);
+
+  useEffect(() => {
     const audio = new Audio();
     audio.preload = "metadata";
     audio.volume = 0.8;
     audioRef.current = audio;
-    const sync = () => { const nextDuration = Number.isFinite(audio.duration) ? audio.duration : 0; setDuration(nextDuration); setCurrentTime(audio.currentTime || 0); setProgress(nextDuration ? (audio.currentTime / nextDuration) * 100 : 0); };
+    const sync = () => { const nextDuration = Number.isFinite(audio.duration) ? audio.duration : 0; setDuration(nextDuration); if (nextDuration && currentSongRef.current) setDurations((previous) => ({ ...previous, [currentSongRef.current!.id]: nextDuration })); setCurrentTime(audio.currentTime || 0); setProgress(nextDuration ? (audio.currentTime / nextDuration) * 100 : 0); };
     const onPlay = () => setPlaying(true);
     const onPause = () => setPlaying(false);
     const onEnded = () => {
@@ -133,9 +157,13 @@ export function RadioPage() {
 
   return (
     <main className="min-h-screen bg-[var(--cream)] pb-32 text-[var(--navy)]">
-      <div className="relative bg-[var(--navy)]">
-        <SiteNav />
-        <div className="mx-auto max-w-[1320px] px-6 pb-14 pt-32 sm:px-10 lg:px-16 lg:pb-20">
+      <div className="relative isolate overflow-visible bg-[var(--navy)]">
+        <div className="absolute inset-x-0 bottom-0 top-[76px] z-0">
+          <Image src="/images/radio/bg.png" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,26,47,.9)_0%,rgba(7,26,47,.62)_52%,rgba(7,26,47,.28)_100%)]" />
+        </div>
+        <SiteNav solid />
+        <div className="relative z-10 mx-auto max-w-[1320px] px-6 pb-36 pt-32 sm:px-10 lg:px-16 lg:pb-44">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--gold)]">The soundtrack between performances</p>
           <h1 className="mt-5 max-w-3xl text-6xl leading-[0.92] text-[var(--cream)] sm:text-7xl lg:text-8xl">Turn the ride up.</h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Original tracks, band-room energy, and something good in your headphones while the stadium gets ready.</p>
@@ -143,12 +171,12 @@ export function RadioPage() {
       </div>
 
       {featured && (
-        <section className="mx-auto -mt-1 max-w-[1440px] px-4 sm:px-8 lg:px-12">
-          <div className="relative overflow-hidden rounded-b-[30px] bg-[var(--purple)] text-white shadow-[0_24px_70px_rgba(7,26,47,0.2)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(231,184,75,.35),transparent_36%)]" />
+        <section className="relative z-20 mx-auto -mt-28 max-w-[1440px] px-4 sm:px-8 lg:px-12">
+          <div className="relative overflow-hidden rounded-[26px] border border-white/20 bg-[rgba(25,24,66,.88)] text-white shadow-[0_24px_70px_rgba(7,26,47,0.3)] backdrop-blur-md">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(231,184,75,.2),transparent_32%)]" />
             <div className="relative grid items-stretch gap-0 p-0 md:grid-cols-[42%_58%] lg:grid-cols-[38%_62%]">
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-white/15 bg-[var(--navy)] md:aspect-auto md:min-h-[330px] md:border-b-0 md:border-r md:border-white/15"><Image src={featured.coverImageUrl || "/content/images/radio-cover.jpg"} alt={featured.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1200px) 42vw, 540px" className="object-cover" /></div>
-              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+              <div className="relative aspect-[3/2] overflow-hidden border-b border-white/15 bg-[var(--navy)] md:aspect-auto md:min-h-[250px] md:border-b-0 md:border-r md:border-white/15"><Image src={featured.coverImageUrl || "/content/images/radio-cover.jpg"} alt={featured.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1200px) 42vw, 540px" className="object-cover" /></div>
+              <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                 <span className="inline-flex w-fit rounded-full bg-[var(--gold)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--navy)]">Featured track</span>
                 <h2 className="mt-5 max-w-xl text-4xl leading-[0.95] sm:text-5xl lg:text-6xl">{featured.title}</h2>
                 <p className="mt-3 text-lg text-white/65">{featured.artist || "Contest day radio"}</p>
@@ -172,12 +200,12 @@ export function RadioPage() {
         </section>
       )}
 
-      <section className="mx-auto max-w-[1320px] px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+      <section className="mx-auto max-w-[1320px] px-6 pb-16 pt-14 sm:px-10 lg:px-16 lg:pb-24 lg:pt-16">
         <div className="flex flex-col gap-5 border-b border-[var(--navy)]/12 pb-6 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--purple)]">Keep exploring</p><h2 className="mt-3 text-4xl sm:text-5xl">All tracks</h2><p className="mt-2 text-sm text-[var(--slate)]">Stream, save, and share your favorites.</p></div><div className="flex flex-wrap items-center gap-3"><span className="rounded-full bg-[var(--champagne)] px-4 py-2 text-xs font-bold text-[var(--navy)]">{sortedSongs.length} tracks</span><div className="flex rounded-full border border-[var(--navy)]/10 bg-white p-1"><button type="button" onClick={() => setSort("default")} className={`rounded-full px-3 py-1.5 text-xs font-bold ${sort === "default" ? "bg-[var(--navy)] text-white" : "text-[var(--slate)]"}`}>Featured</button><button type="button" onClick={() => setSort("az")} className={`rounded-full px-3 py-1.5 text-xs font-bold ${sort === "az" ? "bg-[var(--navy)] text-white" : "text-[var(--slate)]"}`}>A–Z</button><button type="button" onClick={() => setSort("za")} className={`rounded-full px-3 py-1.5 text-xs font-bold ${sort === "za" ? "bg-[var(--navy)] text-white" : "text-[var(--slate)]"}`}>Z–A</button></div></div></div>
         {loading && <div className="grid gap-5 pt-8 sm:grid-cols-2 lg:grid-cols-3"><div className="h-80 animate-pulse rounded-[22px] bg-white/70" /><div className="h-80 animate-pulse rounded-[22px] bg-white/70" /><div className="h-80 animate-pulse rounded-[22px] bg-white/70" /></div>}
         {error && <div className="mt-8 rounded-[22px] border border-dashed border-[var(--purple)]/30 bg-white p-12 text-center text-[var(--slate)]">{error}</div>}
         {!loading && !error && !songs.length && <div className="mt-8 rounded-[22px] border border-dashed border-[var(--purple)]/30 bg-white p-12 text-center text-[var(--slate)]">The catalog is ready for its first tracks.</div>}
-        {!loading && !error && songs.length > 0 && <div className="grid gap-5 pt-8 sm:grid-cols-2 lg:grid-cols-3">{visibleSongs.map((song, index) => <TrackCard key={song.id} song={song} index={index} active={currentSong?.id === song.id} playing={playing} liked={liked.has(song.id)} onPlay={() => playSong(song)} onLike={() => toggleLike(song.id)} onShare={() => shareSong(song)} />)}</div>}
+        {!loading && !error && songs.length > 0 && <div className="grid gap-5 pt-8 sm:grid-cols-2 lg:grid-cols-3">{visibleSongs.map((song, index) => <TrackCard key={song.id} song={song} index={index} displayDuration={durations[song.id]} onDuration={(nextDuration) => setDurations((previous) => ({ ...previous, [song.id]: nextDuration }))} active={currentSong?.id === song.id} playing={playing} liked={liked.has(song.id)} onPlay={() => playSong(song)} onLike={() => toggleLike(song.id)} onShare={() => shareSong(song)} />)}</div>}
         {!loading && visibleCount < sortedSongs.length && <div className="flex justify-center pt-10"><button type="button" onClick={() => setVisibleCount((count) => count + PAGE_SIZE)} className="rounded-full border-2 border-[var(--navy)] px-6 py-3 text-sm font-bold transition hover:bg-[var(--navy)] hover:text-white">Load more tracks</button></div>}
       </section>
 

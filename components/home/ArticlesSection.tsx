@@ -65,7 +65,7 @@ export function ArticlesSection() {
             <h2 className="mt-4 max-w-3xl text-5xl leading-[0.95] sm:text-6xl lg:text-7xl">Before You Step Off the Bus</h2>
             <p className="mt-4 text-base text-[var(--slate)] sm:text-lg">Mindset. Preparation. Real Stories. Everything you need for the ride and beyond.</p>
           </div>
-          <Link href="/read" className="inline-flex w-fit items-center gap-3 rounded-full border border-[var(--navy)] px-5 py-3 text-sm font-semibold transition hover:bg-[var(--navy)] hover:text-white">Explore All Reads <ArrowIcon /></Link>
+          <Link href="/read" className="inline-flex w-fit items-center gap-3 rounded-full bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--navy)] shadow-[0_10px_24px_rgba(231,184,75,.22)] transition hover:-translate-y-0.5 hover:bg-[var(--champagne)] hover:shadow-[0_14px_30px_rgba(231,184,75,.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gold)]">Explore All Reads <ArrowIcon /></Link>
         </div>
 
         <div className="mt-9 grid gap-5 lg:grid-cols-[1.16fr_0.94fr]">

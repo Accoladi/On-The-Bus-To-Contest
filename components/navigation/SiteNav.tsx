@@ -1,65 +1,45 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { label: "Home", href: "/" },
-  { label: "The Ride", href: "/the-ride" },
-  { label: "Read", href: "/read" },
-  { label: "Listen", href: "/listen" },
-  { label: "Play", href: "/play" },
-  { label: "Create", href: "/activities" },
+  { label: "Radio", href: "/listen" },
+  { label: "Articles", href: "/read" },
+  { label: "Games", href: "/play" },
+  { label: "Activities", href: "/activities" },
+  { label: "Books", href: "/books" },
 ];
 
-function ArrowIcon() {
-  return (
-    <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 20 20" fill="none">
-      <path d="M3 10h13M11 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function BusMark() {
-  return (
-    <svg aria-hidden="true" className="h-9 w-14 shrink-0 text-[var(--gold)]" viewBox="0 0 72 42" fill="none">
-      <path d="M7 31V12c0-4 3-7 7-7h35c7 0 12 4 15 11l3 9v6H7Z" fill="currentColor" />
-      <path d="M13 11h34v10H13V11Zm38 0c4 1 7 4 9 10H51V11Z" fill="var(--navy)" />
-      <path d="M8 34h54M17 34a5 5 0 1 0 0 1m35-1a5 5 0 1 0 0 1" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      <path d="M7 27h60" stroke="var(--navy)" strokeWidth="2" />
-    </svg>
-  );
-}
-
-export function SiteNav({ light = false }: { light?: boolean }) {
+export function SiteNav({ light = false, solid = false }: { light?: boolean; solid?: boolean }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <nav className={`absolute inset-x-0 top-0 z-20 border-b backdrop-blur-[2px] ${light ? "border-[var(--navy)]/10 bg-[rgba(247,243,234,0.78)]" : "border-white/15 bg-[rgba(7,26,47,0.22)]"}`} aria-label="Main navigation">
+    <nav className={`absolute inset-x-0 top-0 z-20 border-b ${light ? "border-[var(--navy)]/10 bg-[var(--cream)]" : solid ? "border-white/15 bg-[var(--navy)]" : "border-white/15 bg-[rgba(7,26,47,0.22)] backdrop-blur-[2px]"}`} aria-label="Main navigation">
       <div className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-6 lg:px-[54px]">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <BusMark />
-          <span className={`font-display text-[clamp(1.15rem,2vw,1.75rem)] leading-none ${light ? "text-[var(--navy)]" : "text-white"}`}>
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <Image src="/images/logo/logo.png" alt="" width={68} height={68} priority className="h-14 w-14 shrink-0 object-contain drop-shadow-[0_4px_12px_rgba(231,184,75,0.28)] sm:h-16 sm:w-16" />
+          <span className={`font-display text-[clamp(0.95rem,1.35vw,1.3rem)] font-normal leading-none ${light ? "text-[var(--navy)]/75" : "text-white/82"}`}>
             On the Bus to Contest
           </span>
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex xl:gap-10">
-          {links.map((link, index) => (
+          {links.map((link) => {
+            const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
             <Link
               key={link.label}
               href={link.href}
-              className={`relative py-7 text-[15px] font-semibold transition-colors hover:text-[var(--purple)] ${index === 0 ? "text-[var(--gold)] after:absolute after:bottom-[12px] after:left-1/2 after:h-[3px] after:w-6 after:-translate-x-1/2 after:rounded-full after:bg-[var(--gold)]" : light ? "text-[var(--navy)]/80" : "text-white/90"}`}
+              className={`relative py-7 text-[15px] font-semibold transition-colors hover:text-[var(--purple)] ${active ? "text-[var(--gold)] after:absolute after:bottom-[12px] after:left-1/2 after:h-[3px] after:w-6 after:-translate-x-1/2 after:rounded-full after:bg-[var(--gold)]" : light ? "text-[var(--navy)]/80" : "text-white/90"}`}
             >
               {link.label}
             </Link>
-          ))}
-        </div>
-
-        <div className="hidden lg:block">
-          <Link href="/the-ride" className="flex items-center gap-3 rounded-full bg-[var(--gold)] px-7 py-3 text-[15px] font-bold text-[var(--navy)] shadow-lg transition hover:bg-[var(--champagne)]">
-            Start the Ride <ArrowIcon />
-          </Link>
+            );
+          })}
         </div>
 
         <button
@@ -84,9 +64,6 @@ export function SiteNav({ light = false }: { light?: boolean }) {
                 {link.label}
               </Link>
             ))}
-            <Link href="/the-ride" onClick={() => setOpen(false)} className="mt-3 flex items-center justify-center gap-3 rounded-full bg-[var(--gold)] px-5 py-3 font-bold text-[var(--navy)]">
-              Start the Ride <ArrowIcon />
-            </Link>
           </div>
         </div>
       )}
