@@ -80,7 +80,7 @@ export function RadioSection() {
     <section id="radio" className="relative isolate scroll-mt-8 overflow-hidden bg-[var(--navy)] px-6 py-16 text-white sm:px-10 sm:py-20 lg:px-16 lg:py-28">
       <Image src="/images/home/radio/bg.png" alt="" fill sizes="100vw" className="-z-10 object-cover" />
       <div className="mx-auto grid max-w-[1440px] items-stretch gap-8 lg:grid-cols-[minmax(0,.84fr)_minmax(0,1.16fr)] lg:gap-10 xl:gap-14">
-        <div className="relative min-h-[520px] overflow-hidden rounded-[26px] border border-[var(--gold)]/85 bg-[var(--navy)] shadow-[0_18px_50px_rgba(7,26,47,.14)] sm:min-h-[650px] lg:min-h-0">
+        <div className="relative min-h-[520px] overflow-hidden rounded-[26px] border-[3px] border-[var(--gold)] bg-[var(--navy)] shadow-[0_18px_50px_rgba(7,26,47,.14)] sm:min-h-[650px] lg:min-h-0">
           <Image src="/images/home/radio/left-card.png" alt="A marching band student listening to music on the bus" fill sizes="(max-width: 1024px) 100vw, 58vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,26,47,.9)] via-transparent to-transparent" />
           <p className="absolute bottom-7 left-7 max-w-[170px] rotate-[-7deg] font-[family-name:var(--font-display)] text-3xl leading-[.9] text-[var(--champagne)]/90 sm:bottom-10 sm:left-10 sm:text-4xl">Same<br />Music.<br />Further<br />Together.</p>

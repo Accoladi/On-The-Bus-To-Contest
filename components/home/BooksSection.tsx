@@ -18,7 +18,7 @@ export function BooksSection() {
           <Link href="/books" className="mt-8 inline-flex items-center gap-4 rounded-full bg-[var(--gold)] px-7 py-4 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--soft-champagne)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gold)]">Explore the books <ArrowIcon /></Link>
         </div>
 
-        <article className="relative overflow-hidden rounded-[28px] border border-[var(--gold)]/80 bg-[rgba(7,26,47,.78)] shadow-[0_24px_70px_rgba(0,0,0,.38)] backdrop-blur-sm">
+        <article className="relative overflow-hidden rounded-[28px] border-[3px] border-[var(--gold)] bg-[rgba(7,26,47,.78)] shadow-[0_24px_70px_rgba(0,0,0,.38)] backdrop-blur-sm">
           <div className="grid items-center gap-8 p-6 sm:p-8 md:grid-cols-[minmax(190px,.72fr)_1fr] md:p-10 lg:gap-12">
             <div className="relative mx-auto aspect-[.66] w-full max-w-[285px] drop-shadow-[0_22px_22px_rgba(0,0,0,.38)] transition duration-500 hover:-translate-y-2">
               <Image src="/images/books/books-cover/first_note.png" alt="Before the First Note book cover" fill sizes="(max-width: 768px) 70vw, 285px" className="object-contain" />

@@ -43,7 +43,7 @@ export function ActivitiesSection() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           {activities.map((activity) => (
-            <Link href={activity.href} key={activity.title} className="group relative min-h-[590px] overflow-hidden rounded-[20px] border border-[rgba(231,184,75,0.55)] bg-[rgba(7,26,47,0.72)] shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-[var(--gold)] hover:shadow-[0_24px_55px_rgba(0,0,0,0.35)] sm:min-h-[625px]">
+            <Link href={activity.href} key={activity.title} className="group relative min-h-[590px] overflow-hidden rounded-[20px] border-[3px] border-[var(--gold)] bg-[rgba(7,26,47,0.72)] shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(0,0,0,0.35)] sm:min-h-[625px]">
               <div className="absolute inset-x-0 top-0 h-[58%] overflow-hidden"><Image src={activity.image} alt={activity.alt} fill sizes="(max-width: 640px) 100vw, 42vw" className="object-cover transition duration-700 group-hover:scale-105" /><div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(7,26,47,0.96)]" /></div>
               <div className="relative flex min-h-[590px] flex-col justify-between p-6 sm:min-h-[625px] sm:p-7 lg:p-8">
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--gold)] text-base font-bold text-[var(--navy)]">{activity.number}</span>

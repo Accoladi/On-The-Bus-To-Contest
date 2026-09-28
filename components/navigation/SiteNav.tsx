@@ -11,6 +11,7 @@ const links = [
   { label: "Games", href: "/play" },
   { label: "Activities", href: "/activities" },
   { label: "Books", href: "/books" },
+  { label: "About", href: "/about" },
 ];
 
 export function SiteNav({ light = false, solid = false }: { light?: boolean; solid?: boolean }) {
