@@ -1,0 +1,324 @@
+:root {
+    --color-1: #0C2545;
+    --color-2: #2a598f;
+    --color-3: #961c20;
+    --color-4: #20961c;
+    --color-5: #fbdc93;
+    --header-font: 'Work Sans', sans-serif;
+    --sub-header: 'Yantramanav', sans-serif;
+    --paragraph: 'Montserrat', sans-serif;
+    --serif: 'Martel', serif;
+}
+
+
+#ad-line-top {
+    width: 100px;
+    height: 8px;
+    background-color: var(--color-5);
+    align-self: center;
+}
+
+.ad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 1em auto;
+}
+
+.ad-square {
+    width: 32%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ad-square-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    text-align: center;
+    width: 85%;
+    height: 85%;
+}
+
+.ad-square h3 {
+    font-family: var(--sub-header);
+    font-size: 2em;
+    color: var(--color-1)
+}
+
+
+.ad-square p {
+    font-family: var(--sub-header);
+    color: var(--color-3);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.ad-logo {
+    justify-self: center;
+}
+
+.ad-main {
+
+    /* background-color: var(--color-3); */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ad-main h2 {
+    font-family: var(--header-font);
+    font-size: 3em;
+    margin-bottom: 0.25em;
+    color: var(--color-3);
+
+}
+
+#Ourpartners {
+    color: var(--color-2);
+    font-family: var(--header-font);
+    font-size: 3em;
+}
+
+.advertisement {
+
+    /* margin: 2em auto; */
+    display: flex;
+    flex-direction: column;
+
+    padding: 3em 0;
+
+}
+
+#ad-line {
+    width: 50%;
+    height: 2px;
+    background-color: var(--color-2);
+    align-self: center;
+    margin-bottom: 2em;
+
+
+}
+
+.partners-icon {
+
+    width: 50px;
+
+}
+
+#our-partners-p {
+    font-family: var(--paragraph);
+    font-weight: 400;
+    line-height: 1.5;
+    width: 75%;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+#our-partners-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+#our-partners-title h2 {
+    margin-left: 0.25em;
+}
+
+#our-partners-title img {
+    margin-right: 0.25em;
+}
+
+
+#accoladi {
+    width: 200px;
+}
+
+#my-music-ftr {
+    width: 250px;
+}
+
+#ncma {
+    width: 240px;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .ad {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 2em auto;
+    }
+
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .ad {
+        width: 95%;
+    }
+
+    .ad-square {
+        padding: 0.5em;
+
+    }
+
+    #ad-line {
+        width: 70%;
+    }
+
+    #accoladi {
+        width: 160px;
+    }
+
+    #my-music-ftr {
+        width: 190px;
+    }
+
+    #ncma {
+        width: 190px;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .ad {
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .ad-square {
+        width: 80%;
+        padding: 1em;
+
+    }
+
+    #accoladi {
+        width: 200px;
+    }
+
+    #my-music-ftr {
+        width: 250px;
+    }
+
+    #ncma {
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #ad-line {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .ad-square {
+        width: 90%;
+    }
+
+    #ad-line {
+        width: 90%;
+    }
+
+    .ad-square-content {
+        width: 90%;
+        height: 90%;
+    }
+
+
+    #Ourpartners {
+        font-size: 2.5em;
+    }
+
+    .partners-icon {
+
+        width: 40px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 460px) {
+    .partners-icon {
+        width: 35px;
+    }
+
+    #Ourpartners {
+        font-size: 2em;
+    }
+
+
+}
+
+
+@media screen and (max-width: 400px) {
+    .ad-square {
+        width: 95%;
+    }
+
+    #ad-line {
+        width: 90%;
+    }
+
+    .ad {
+        width: 98%;
+    }
+
+    #accoladi {
+        width: 190px;
+    }
+
+    #my-music-ftr {
+        width: 230px;
+    }
+
+    #ncma {
+        width: 220px;
+    }
+}
+
+
+@media screen and (max-width: 325px) {
+    .partners-icon {
+        width: 30px;
+    }
+
+    #Ourpartners {
+        font-size: 1.5em;
+    }
+
+    #accoladi {
+        width: 160px;
+    }
+
+    #my-music-ftr {
+        width: 190px;
+    }
+
+    #ncma {
+        width: 190px;
+    }
+}

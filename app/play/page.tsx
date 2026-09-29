@@ -18,7 +18,7 @@ function ArrowIcon() {
 export default function PlayPage() {
   return (
     <main className="min-h-screen bg-[var(--cream)] text-[var(--navy)]">
-      <section className="relative isolate overflow-hidden bg-[var(--navy)] px-6 pb-16 pt-32 text-white sm:px-10 lg:px-16 lg:pb-24 lg:pt-40">
+      <section className="relative isolate overflow-hidden bg-[var(--navy)] px-6 pb-24 pt-44 text-white sm:px-10 sm:pb-28 sm:pt-52 lg:px-16 lg:pb-36 lg:pt-64">
         <Image src="/images/games/bg.png" alt="" fill sizes="100vw" priority className="z-0 object-cover object-center" />
         <div className="absolute inset-0 z-0 bg-[linear-gradient(105deg,rgba(7,26,47,.32)_0%,rgba(7,26,47,.2)_45%,rgba(7,26,47,.08)_100%)]" />
         <SiteNav />

@@ -31,10 +31,10 @@ function filterSongs(songs: RadioSong[]) {
 
 function TrackCard({ song, index, active, playing, liked, displayDuration, onDuration, onPlay, onLike, onShare }: { song: RadioSong; index: number; active: boolean; playing: boolean; liked: boolean; displayDuration?: number; onDuration: (duration: number) => void; onPlay: () => void; onLike: () => void; onShare: () => void }) {
   return (
-    <article className={`group flex h-full flex-col overflow-hidden rounded-[22px] border bg-white shadow-[0_12px_32px_rgba(7,26,47,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(7,26,47,0.14)] ${active ? "border-[var(--gold)] ring-2 ring-[var(--gold)]/25" : "border-[var(--navy)]/8"}`}>
+    <article className={`group mx-auto flex h-full w-full max-w-[360px] flex-col overflow-hidden rounded-[22px] border bg-white shadow-[0_12px_32px_rgba(7,26,47,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(7,26,47,0.14)] ${active ? "border-[var(--gold)] ring-2 ring-[var(--gold)]/25" : "border-[var(--navy)]/8"}`}>
       {song.audioUrl && <audio src={song.audioUrl} preload="metadata" className="hidden" onLoadedMetadata={(event) => { const nextDuration = event.currentTarget.duration; if (Number.isFinite(nextDuration)) onDuration(nextDuration); }} />}
-      <button type="button" onClick={onPlay} className="relative aspect-[16/10] overflow-hidden bg-[var(--navy)] text-left">
-        <Image src={song.coverImageUrl || "/content/images/radio-cover.jpg"} alt={`${song.title} cover`} fill sizes="(max-width: 768px) 100vw, 33vw" className="bg-[var(--navy)] object-contain transition duration-500 group-hover:scale-105" />
+      <button type="button" onClick={onPlay} className="relative aspect-[4/3] overflow-hidden bg-[var(--navy)] text-left">
+        <Image src={song.coverImageUrl || "/content/images/radio-cover.jpg"} alt={`${song.title} cover`} fill sizes="(max-width: 768px) 100vw, 33vw" className="bg-[var(--navy)] object-contain object-center transition duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,26,47,.8)] via-transparent to-transparent" />
         <span className="absolute left-3 top-3 rounded-full bg-[rgba(7,26,47,.65)] px-3 py-1 text-[10px] font-bold uppercase tracking-[.2em] text-white backdrop-blur">{String(index + 1).padStart(2, "0")}</span>
         {active && <span className="absolute right-3 top-3 rounded-full bg-[var(--gold)] px-3 py-1 text-[10px] font-bold uppercase tracking-[.15em] text-[var(--navy)]">{playing ? "Playing" : "Paused"}</span>}
@@ -160,10 +160,10 @@ export function RadioPage() {
       <div className="relative isolate overflow-visible bg-[var(--navy)]">
         <div className="absolute inset-x-0 bottom-0 top-[76px] z-0">
           <Image src="/images/radio/bg.png" alt="" fill priority sizes="100vw" className="object-cover object-center" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,26,47,.9)_0%,rgba(7,26,47,.62)_52%,rgba(7,26,47,.28)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,26,47,.64)_0%,rgba(7,26,47,.34)_52%,rgba(7,26,47,.1)_100%)]" />
         </div>
         <SiteNav solid />
-        <div className="relative z-10 mx-auto max-w-[1320px] px-6 pb-36 pt-32 sm:px-10 lg:px-16 lg:pb-44">
+        <div className="relative z-10 mx-auto max-w-[1320px] px-6 pb-44 pt-44 sm:px-10 lg:px-16 lg:pb-52 lg:pt-52">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--gold)]">The soundtrack between performances</p>
           <h1 className="mt-5 max-w-3xl text-6xl leading-[0.92] text-[var(--cream)] sm:text-7xl lg:text-8xl">Turn the ride up.</h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-white/65">Original tracks, band-room energy, and something good in your headphones while the stadium gets ready.</p>
@@ -175,7 +175,7 @@ export function RadioPage() {
           <div className="relative overflow-hidden rounded-[26px] border border-white/20 bg-[rgba(25,24,66,.88)] text-white shadow-[0_24px_70px_rgba(7,26,47,0.3)] backdrop-blur-md">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(231,184,75,.2),transparent_32%)]" />
             <div className="relative grid items-stretch gap-0 p-0 md:grid-cols-[42%_58%] lg:grid-cols-[38%_62%]">
-              <div className="relative aspect-[3/2] overflow-hidden border-b border-white/15 bg-[var(--navy)] md:aspect-auto md:min-h-[250px] md:border-b-0 md:border-r md:border-white/15"><Image src={featured.coverImageUrl || "/content/images/radio-cover.jpg"} alt={featured.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1200px) 42vw, 540px" className="object-contain" /></div>
+              <div className="relative aspect-[3/2] overflow-hidden border-b border-white/15 bg-[var(--navy)] md:aspect-auto md:min-h-[250px] md:border-b-0 md:border-r md:border-white/15"><Image src={featured.coverImageUrl || "/content/images/radio-cover.jpg"} alt={featured.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1200px) 42vw, 540px" className="object-cover object-center" /></div>
               <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                 <span className="inline-flex w-fit rounded-full bg-[var(--gold)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--navy)]">Featured track</span>
                 <h2 className="mt-5 max-w-xl text-4xl leading-[0.95] sm:text-5xl lg:text-6xl">{featured.title}</h2>

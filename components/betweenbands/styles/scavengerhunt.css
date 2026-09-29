@@ -1,0 +1,510 @@
+:root {
+    --color-1: #0C2545;
+    --color-2: #2a598f;
+    --color-3: #961c20;
+    --color-4: #20961c;
+    --color-5: #fbdc93;
+    --header-font: 'Work Sans', sans-serif;
+    --sub-header: 'Yantramanav', sans-serif;
+    --paragraph: 'Montserrat', sans-serif;
+    --serif: 'Martel', serif;
+}
+
+
+#scavengerhunt-image {
+    background-color: var(--color-2);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.after-game-home-btn {
+    border: none;
+    background-color: var(--color-3);
+    color: white;
+    font-family: var(--sub-header);
+    width: 250px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.after-game-home-btn:hover {
+    background-color: var(--color-1);
+}
+
+
+.scavenger-main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-2);
+    padding: 2em 0;
+    position: relative;
+}
+
+#image-outer {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+}
+
+#scav-hunt-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+}
+
+.image-blur {
+    filter: blur(3px);
+}
+
+
+.item {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+
+.found {
+
+    border: 5px solid var(--color-4);
+}
+
+.wheel {
+    width: 120px;
+}
+
+
+.wheel-slice {
+    cursor: auto;
+    fill: white;
+}
+
+.find-count {
+    fill: var(--color-4);
+}
+
+.wheel-text {
+    font-family: var(--sub-header);
+    font-size: 50px;
+    color: white;
+}
+
+
+
+.scavenger-hunt-control {
+    display: flex;
+    /* min-height: 150px; */
+    /* padding: 1em; */
+    align-items: center;
+    transition: filter 0.5s ease;
+    justify-content: center;
+    /* width: 75%; */
+    gap: 2em;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+
+#scavenger-control-2 {
+    /* width: 40%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* #scavenger-control-1 {
+    width: 80%;
+} */
+
+#items-list {
+    /* width: 40%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2em auto;
+    gap: 1em; */
+    display: flex;
+    gap: 1em;
+    margin: 2em 0;
+
+}
+
+.item-icon {
+    background-color: #efefef;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+#winning-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    text-align: center;
+
+
+
+}
+
+
+.scavenger-control-panel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--color-1);
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.won-game {
+    opacity: 0.4;
+    filter: blur(3px);
+
+
+}
+
+#scroll-anim {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    animation-duration: 5s;
+    animation-name: scroll-animation;
+    z-index: 100;
+    background-color: var(--color-1);
+    padding: 20px;
+    color: white;
+    font-size: 22px;
+    font-family: 900;
+}
+
+@keyframes scroll-animation {
+    0% {
+        opacity: 1;
+        display: flex;
+    }
+
+    25% {
+        opacity: 1;
+        display: flex;
+    }
+
+    50% {
+        opacity: 1;
+        display: flex;
+    }
+
+    75% {
+        opacity: 0.8;
+        display: flex;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+#win-greeting {
+    font-size: 1.5em;
+    font-weight: 800;
+    font-family: var(--header-font);
+    color: white;
+    padding: 5px;
+    background-color: var(--color-1);
+}
+
+#reset-hunt {
+    border: none;
+    background-color: var(--color-4);
+    color: white;
+    font-family: var(--sub-header);
+    width: 250px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#reset-hunt:hover {
+    background-color: #961c20;
+}
+
+
+.check-mark {
+    width: 30px;
+}
+
+
+#item-1 {
+    position: absolute;
+    top: 67.5%;
+    left: 80.25%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+#item-2 {
+    position: absolute;
+    top: 24%;
+    left: 19.25%;
+    transform: translate(-50%, -50%);
+}
+
+#item-3 {
+    position: absolute;
+    top: 33%;
+    left: 36.5%;
+    transform: translate(-50%, -50%);
+}
+
+#item-4 {
+    position: absolute;
+    top: 47.5%;
+    left: 7.25%;
+    transform: translate(-50%, -50%);
+
+}
+
+#item-5 {
+    position: absolute;
+    top: 60.5%;
+    left: 18.25%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+#item-6 {
+    position: absolute;
+    top: 76%;
+    left: 66.5%;
+    transform: translate(-50%, -50%);
+}
+
+#item-7 {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+
+}
+
+#item-8 {
+    position: absolute;
+    top: 77%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+
+}
+
+#items-lbl p {
+    text-align: center;
+    font-family: var(--sub-header);
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+
+
+
+
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+
+
+#scavenger-hunt-image {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+#scav-hunt-container::-webkit-scrollbar {
+    width: 0 !important
+}
+
+
+#scav-hunt-container {
+    overflow: -moz-scrollbars-none;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+
+
+    .scavenger-hunt-control {
+        flex-direction: row;
+
+        align-items: center;
+    }
+
+    #items-list {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .scavenger-hunt-control {
+        position: relative;
+        display: flex;
+        width: 100%;
+        gap: 1em;
+    }
+
+
+
+
+
+
+    .item-icon {
+        margin-bottom: 2px;
+
+    }
+
+    #items-list {
+        gap: 0.5em 1em;
+
+    }
+
+
+
+
+
+    #scavengerhunt-image {
+        width: 100%;
+
+    }
+
+    #image-outer {
+        width: 100%;
+    }
+
+    .scavenger-control-panel {
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .item {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+    }
+
+    .item-icon {
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .wheel {
+        width: 110px;
+    }
+
+    #image-outer {
+        width: 1000px;
+    }
+
+    #scav-hunt-container {
+        background-color: var(--color-1);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    #scavenger-control-1 {
+        width: 60%;
+    }
+
+    #scavenger-control-2 {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #image-outer {
+        width: 800px;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+
+
+
+
+    #items-lbl p {
+        font-size: 1em;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .item {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    .item-icon {
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .wheel {
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 303px) {
+    #items-list {
+        gap: 0.5em 0.25em;
+
+    }
+
+    #items-lbl p {
+        font-size: 12px;
+    }
+}

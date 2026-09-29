@@ -1,0 +1,1343 @@
+:root {
+  --color-1: #0C2545;
+  --color-2: #2a598f;
+  --color-3: #961c20;
+  --color-4: #20961c;
+  --color-5: #fbdc93;
+  --header-font: 'Work Sans', sans-serif;
+  --sub-header: 'Yantramanav', sans-serif;
+  --paragraph: 'Montserrat', sans-serif;
+  --serif: 'Martel', serif;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  /* Adjust to your desired width */
+  height: 350px;
+  /* Set a maximum height for the container */
+  overflow: hidden;
+  /* Hide the overflow (crop the image) */
+  /* background-size: 100% auto; */
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+/* Style for the cropped image */
+.cropped-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+  /* background: rgba(0, 0, 0, 0.5); */
+  object-fit: cover;
+  /*Crop the image to cover the container */
+  background-size: cover;
+}
+
+.marching-contests-ad {
+  width: 100%;
+}
+
+/* Style for the text */
+.image-text {
+  font-family: var(--header-font);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px;
+  font-size: 3em;
+  /* font-weight: bold; */
+  text-align: center;
+  border-radius: 5px;
+  font-family: var(--sub-header);
+  font-weight: 800;
+  line-height: 1.5;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjust the alpha value to control darkness */
+}
+
+.text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify, center;
+  color: #333;
+  /* Adjust the color to your preference */
+  margin: 20px;
+  /* Add margin for spacing */
+}
+
+.text p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.text h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.text ul {
+  list-style-type: disc;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.text li {
+  margin-bottom: 10px;
+  margin: 20px;
+  text-align: justify;
+}
+
+
+.article-container p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*margin: 16px 0 16px 0; maybe bring this back*/
+  margin-bottom: 20px;
+  font-family: var(--sub-header);
+  line-height: 1.25;
+  font-size: 22px;
+}
+
+.card {
+  position: relative;
+  width: auto;
+  /* Adjust to your desired width */
+  max-height: auto;
+  /* Set a maximum height for the container */
+  overflow: hidden;
+  /* Hide the overflow (crop the content) */
+  margin: 20px;
+  /* Adjust margin as needed */
+  border: 1px solid #ccc;
+  /* Add a border for the card */
+  border-radius: 10px;
+  /* Optional: Add border-radius for rounded corners */
+}
+
+.Home__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-border {
+  margin: 10px;
+  padding: 20px 0 20px 0;
+  background-image: url(../../../public/images/article-background.jpg);
+  width: 80%;
+
+  @media (max-width: 800px) {
+    width: 95%;
+  }
+}
+
+.article-container-2 {
+  width: 95%;
+  margin: auto;
+
+}
+
+.article-container {
+  width: 95%;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+}
+
+.left-image {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1500px) {
+    flex-direction: column;
+  }
+}
+
+#cc-post-border {
+  border: 2px solid rgb(201, 13, 13);
+  padding: 10px
+}
+
+.left-image-cc {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+}
+
+.right-image {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1500px) {
+    flex-direction: column;
+  }
+}
+
+.article-image {
+  display: flex;
+  align-items: stretch;
+  /* width: 300%; */
+  padding: 5px;
+  overflow: hidden;
+
+  @media (max-width: 1500px) {
+    width: 100%;
+  }
+}
+
+.article-image-cc {
+  margin-right: 20px;
+
+  @media (max-width: 1200px) {
+    width: fit-content;
+  }
+}
+
+.article-image img {
+  object-fit: cover;
+  /* width: 100%; */
+
+}
+
+#article-footer-image {
+  width: 100%;
+}
+
+.text-container {
+  margin: 0;
+}
+
+.text-container p {
+  line-height: 28px;
+}
+
+.recipe-banner {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+
+  @media (max-width: 1500px) {
+    flex-direction: column;
+  }
+}
+
+.recipe-banner-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #8ed6f0;
+  padding: 10px;
+}
+
+.recipe-banner-text h3 {
+  margin: auto;
+  padding: 25px;
+  font-size: 100px;
+  color: #e69f25;
+  border: solid 10px #e69f25;
+
+  @media (max-width: 1500px) {
+    font-size: 50px;
+  }
+}
+
+.common-image-class {
+  text-align: center;
+  margin-left: 3%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.common-image-class img {
+  align-items: center;
+  width: 101%;
+  display: inline-block;
+
+  @media (max-width: 1500px) {
+    flex-direction: column;
+  }
+
+}
+
+
+
+
+
+
+.article-h2 {
+  font-size: 46px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+td {
+  /* border: blue solid 1px; */
+  font-size: 44px;
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .article-h2 {
+    font-size: 34px;
+  }
+
+  td {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .recipes-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .article-h2 {
+    font-size: 26px;
+  }
+
+  td {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .recipes-container {
+    width: 100%;
+  }
+}
+
+
+.articles-bullet-list {
+  width: 90%;
+  margin: 1em auto;
+}
+
+.articles-bullet-list li {
+  margin-bottom: 1em;
+  font-family: var(--sub-header);
+  font-size: 22px;
+}
+
+.articles-h3 {
+  margin: 1em 0 15px 5%;
+  font-size: 32px;
+  color: var(--color-1);
+
+}
+
+
+.cracking-the-code-img {
+  width: 80%;
+}
+
+
+
+.articles-line {
+  height: 3px;
+  width: 325px;
+  background-color: var(--color-5);
+  margin: 8px 0 0.5em 5%;
+
+}
+
+#who-are-these-band-members-head {
+  display: flex;
+  align-items: center;
+  /* Vertically center the items */
+  gap: 20px;
+  /* Space between the image and text */
+  padding: 20px;
+}
+
+
+#who-are-these-band-members-head img {
+  width: auto;
+  /* Let the browser decide the width */
+  height: auto;
+  /* Maintain the aspect ratio */
+  max-height: 200px;
+  /* Adjust as needed */
+  max-width: 50%;
+}
+
+.nsma-add-link {
+  text-decoration: none;
+  color: white;
+}
+
+#who-are-these-band-members-head p {
+  flex: 1;
+  line-height: 1.5;
+  font-family: var(--sub-header);
+  font-size: 20px;
+}
+
+.art-li {
+  line-height: 1.5;
+  list-style-type: circle;
+
+}
+
+.articles-paragraph {
+  font-family: var(--sub-header);
+  font-size: 20px;
+}
+
+.listwimage {
+  overflow: auto;
+}
+
+.listwimage img {
+  float: right;
+  margin-left: 10px;
+  max-width: 400px;
+  height: auto;
+}
+
+.articles-bullet-list-condensed {
+  width: 90%;
+  margin: 1em auto;
+}
+
+.articles-bullet-list-condensed li {
+  margin-bottom: 0.5em;
+  font-family: var(--sub-header);
+  font-size: 22px;
+}
+
+#watbm-conclusion {
+  font-family: var(--sub-header);
+  font-size: 20px;
+  line-height: 1.5;
+  width: 90%;
+  margin: 0.5em auto;
+
+}
+
+
+.paragraphwimage {
+  overflow: hidden;
+}
+
+.paragraphwimage img {
+  float: right;
+  margin-left: 10px;
+  max-width: 400px;
+  height: auto;
+}
+
+
+
+#etiquette-container {
+  margin: 1em auto;
+  display: flex;
+  gap: 10px;
+}
+
+#etiquette {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#etiquette-content {
+  background-color: white;
+  padding: 1em;
+  margin: auto;
+  width: 90%;
+  height: 90%;
+
+}
+
+#etiquette-list {
+  line-height: 1.25;
+}
+
+#etiquette-content h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--color-1);
+  line-height: 1.25;
+}
+
+#etiquette-content h5 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--color-2);
+}
+
+#etiquette-content ul li {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+
+#etiquette-paragraph {
+  width: 70%;
+}
+
+#etiquette-paragraph p {
+  line-height: 1.25;
+}
+
+
+
+#got-style {
+  font-size: 2.5em;
+  color: var(--color-1);
+  font-family: var(--header-font);
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#scramble-bands {
+  margin-top: 20px;
+}
+
+
+.paragraphwimage-left {
+  overflow: hidden;
+}
+
+.paragraphwimage-left img {
+  float: left;
+  margin-right: 10px;
+  max-width: 400px;
+  height: auto;
+}
+
+#marching-to-success-img {
+  height: 400px;
+}
+
+.article-image-wide {
+  max-width: 680px;
+  min-width: 525px;
+
+}
+
+.style-h3 {
+  color: var(--color-1);
+  font-size: 24px;
+  font-family: var(--sub-header);
+  margin-bottom: 3px;
+}
+
+#style-list span {
+  font-weight: 800;
+
+}
+
+
+#band-dad-img {
+  width: 500px;
+  height: auto;
+}
+
+.jokes-img {
+  height: 400px;
+  margin-top: 30px;
+}
+
+#joke-img-tall {
+  width: 50%;
+  margin-top: 30px;
+}
+
+#jokes-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#this-is-no-joke {
+  margin: 2em 0 10px 0;
+  font-family: var(--header-font);
+  font-size: 3em;
+  color: white;
+  text-align: center;
+}
+
+
+
+.article-btm-cc {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  font-size: 40px;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.paragraphleftimage {
+  overflow: hidden;
+}
+
+.paragraphleftimage img {
+  float: left;
+  margin-right: 10px;
+  max-width: 400px;
+  height: auto;
+}
+
+
+.mc-h2 {
+  font-size: 28px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+#post-title {
+  text-align: center;
+}
+
+#post-body-title {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.crackcode-bp {
+  margin: 0;
+}
+
+.cc-btm-img {
+  padding: 30px 0 30px 0;
+  text-align: center;
+
+}
+
+
+
+
+/* band jokes post */
+
+.bandjoke-img {
+  width: 1100px;
+  height: auto;
+  margin-left: 135px;
+  margin-top: 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+
+#soa-recipes {
+  background-color: var(--color-5);
+  width: 95%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+#soa-recipes-img-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  background-color: var(--color-3);
+
+}
+
+
+#soa-recipes-img-container h2 {
+  font-family: var(--sub-header);
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+#soa-recipes-img-container button {
+  background-color: var(--color-3);
+  border: none;
+  width: 200px;
+  height: 40px;
+  font-family: var(--sub-header);
+  color: white;
+}
+
+
+#soa-recipes-img-container button:hover {
+  background-color: var(--color-4);
+}
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  #etiquette-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #etiquette-paragraph {
+    width: 98%;
+  }
+
+  #etiquette {
+    padding: 1em;
+  }
+
+
+  .article-btm-cc {
+    font-size: 35px;
+  }
+}
+
+
+@media screen and (max-width: 1300px) {
+  #who-are-these-band-members-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+
+  #who-are-these-band-members-head img {
+    max-width: 90%;
+    max-height: 400px;
+  }
+
+
+  #who-are-these-band-members-head p {
+    flex: 1;
+    line-height: 1.5;
+    font-family: var(--sub-header);
+    font-size: 20px;
+  }
+
+
+
+  .jokes-img {
+    height: 350px;
+    margin-top: 30px;
+  }
+
+  #joke-img-tall {
+    width: 70%;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .jokes-img {
+    height: 300px;
+  }
+
+  #joke-img-tall {
+    width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .listwimage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listwimage img {
+    float: right;
+    margin-left: 0;
+    max-width: 95%;
+    height: auto;
+  }
+
+  .image-text {
+    width: 70%;
+  }
+
+  .cropped-image {
+    z-index: 1;
+
+
+    /* background: rgba(0, 0, 0, 0.5); */
+    /*Crop the image to cover the container */
+  }
+
+  .article-btm-cc {
+    font-size: 30px;
+  }
+
+  .cracking-the-code-img {
+    width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 776px) {
+
+  .cc-btm-img {
+    padding: 15px 0 15px 0;
+    text-align: center;
+  }
+
+
+  #marching-to-success-img {
+    height: auto;
+    width: 90%;
+  }
+
+  .paragraphwimage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paragraphwimage img {
+    float: right;
+    margin-left: 0;
+    max-width: 90%;
+    height: auto;
+  }
+
+  #band-dad-img {
+    width: 90%;
+  }
+
+  #etiquette-content h4 {
+    font-size: 18px;
+  }
+
+  #etiquette-content h5 {
+    font-size: 16px;
+  }
+
+
+  #etiquette-content ul li {
+    font-size: 16px;
+  }
+
+  #got-style {
+    font-size: 2em;
+  }
+
+  .paragraphwimage-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .paragraphwimage-left img {
+    float: left;
+    margin-right: 0;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .style-h3 {
+    text-align: center;
+  }
+
+  .cropped-image {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /*Crop the image to cover the container */
+  }
+
+
+  #scramble-bands {
+    margin-top: 0;
+  }
+
+  .article-btm-cc {
+    font-size: 24px;
+  }
+
+  .cracking-the-code-img {
+    width: 95%;
+  }
+
+
+  #soa-recipes-img-container h2 {
+    font-size: 2.5em;
+  }
+
+  #jokes-images {
+    flex-direction: column;
+  }
+
+  .jokes-img {
+    height: auto;
+    width: 90%;
+  }
+
+  #joke-img-tall {
+    width: 90%;
+  }
+
+
+
+  #this-is-no-joke {
+    margin: 1em 0 10px 0;
+
+    font-size: 2.5em;
+
+  }
+
+
+  .article-image-wide {
+    max-width: auto;
+    min-width: auto;
+    width: 90%;
+
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #who-are-these-band-members-head p {
+    font-size: 16px;
+  }
+
+  #watbm-conclusion {
+    font-size: 16px;
+  }
+
+  .articles-bullet-list-condensed li {
+    font-size: 16px;
+  }
+
+  .cropped-image {
+    z-index: 1;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /*Crop the image to cover the container */
+  }
+
+  .articles-bullet-list li {
+    margin-bottom: 1em;
+    font-family: var(--sub-header);
+    font-size: 16px;
+  }
+
+  .articles-h3 {
+    margin: 1em auto 15px auto;
+    font-size: 26px;
+    text-align: center;
+
+  }
+
+  .articles-paragraph {
+    font-family: var(--sub-header);
+    font-size: 16px;
+  }
+
+
+  .articles-line {
+    height: 3px;
+    width: 90%;
+    margin: 8px auto 0.5em auto;
+
+  }
+
+  .image-text {
+    width: 90%;
+    font-size: 2.5em;
+
+  }
+
+  .article-container p {
+    font-size: 16px;
+  }
+
+  #etiquette-content h4 {
+    font-size: 16px;
+  }
+
+  #etiquette-content h5 {
+    font-size: 14px;
+  }
+
+  #etiquette-content ul li {
+    font-size: 14px;
+  }
+
+
+  .style-h3 {
+    font-size: 22px;
+  }
+
+  .article-btm-cc {
+    font-size: 18px;
+  }
+
+  .recipe-banner-text h3 {
+    font-size: 40px;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .article-btm-cc {
+    font-size: 16px;
+  }
+
+  #this-is-no-joke {
+
+
+    font-size: 2em;
+
+  }
+
+
+  .cc-btm-img {
+    padding: 10px 0 10px 0;
+    text-align: center;
+
+  }
+
+  #etiquette-content h4 {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+
+
+
+
+
+  #who-are-these-band-members-head p {
+    font-size: 14px;
+  }
+
+  #watbm-conclusion {
+    font-size: 14px;
+  }
+
+  .articles-bullet-list-condensed li {
+    font-size: 14px;
+  }
+
+  .cropped-image {
+    z-index: 1;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /*Crop the image to cover the container */
+  }
+
+  .image-text {
+    width: 95%;
+    font-size: 2em;
+
+  }
+
+  .articles-bullet-list li {
+    margin-bottom: 1em;
+    font-family: var(--sub-header);
+    font-size: 14px;
+  }
+
+  .articles-h3 {
+    margin: 1em auto 0 auto;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .articles-paragraph {
+    font-family: var(--sub-header);
+    font-size: 14px;
+  }
+
+  .article-container p {
+    font-size: 14px;
+  }
+
+  #got-style {
+    font-size: 1.5em;
+  }
+
+  .style-h3 {
+    font-size: 20px;
+  }
+
+  .recipe-banner-text h3 {
+    font-size: 30px;
+  }
+
+
+  #soa-recipes-img-container h2 {
+    font-size: 2em;
+  }
+}
+
+
+@media screen and (max-width: 380px) {
+  .article-btm-cc {
+    font-size: 14px;
+  }
+}
+
+/* Modern shared editorial shell. Each long-form article keeps its own copy
+   and media while sharing a consistent reading experience. */
+.card {
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: #f4f0e8;
+}
+
+.image-container {
+  height: clamp(360px, 43vw, 620px);
+  max-width: 1500px;
+  margin: 0 auto;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 20px 50px rgba(6, 24, 43, .18);
+}
+
+.cropped-image { object-position: center 28%; }
+
+.image-text {
+  width: min(900px, 88%);
+  padding: 20px 28px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 800;
+  line-height: .92;
+  letter-spacing: -.02em;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, .38);
+}
+
+.Home__container {
+  width: 100%;
+  align-items: stretch;
+  background: #f4f0e8;
+}
+
+.article-border {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 80px;
+  background: transparent;
+}
+
+.article-container {
+  width: 100%;
+  margin: 0;
+  padding: clamp(26px, 5vw, 72px);
+  border: 1px solid rgba(6, 24, 43, .1);
+  border-top: 5px solid #b6292e;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 20px 55px rgba(6, 24, 43, .1);
+}
+
+.article-container p,
+.articles-paragraph,
+.article-container li,
+#watbm-conclusion {
+  color: #26384b;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.article-container p { margin-bottom: 1.25rem; }
+
+.article-container h2,
+.article-container h3,
+.articles-h3,
+.article-h2 {
+  color: #06182b;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  letter-spacing: -.015em;
+}
+
+.articles-h3,
+.article-h2 {
+  margin: 3.5rem 0 .7rem;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  line-height: .95;
+}
+
+.articles-line {
+  width: 72px;
+  height: 4px;
+  margin: 0 0 1.8rem;
+  border-radius: 999px;
+  background: #d6a62e;
+}
+
+.articles-bullet-list,
+.articles-bullet-list-condensed {
+  width: 100%;
+  margin: 1.2rem 0;
+  padding-left: 1.5rem;
+}
+
+.articles-bullet-list li,
+.articles-bullet-list-condensed li { margin-bottom: .9rem; padding-left: .35rem; }
+
+#who-are-these-band-members-head {
+  display: grid;
+  grid-template-columns: minmax(220px, .9fr) 1.1fr;
+  gap: clamp(24px, 4vw, 58px);
+  align-items: center;
+  padding: 0 0 1.5rem;
+}
+
+#who-are-these-band-members-head img {
+  width: 100%;
+  max-width: none;
+  max-height: 360px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.listwimage,
+.paragraphwimage,
+.paragraphwimage-left { overflow: auto; }
+
+.listwimage img,
+.paragraphwimage img,
+.paragraphwimage-left img {
+  max-width: min(42%, 400px);
+  height: auto;
+  margin: 0 0 1.5rem 2rem;
+  border-radius: 16px;
+}
+
+.article-container-2 {
+  width: 100%;
+  margin: 24px 0 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.article-container-2 img,
+#article-footer-image { display: block; width: 100%; height: auto; }
+
+@media (max-width: 700px) {
+  .image-container { height: 390px; border-radius: 0 0 20px 20px; }
+  .article-border { width: min(100% - 24px, 1180px); padding: 28px 0 44px; }
+  .article-container { padding: 24px 20px 36px; border-radius: 20px; }
+  #who-are-these-band-members-head { display: block; }
+  #who-are-these-band-members-head img { max-height: 240px; margin-bottom: 1.2rem; }
+  .listwimage img,
+  .paragraphwimage img,
+  .paragraphwimage-left img { float: none; display: block; max-width: 100%; margin: 0 auto 1.2rem; }
+  .article-container p,
+  .articles-paragraph,
+  .article-container li,
+  #watbm-conclusion { font-size: 1rem; line-height: 1.7; }
+}
+
+/* Keep headings balanced and give image-led sections a calmer editorial
+   rhythm instead of leaving short orphan lines or tight image edges. */
+#got-style {
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.45rem, 4vw, 4.25rem);
+  font-weight: 800;
+  line-height: .98;
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+
+.style-h3,
+.article-container h2,
+.article-container h3,
+.articles-h3,
+.article-h2 {
+  max-width: 900px;
+  text-wrap: balance;
+}
+
+.paragraphwimage img,
+.paragraphwimage-left img,
+.listwimage img {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.paragraphwimage p,
+.paragraphwimage-left p,
+.listwimage p {
+  padding: 0 .5rem;
+}
+
+@media (max-width: 700px) {
+  #got-style {
+    margin-bottom: 2rem;
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+  }
+
+  .paragraphwimage img,
+  .paragraphwimage-left img,
+  .listwimage img {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .paragraphwimage p,
+  .paragraphwimage-left p,
+  .listwimage p { padding: 0; }
+}

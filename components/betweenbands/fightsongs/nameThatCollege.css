@@ -1,0 +1,74 @@
+/* ============================================================================
+   nameThatCollege.css — result modal that reveals the correct college logo
+   ============================================================================ */
+
+.ntc-result-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(6, 20, 40, 0.72);
+  animation: ntcFadeIn 0.18s ease;
+}
+
+.ntc-result-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 1.9rem 1.5rem 1.5rem;
+  text-align: center;
+  color: #0c2545;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  animation: ntcPop 0.2s ease;
+}
+
+.ntc-result-close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #7a8aa0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.ntc-result-close:hover {
+  color: #0c2545;
+}
+
+.ntc-result-logo {
+  width: 150px;
+  height: 150px;
+  margin: 0.4rem auto 0.25rem;
+  object-fit: contain;
+  display: block;
+}
+
+.ntc-result-college {
+  margin: 0.25rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.ntc-result-song {
+  margin: 0.35rem 0 0.6rem;
+  color: #55627a;
+}
+
+@keyframes ntcFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ntcPop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
