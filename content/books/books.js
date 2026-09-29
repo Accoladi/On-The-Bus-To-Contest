@@ -38,6 +38,17 @@ export const books = [
     status: 'available',
     sections: soundOfHomeSections,
   },
+  {
+    slug: 'making-friends',
+    title: 'Making Friends on the Band Bus',
+    subtitle: 'How to Meet People, Make Someone Laugh, and Make the Ride Better for Everyone',
+    author: 'On the Bus to Contest',
+    excerpt: 'A practical guide to starting conversations, building friendships, and making the band bus feel more like home.',
+    coverImageUrl: '/images/books/books-cover/making_friends.png',
+    chapterCount: 42,
+    status: 'available',
+    sections: [],
+  },
 ];
 
 export function getBookBySlug(slug) {

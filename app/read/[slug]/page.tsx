@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteNav } from "@/components/navigation/SiteNav";
+import { ArticleAd } from "@/components/articles/ArticleAd";
 import { articleCatalog } from "@/content/articles/articleCatalog";
 import { onTheBusArticleContent } from "@/content/articles/onTheBusArticleContent";
 
@@ -31,6 +32,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!article || !content) notFound();
 
   const headings = content.sections.filter((section) => section.type === "heading").slice(0, 6);
+  const articleIndex = articleCatalog.findIndex((item) => item.slug === article.slug);
   const related = articleCatalog.filter((item) => item.slug !== article.slug).slice(0, 3);
 
   return (
@@ -87,6 +89,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               }
               return <p key={`${section.type}-${index}`} className="mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a]">{section.text}</p>;
             })}
+            <ArticleAd index={articleIndex} />
             <div className="mt-14 border-t border-[var(--navy)]/10 pt-8">
               <Link href="/read" className="inline-flex items-center gap-3 rounded-full bg-[var(--gold)] px-5 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--soft-champagne)]">Back to all articles <ArrowIcon /></Link>
             </div>
@@ -97,7 +100,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <section className="bg-white px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-[1180px]">
           <div className="flex items-end justify-between gap-6 border-b border-[var(--navy)]/10 pb-5"><div><p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--purple)]">Keep reading</p><h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl">More for the ride.</h2></div><Link href="/read" className="hidden text-sm font-semibold text-[var(--purple)] sm:block">Explore all <ArrowIcon /></Link></div>
-          <div className="mt-7 grid gap-5 md:grid-cols-3">{related.map((item) => <Link key={item.slug} href={`/read/${item.slug}`} className="group overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-[#f7f3ea] transition hover:-translate-y-1 hover:shadow-lg"><div className="relative aspect-[1.65] overflow-hidden"><Image src={item.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /></div><div className="p-5"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--purple)]">{item.category}</p><h3 className="mt-3 font-[family-name:var(--font-display)] text-2xl leading-tight">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[var(--slate)]">{item.description}</p></div></Link>)}</div>
+          <div className="mt-7 grid gap-5 md:grid-cols-3">{related.map((item) => <Link key={item.slug} href={`/read/${item.slug}`} className="group overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-white transition hover:-translate-y-1 hover:shadow-lg"><div className="relative aspect-[1.65] overflow-hidden"><Image src={item.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /></div><div className="p-5"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--purple)]">{item.category}</p><h3 className="mt-3 font-[family-name:var(--font-display)] text-2xl leading-tight">{item.title}</h3><p className="mt-3 text-sm leading-6 text-[var(--slate)]">{item.description}</p></div></Link>)}</div>
         </div>
       </section>
     </main>

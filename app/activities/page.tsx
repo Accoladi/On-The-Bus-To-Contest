@@ -14,16 +14,16 @@ function ArrowIcon() {
 export default function ActivitiesPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--cream)] text-[var(--navy)]">
-      <section className="relative isolate min-h-[520px] overflow-hidden bg-[var(--cream)] sm:min-h-[590px] lg:min-h-[650px]">
+      <section className="relative isolate min-h-[520px] overflow-hidden bg-[var(--navy)] text-[var(--cream)] sm:min-h-[590px] lg:min-h-[650px]">
         <Image src="/images/activities/hero-bg.png" alt="A student drawing on the bus during the ride to contest" fill priority sizes="100vw" className="-z-10 object-cover object-center" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(247,243,234,.98)_0%,rgba(247,243,234,.9)_38%,rgba(247,243,234,.25)_70%,rgba(247,243,234,.05)_100%)]" />
-        <SiteNav light />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,26,47,.95)_0%,rgba(7,26,47,.84)_38%,rgba(7,26,47,.58)_70%,rgba(7,26,47,.38)_100%)]" />
+        <SiteNav solid />
         <div className="relative mx-auto flex min-h-[520px] max-w-[1320px] items-center px-6 pb-14 pt-32 sm:min-h-[590px] sm:px-10 sm:pb-20 lg:min-h-[650px] lg:px-16 lg:pt-40">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-[var(--purple)]"><span>A little space to reset</span><span className="h-px w-16 bg-[var(--purple)]" /></div>
+            <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-[var(--gold)]"><span>A little space to reset</span><span className="h-px w-16 bg-[var(--gold)]" /></div>
             <h1 className="mt-7 max-w-3xl text-6xl leading-[.88] sm:text-7xl lg:text-[6.7rem]">Make the ride<br />your own.</h1>
             <div className="mt-4 h-3 w-80 rounded-[50%] border-t-[5px] border-[var(--gold)]/80 rotate-[-2deg] sm:w-[29rem]" />
-            <p className="mt-5 max-w-lg text-base leading-7 text-[var(--slate)] sm:text-lg">Color, notice, explore, and find a small way to make the miles feel yours. No score required.</p>
+            <p className="mt-5 max-w-lg text-base leading-7 text-white/75 sm:text-lg">Color, notice, explore, and find a small way to make the miles feel yours. No score required.</p>
           </div>
         </div>
       </section>

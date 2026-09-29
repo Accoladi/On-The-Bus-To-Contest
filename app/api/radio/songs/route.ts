@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { curateRadioSongs } from "@/lib/radioCatalog";
+import type { RadioSong } from "@/components/radio/types";
 
 const DEFAULT_RADIO_UPSTREAM = "https://bandcampnation.com/api/radio/songs";
 
@@ -29,7 +31,9 @@ export async function GET() {
       );
     }
 
-    return NextResponse.json(payload, {
+    const songs = curateRadioSongs((payload as { songs: RadioSong[] }).songs);
+
+    return NextResponse.json({ ...payload, songs }, {
       headers: {
         "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
       },
