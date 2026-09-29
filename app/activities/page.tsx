@@ -16,7 +16,7 @@ export default function ActivitiesPage() {
     <main className="min-h-screen overflow-hidden bg-[var(--cream)] text-[var(--navy)]">
       <section className="relative isolate min-h-[520px] overflow-hidden bg-[var(--navy)] text-[var(--cream)] sm:min-h-[590px] lg:min-h-[650px]">
         <Image src="/images/activities/hero-bg.png" alt="A student drawing on the bus during the ride to contest" fill priority sizes="100vw" className="-z-10 object-cover object-center" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,26,47,.95)_0%,rgba(7,26,47,.84)_38%,rgba(7,26,47,.58)_70%,rgba(7,26,47,.38)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,26,47,.38)_0%,rgba(7,26,47,.28)_38%,rgba(7,26,47,.14)_70%,rgba(7,26,47,.05)_100%)]" />
         <SiteNav solid />
         <div className="relative mx-auto flex min-h-[520px] max-w-[1320px] items-center px-6 pb-14 pt-32 sm:min-h-[590px] sm:px-10 sm:pb-20 lg:min-h-[650px] lg:px-16 lg:pt-40">
           <div className="max-w-2xl">

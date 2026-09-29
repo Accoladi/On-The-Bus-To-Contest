@@ -23,7 +23,7 @@ export default function AboutPage() {
     <main className="min-h-screen overflow-hidden bg-[var(--cream)] text-[var(--navy)]">
       <section className="relative isolate min-h-[600px] overflow-hidden bg-[var(--navy)] text-white sm:min-h-[680px] lg:min-h-[720px]">
         <Image src="/images/about/hero-bg.png" alt="Marching band students riding together on a bus at sunset" fill priority sizes="100vw" className="-z-10 object-cover object-center" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(3,18,38,.95)_0%,rgba(3,18,38,.8)_40%,rgba(3,18,38,.18)_78%,rgba(3,18,38,.1)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(3,18,38,.82)_0%,rgba(3,18,38,.62)_40%,rgba(3,18,38,.12)_78%,rgba(3,18,38,.05)_100%)]" />
         <SiteNav />
         <div className="relative mx-auto flex min-h-[600px] max-w-[1320px] items-center px-6 pb-20 pt-32 sm:min-h-[680px] sm:px-10 lg:min-h-[720px] lg:px-16">
           <div className="max-w-xl">
@@ -51,7 +51,6 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-[-34px] h-16 rounded-[0_0_50%_50%/0_0_100%_100%] bg-[var(--navy)]" />
       </section>
 
       <section className="relative isolate overflow-hidden bg-[var(--navy)] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16">
@@ -100,7 +99,7 @@ export default function AboutPage() {
         <div className="absolute -right-12 bottom-4 rotate-12 text-[10rem] leading-none text-[var(--gold)]/10" aria-hidden="true">♫</div>
         <div className="relative mx-auto max-w-3xl">
           <Eyebrow>A community on the move</Eyebrow>
-          <h2 className="mt-7 text-4xl leading-[.95] sm:text-5xl">For Every Marching Band Student.</h2>
+          <h2 className="mt-7 text-4xl leading-[.95] sm:text-5xl">For Every Marching Band Member.</h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--slate)] sm:text-lg">Whether it’s your first contest or your last, whether you’re a freshman or a senior, whether you’re a musician, color guard member, or part of the drumline — you’re part of the same ride. On the Bus to Contest is for every student who wants to feel prepared, connected, and ready before the band steps onto the field.</p>
         </div>
       </section>

@@ -5,6 +5,8 @@ import { SiteNav } from "@/components/navigation/SiteNav";
 import { ArticleAd } from "@/components/articles/ArticleAd";
 import { articleCatalog } from "@/content/articles/articleCatalog";
 import { onTheBusArticleContent } from "@/content/articles/onTheBusArticleContent";
+import { additionalArticleContent } from "@/content/articles/additionalArticleContent";
+import { collegeArticleContent } from "@/content/articles/collegeArticleContent";
 
 const categoryStyles: Record<string, string> = {
   Mindset: "bg-[#5a2a78]",
@@ -14,6 +16,8 @@ const categoryStyles: Record<string, string> = {
   Wellbeing: "bg-[#355d9b]",
   Stories: "bg-[#a06b19]",
   "Band Culture": "bg-[#5a2a78]",
+  "College & Scholarships": "bg-[#355d9b]",
+  "Student Life": "bg-[#2c8b69]",
 };
 
 export function generateStaticParams() {
@@ -27,7 +31,7 @@ function ArrowIcon() {
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = articleCatalog.find((item) => item.slug === slug);
-  const content = onTheBusArticleContent[slug];
+  const content = onTheBusArticleContent[slug] || additionalArticleContent[slug] || collegeArticleContent[slug];
 
   if (!article || !content) notFound();
 

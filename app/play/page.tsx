@@ -20,20 +20,20 @@ export default function PlayPage() {
     <main className="min-h-screen bg-[var(--cream)] text-[var(--navy)]">
       <section className="relative isolate overflow-hidden bg-[var(--navy)] px-6 pb-16 pt-32 text-white sm:px-10 lg:px-16 lg:pb-24 lg:pt-40">
         <Image src="/images/games/bg.png" alt="" fill sizes="100vw" priority className="z-0 object-cover object-center" />
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(105deg,rgba(7,26,47,.82)_0%,rgba(7,26,47,.58)_45%,rgba(7,26,47,.42)_100%)]" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(105deg,rgba(7,26,47,.32)_0%,rgba(7,26,47,.2)_45%,rgba(7,26,47,.08)_100%)]" />
         <SiteNav />
         <div className="relative z-10 mx-auto max-w-[1320px]">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4"><p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--gold)]">Make the miles fly</p><span className="h-px w-16 bg-[var(--gold)]" /></div>
-            <h1 className="mt-6 text-6xl leading-[0.9] sm:text-7xl lg:text-[7.2rem]">Settle the bus debate.</h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">Quick games, friendly competition, and just enough marching-band trivia to settle the debate across the aisle.</p>
+            <h1 className="mt-6 text-6xl leading-[0.9] sm:text-7xl lg:text-[7.2rem]">Make the miles count.</h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">Short games, quick challenges, and marching-band trivia for the ride to contest—play at your own pace, one stop at a time.</p>
           </div>
         </div>
       </section>
 
       <section className="px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
         <div className="mx-auto max-w-[1320px]">
-          <div className="flex flex-col justify-between gap-5 border-b border-[var(--navy)]/10 pb-7 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.24em] text-[var(--purple)]">Choose your challenge</p><h2 className="mt-3 text-4xl sm:text-5xl">Something for every stretch of road.</h2></div><p className="max-w-sm text-sm leading-6 text-[var(--slate)]">Play solo, compare answers with your seatmate, or keep a quiet score in your head.</p></div>
+          <div className="flex flex-col justify-between gap-5 border-b border-[var(--navy)]/10 pb-7 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.24em] text-[var(--purple)]">Choose your challenge</p><h2 className="mt-3 text-4xl sm:text-5xl">Something for every stretch of road.</h2></div><p className="max-w-sm text-sm leading-6 text-[var(--slate)]">Play solo, follow a curiosity, or keep a quiet score in your head while the bus rolls on.</p></div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {games.map((game) => <Link href={game.href} key={game.title} className="group flex h-full flex-col overflow-hidden rounded-[24px] bg-white shadow-[0_14px_38px_rgba(7,26,47,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_46px_rgba(7,26,47,0.15)]">
               <div className={`relative aspect-[1.1] overflow-hidden ${game.panel}`}><Image src={game.image} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-4 top-4 rounded-full bg-[var(--gold)] px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-[var(--navy)]">{game.number}</span></div>

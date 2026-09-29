@@ -1058,6 +1058,30 @@ export const beforeTheFirstNoteSections: BookSection[] = [
     "text": "BEFORE YOU PERFORM"
   },
   {
+    "type": "heading",
+    "text": "THEY WERE IN BAND TOO"
+  },
+  {
+    "type": "heading",
+    "text": "Anthony McGill — The Clarinetist Who Prepared for the Moment"
+  },
+  {
+    "type": "paragraph",
+    "text": "Anthony McGill grew up in Chicago and began developing as a young clarinetist through programs including the Merit School of Music and the Chicago Youth Symphony Orchestra."
+  },
+  {
+    "type": "paragraph",
+    "text": "He went on to study at the Curtis Institute of Music and became Principal Clarinet of the New York Philharmonic, one of the most respected orchestral positions in the world."
+  },
+  {
+    "type": "paragraph",
+    "text": "His story is a reminder that preparation does not always announce where it is taking you. The scales, rehearsals, corrections, and performances you work through now can become the foundation for opportunities you cannot see yet."
+  },
+  {
+    "type": "paragraph",
+    "text": "When the moment arrives, confidence is not magic. It is the memory of having prepared for this your entire life."
+  },
+  {
     "type": "paragraph",
     "text": "Anthony McGill has described performance confidence as remembering that \u201cI had been preparing for this my entire life.\u201d International Clarinet Association"
   },

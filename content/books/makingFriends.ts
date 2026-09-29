@@ -7,7 +7,7 @@ export const makingFriendsSections = [
     "text": "ON THE BAND BUS"
   },
   {
-    "text": "How to Meet People, Make Someone Laugh,                          Be a Good Friend, and Make the Ride Better for Everyone"
+    "text": "How to Meet People, Make Someone Laugh,\nBe a Good Friend, and Make the Ride Better for Everyone"
   },
   {
     "text": "The Person Sitting Three Rows Away"

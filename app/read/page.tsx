@@ -16,14 +16,16 @@ const categoryStyles: Record<string, string> = {
   Preparation: "bg-[#355d9b]",
   Stories: "bg-[#a06b19]",
   "Band Culture": "bg-[#5a2a78]",
+  "College & Scholarships": "bg-[#355d9b]",
+  "Student Life": "bg-[#2c8b69]",
 };
 
 const filterLabels = ["All Articles", "Student Life", "Music & Performance", "Tips & How To", "College & Scholarships", "Stories", "Band Culture"];
 const filterCategories: Record<string, string[]> = {
-  "Student Life": ["People", "Stories"],
+  "Student Life": ["People", "Stories", "Student Life"],
   "Music & Performance": ["Confidence", "Directors"],
   "Tips & How To": ["Mindset", "Confidence", "Directors", "Wellbeing"],
-  "College & Scholarships": ["Stories"],
+  "College & Scholarships": ["College & Scholarships", "Stories"],
   Stories: ["Stories"],
   "Band Culture": ["People", "Directors", "Band Culture"],
 };
