@@ -1,0 +1,581 @@
+/* ============================================================================
+   Name That Tune — Styles
+   ============================================================================ */
+
+/* ─── PAGE SHELL (unchanged from original) ─── */
+
+.ntt-page-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #0C2545; /* Dark blue to fill empty space */
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ntt-overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.ntt-game-box {
+    background-color: rgba(53, 80, 112, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 750px;
+    text-align: center;
+    animation: ntt-fadeIn 0.3s ease-out;
+}
+
+@keyframes ntt-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── HEADER BAR (round + score) ─── */
+
+.ntt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ntt-round {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.ntt-score {
+    background-color: rgba(251, 220, 147, 0.15);
+    color: #fbdc93;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* ─── TITLE ─── */
+
+.ntt-title {
+    font-size: 2rem;
+    color: #fbdc93;
+    margin-bottom: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* ─── IDLE SCREEN ─── */
+
+.ntt-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+}
+
+.ntt-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ─── LISTEN BUTTON ─── */
+
+.ntt-listen-section {
+    margin-bottom: 2rem;
+}
+
+.ntt-listen-btn {
+    background-color: #e56b6f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ntt-listen-btn:hover:not(:disabled) {
+    background-color: #d45a5e;
+    transform: scale(1.05);
+}
+
+.ntt-listen-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ntt-listen-btn.ntt-playing {
+    background-color: #d45a5e;
+    animation: ntt-pulse 1.5s infinite;
+}
+
+@keyframes ntt-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(229, 107, 111, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(229, 107, 111, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(229, 107, 111, 0);
+    }
+}
+
+/* ─── AUDIO PROGRESS BAR ─── */
+
+.ntt-progress-bar {
+    width: 80%;
+    max-width: 300px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    margin: 12px auto 0;
+    overflow: hidden;
+}
+
+.ntt-progress-fill {
+    height: 100%;
+    background-color: #fbdc93;
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+.ntt-audio-error {
+    color: #ff8a80;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ─── OPTION BUTTONS ─── */
+
+.ntt-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.ntt-option-btn {
+    background-color: white;
+    color: #0C2545;
+    border: 3px solid transparent;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ntt-option-btn:hover:not(:disabled) {
+    background-color: #fbdc93;
+    transform: translateY(-2px);
+}
+
+.ntt-option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ─── ANSWER FEEDBACK STATES ─── */
+
+.ntt-option-btn.ntt-correct {
+    background-color: #4caf50 !important;
+    color: white !important;
+    border-color: #2e7d32;
+    transform: scale(1.03);
+    cursor: default;
+}
+
+.ntt-option-btn.ntt-wrong {
+    background-color: #f44336 !important;
+    color: white !important;
+    border-color: #c62828;
+    cursor: default;
+}
+
+.ntt-option-btn.ntt-disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* ─── FEEDBACK MESSAGE ─── */
+
+.ntt-feedback {
+    margin-top: 1.5rem;
+    animation: ntt-fadeIn 0.3s ease-out;
+}
+
+.ntt-feedback-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ntt-text-correct {
+    color: #81c784;
+}
+
+.ntt-text-wrong {
+    color: #ff8a80;
+}
+
+.ntt-next-btn {
+    margin-top: 0.5rem;
+    background-color: #fbdc93 !important;
+    color: #0C2545 !important;
+    font-weight: 600;
+}
+
+.ntt-next-btn:hover:not(:disabled) {
+    background-color: #f5c842 !important;
+}
+
+/* ─── GAME OVER SCREEN ─── */
+
+.ntt-final-score {
+    margin: 2rem 0;
+}
+
+.ntt-final-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.ntt-final-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fbdc93;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0.5rem 0;
+}
+
+.ntt-final-pct {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.ntt-final-message {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.ntt-final-points {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fbdc93;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0.5rem 0 0;
+    letter-spacing: 1px;
+}
+
+/* ─── POINTS RESULT (post-answer) ─── */
+
+.ntt-timer {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FFD700;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    min-width: 70px;
+    text-align: center;
+}
+
+.ntt-points-result {
+    margin-top: 0.75rem;
+    animation: ntt-fadeIn 0.4s ease-out;
+    text-align: center;
+}
+
+.ntt-points-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #fbdc93, #f5a623);
+    color: #0C2545;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    animation: ntt-popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes ntt-popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.ntt-elapsed {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ntt-speed-feedback {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 600px) {
+    .ntt-page-container {
+        background-size: auto 150%;
+        background-position: center 60%;
+    }
+
+    .ntt-overlay {
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .ntt-options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ntt-title {
+        font-size: 1.5rem;
+    }
+
+    .ntt-game-box {
+        padding: 1.5rem;
+    }
+}
+
+/* ============================================================================
+   CLUE SYSTEM
+   ============================================================================ */
+
+.ntt-clue-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 24px;
+    border: 2px solid #fbdc93;
+    border-radius: 50px;
+    background-color: rgba(251, 220, 147, 0.15);
+    color: #fbdc93;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ntt-clue-button:hover:not(:disabled) {
+    background-color: rgba(251, 220, 147, 0.3);
+    transform: scale(1.05);
+}
+
+.ntt-clue-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+    border-color: rgba(251, 220, 147, 0.3);
+    color: rgba(251, 220, 147, 0.5);
+}
+
+.ntt-clue-box {
+    margin-top: 12px;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(251, 220, 147, 0.5);
+    border-radius: 10px;
+    background-color: rgba(251, 220, 147, 0.08);
+    animation: ntt-fadeIn 0.4s ease-out;
+}
+
+.ntt-clue {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    margin: 4px 0;
+    text-align: left;
+}
+
+/* ============================================================================
+   WIN CELEBRATION
+   ============================================================================ */
+
+.ntt-celebration-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.ntt-celebration-note {
+    position: absolute;
+    bottom: -40px;
+    font-size: 2rem;
+    animation: ntt-float-up ease-out forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes ntt-float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+/* ============================================================================
+   RULES MODAL & TIMER
+   ============================================================================ */
+
+.ntt-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.ntt-modal-content {
+    background-color: #0C2545;
+    color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 2px solid #fbdc93;
+    max-width: 500px;
+    width: 90%;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    animation: ntt-fadeIn 0.2s ease-out;
+}
+
+.ntt-modal-content h2 {
+    color: #fbdc93;
+    font-family: 'Work Sans', sans-serif;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.ntt-rules-list {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.ntt-rules-list li {
+    margin-bottom: 0.75rem;
+}
+
+.ntt-rules-list ul {
+    margin-top: 0.5rem;
+    list-style-type: circle;
+    padding-left: 1.5rem;
+}
+
+.ntt-modal-content .ntt-listen-btn {
+    display: block;
+    width: 100%;
+}
+
+.ntt-rules-btn-idle {
+    margin-left: 15px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.ntt-rules-btn-idle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ntt-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ntt-rules-btn-small {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.ntt-rules-btn-small:hover {
+    transform: scale(1.1);
+}

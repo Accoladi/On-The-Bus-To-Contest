@@ -1,0 +1,295 @@
+/* ============================================================================
+   runner.css — Halftime Hustle (3D endless runner)
+   Warm espresso + copper theme, matching the crossword games.
+   ============================================================================ */
+
+
+.hh-page {
+    --hh-espresso: #110e08;
+    --hh-espresso-mid: #1c1710;
+    --hh-copper: #b87333;
+    --hh-copper-light: #d4975a;
+    --hh-cream: #f5ead2;
+    --hh-muted: #9c8a6e;
+
+    min-height: 100vh;
+    background: linear-gradient(160deg, #110e08 0%, #1c1710 60%, #201810 100%);
+    font-family: 'Outfit', sans-serif;
+    color: var(--hh-cream);
+    padding: 1.5rem 1rem 3rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ─── Stage (canvas + overlays share this box) ─────────────────────────────── */
+.hh-stage {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 10;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(184, 115, 51, 0.3);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    background: #140f09;
+}
+
+.hh-canvas-host {
+    position: absolute;
+    inset: 0;
+}
+
+.hh-canvas-host canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ─── HUD ──────────────────────────────────────────────────────────────────── */
+.hh-hud {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+}
+
+.hh-score {
+    display: flex;
+    flex-direction: column;
+    background: rgba(17, 14, 8, 0.6);
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.hh-notes {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(17, 14, 8, 0.6);
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    border-radius: 12px;
+    padding: 0.5rem 0.9rem;
+    backdrop-filter: blur(4px);
+}
+
+.hh-notes-icon {
+    font-size: 1.1rem;
+}
+
+.hh-notes-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--hh-copper-light);
+}
+
+/* ─── Song Meter ───────────────────────────────────────────────────────────── */
+.hh-meter-wrap {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(60%, 360px);
+    pointer-events: none;
+    text-align: center;
+}
+
+.hh-meter-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--hh-muted);
+    margin-bottom: 0.3rem;
+}
+
+.hh-meter-track {
+    height: 12px;
+    border-radius: 8px;
+    background: rgba(17, 14, 8, 0.7);
+    border: 1px solid rgba(184, 115, 51, 0.4);
+    overflow: hidden;
+}
+
+.hh-meter-fill {
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--hh-copper), var(--hh-copper-light));
+    transition: width 0.18s ease-out;
+}
+
+.hh-meter-fill.full {
+    background: linear-gradient(90deg, #f4c430, #ffe08a);
+    animation: hhMeterPulse 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes hhMeterPulse {
+    from { box-shadow: 0 0 4px rgba(244, 196, 48, 0.4); }
+    to { box-shadow: 0 0 16px rgba(244, 196, 48, 0.9); }
+}
+
+/* ─── Marching Mode banner ─────────────────────────────────────────────────── */
+.hh-marching-banner {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgba(244, 196, 48, 0.95), rgba(212, 151, 90, 0.95));
+    color: #110e08;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 18px rgba(244, 196, 48, 0.45);
+    pointer-events: none;
+    white-space: nowrap;
+    animation: hhBannerPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes hhBannerPop {
+    from { transform: translateX(-50%) scale(0.8); opacity: 0; }
+    to { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.hh-score-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--hh-muted);
+}
+
+.hh-score-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--hh-cream);
+}
+
+/* ─── Overlay (start / game-over) ──────────────────────────────────────────── */
+.hh-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 8, 5, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+.hh-card {
+    text-align: center;
+    max-width: 440px;
+    width: 90%;
+    padding: 2rem 2.25rem;
+    background: linear-gradient(135deg, rgba(28, 23, 16, 0.95), rgba(39, 31, 19, 0.95));
+    border: 1px solid rgba(184, 115, 51, 0.4);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hh-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    color: var(--hh-cream);
+}
+
+.hh-desc {
+    color: var(--hh-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+}
+
+.hh-btn {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.8rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hh-btn-primary {
+    background: var(--hh-copper);
+    color: var(--hh-espresso);
+}
+
+.hh-btn-primary:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+.hh-over-emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.hh-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    margin: 0.25rem 0 1.5rem;
+}
+
+.hh-final-num {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--hh-copper-light);
+}
+
+.hh-final-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--hh-muted);
+}
+
+.hh-final-notes {
+    margin: -0.75rem 0 1.5rem;
+    font-size: 0.9rem;
+    color: var(--hh-cream);
+}
+
+.hh-controls {
+    margin: 1.25rem 0 0.75rem;
+    font-size: 0.82rem;
+    color: var(--hh-muted);
+}
+
+.hh-controls strong {
+    color: var(--hh-copper-light);
+}
+
+.hh-controls-touch {
+    margin-top: -0.4rem;
+    font-size: 0.78rem;
+    opacity: 0.85;
+}
+
+.hh-back {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--hh-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.hh-back:hover {
+    color: var(--hh-cream);
+}

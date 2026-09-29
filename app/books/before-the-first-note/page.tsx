@@ -7,7 +7,7 @@ import { SiteNav } from "@/components/navigation/SiteNav";
 
 const chapters = [
   ["Introduction", "introduction"], ["The Ride There", "part-one"], ["Before You Perform", "part-two"], ["On the Field", "part-three"],
-  ["The Ride Home", "part-four"], ["Reflection Pages", "reflections"], ["For the adults around the band", "letters"], ["People Behind the Words", "people-behind-words"],
+  ["The Ride Home", "part-four"], ["Reflection Pages", "reflections"], ["For the adults around the band", "letters"],
 ] as const;
 
 function BookMarkIcon() { return <svg aria-hidden="true" className="h-6 w-6" viewBox="0 0 24 24" fill="none"><path d="M6 4.75A2.75 2.75 0 0 1 8.75 2h6.5A2.75 2.75 0 0 1 18 4.75V21l-6-3.6L6 21V4.75Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" /></svg>; }
