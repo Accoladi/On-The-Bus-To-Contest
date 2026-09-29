@@ -35,8 +35,8 @@ export function ActivitiesSection() {
         <div className="relative mx-auto grid max-w-[1390px] gap-10 lg:grid-cols-[minmax(390px,0.95fr)_minmax(0,1.45fr)] lg:items-center lg:gap-12 xl:gap-16">
         <div className="max-w-[390px] lg:pb-5">
           <div className="flex items-center gap-5 text-xs font-bold uppercase tracking-[0.3em] text-[var(--gold)]"><span>Activities</span><span className="h-px w-10 bg-[var(--gold)]" /></div>
-          <h2 className="mt-7 max-w-[410px] text-5xl leading-[0.94] sm:text-6xl lg:max-w-[370px] lg:text-[4.5rem] xl:text-[5.15rem]">Creative Breaks Between Performances</h2>
-          <p className="mt-7 max-w-[350px] text-base leading-7 text-white/75 sm:text-lg">Students can explore a couple of fun activities while riding to the contest or waiting between performances.</p>
+          <h2 className="mt-7 max-w-[410px] text-5xl leading-[0.94] sm:text-6xl lg:max-w-[370px] lg:text-[4.5rem] xl:text-[5.15rem]">Make the Ride Your Own</h2>
+          <p className="mt-7 max-w-[350px] text-base leading-7 text-white/75 sm:text-lg">Students can explore, create, and reset while the bus rolls toward the contest and the band gets ready for the field.</p>
           <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--gold)] px-5 py-3 text-sm font-semibold text-[var(--gold)]"><span aria-hidden="true" className="text-xl leading-none">☆</span>2 activities available</div>
           <Link href="/activities" className="mt-7 flex w-fit items-center gap-4 rounded-full bg-[var(--gold)] px-7 py-4 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--champagne)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gold)]">Explore All Activities <ArrowIcon /></Link>
         </div>

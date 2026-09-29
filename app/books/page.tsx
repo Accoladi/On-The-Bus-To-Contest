@@ -28,7 +28,7 @@ export default function BooksPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_80%,rgba(231,184,75,.14),transparent_34%)]" />
             <div className="relative grid items-center gap-8 px-6 py-8 sm:px-10 sm:py-10 md:grid-cols-[minmax(230px,.8fr)_1.2fr] lg:gap-16 lg:px-16 lg:py-12">
               <div className="relative mx-auto aspect-[.66] w-full max-w-[300px] drop-shadow-[0_22px_22px_rgba(7,26,47,.25)] transition duration-500 hover:-translate-y-2">
-                <Image src="/images/books/books-cover/first_note.png" alt="Before the First Note book cover" fill sizes="(max-width: 768px) 70vw, 300px" className="object-contain" />
+                <Image src="/images/books/book-view/firstnote/book-cover.png?v=2" alt="Before the First Note book cover" fill sizes="(max-width: 768px) 70vw, 300px" className="object-contain" />
               </div>
               <div className="max-w-2xl">
                 <div className="flex flex-wrap gap-2">{["Poetry", "Reflection", "Contest Day"].map((tag) => <span key={tag} className="rounded-full border border-[var(--gold)]/45 bg-white/45 px-3 py-1.5 text-xs font-semibold text-[var(--slate)]">{tag}</span>)}</div>
@@ -39,6 +39,23 @@ export default function BooksPage() {
               </div>
             </div>
             <div className="flex items-center gap-4 border-t border-[var(--navy)]/10 px-6 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--slate)]/70 sm:px-10"><span className="text-lg" aria-hidden="true">♫</span><span className="h-5 w-px bg-[var(--navy)]/15" /><span>A longer read for the ride</span></div>
+          </article>
+
+          <article className="relative mt-8 overflow-hidden rounded-[26px] border border-[var(--navy)]/8 bg-[rgba(255,255,255,.5)] shadow-[0_18px_45px_rgba(7,26,47,.08)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_80%,rgba(231,184,75,.14),transparent_34%)]" />
+            <div className="relative grid items-center gap-8 px-6 py-8 sm:px-10 sm:py-10 md:grid-cols-[minmax(230px,.8fr)_1.2fr] lg:gap-16 lg:px-16 lg:py-12">
+              <div className="relative mx-auto aspect-[.66] w-full max-w-[300px] drop-shadow-[0_22px_22px_rgba(7,26,47,.25)] transition duration-500 hover:-translate-y-2">
+                <Image src="/images/books/books-cover/making_friends.png" alt="Making Friends on the Band Bus book cover" fill sizes="(max-width: 768px) 70vw, 300px" className="object-contain" />
+              </div>
+              <div className="max-w-2xl">
+                <div className="flex flex-wrap gap-2">{["Friendship", "Practical Guide", "Band Bus"].map((tag) => <span key={tag} className="rounded-full border border-[var(--gold)]/45 bg-white/45 px-3 py-1.5 text-xs font-semibold text-[var(--slate)]">{tag}</span>)}</div>
+                <h2 className="mt-6 text-5xl leading-[.92] sm:text-6xl">Making Friends<br />on the Band Bus</h2>
+                <p className="mt-4 font-[family-name:var(--font-display)] text-xl italic text-[var(--slate)]">How to Meet People, Make Someone Laugh, and Make the Ride Better for Everyone</p>
+                <p className="mt-6 max-w-xl text-base leading-7 text-[var(--slate)]">A practical guide to starting conversations, building friendships, and making the band bus feel more like home.</p>
+                <Link href="/books/making-friends" className="mt-8 inline-flex items-center gap-4 rounded-full bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--soft-champagne)]">View the book <ArrowIcon /></Link>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 border-t border-[var(--navy)]/10 px-6 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--slate)]/70 sm:px-10"><span className="text-lg" aria-hidden="true">♫</span><span className="h-5 w-px bg-[var(--navy)]/15" /><span>A practical guide for the ride</span></div>
           </article>
         </div>
       </section>

@@ -3,10 +3,10 @@ import { SiteNav } from "@/components/navigation/SiteNav";
 
 const contentAreas = [
   { icon: "▱", title: "Articles", text: "Stories, advice, and fresh perspectives from the band world." },
-  { icon: "⌁", title: "Games", text: "Fun ways to pass the time between performances." },
+  { icon: "⌁", title: "Games", text: "Fun ways to pass the time on the ride to contest." },
   { icon: "♫", title: "Activities", text: "Things to do on the bus with your section or the whole band." },
   { icon: "▤", title: "Books", text: "Longer reads for the ride, from real stories to inspiration." },
-  { icon: "◉", title: "Radio", text: "A soundtrack for the road." },
+  { icon: "◉", title: "Radio", text: "A soundtrack for the bus ride and warm-up." },
 ];
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="max-w-xl">
             <Eyebrow light>About</Eyebrow>
             <h1 className="mt-7 text-6xl leading-[.9] sm:text-7xl lg:text-[6.5rem]">More Than<br /><span className="text-[var(--gold)]">a Ride.</span></h1>
-            <p className="mt-8 max-w-md text-base leading-7 text-white/80 sm:text-lg">On the Bus to Contest is a place for the moments in between — the music, the friends, the stories, and everything that makes the bus ride part of the experience.</p>
+            <p className="mt-8 max-w-md text-base leading-7 text-white/80 sm:text-lg">On the Bus to Contest is a place for the moments before the contest — the music, the friendships, the nerves, and everything that makes the ride to the field matter.</p>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-[-1px] h-16 rounded-[50%_50%_0_0/100%_100%_0_0] bg-[var(--cream)]" />
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <Eyebrow>Our story</Eyebrow>
             <h2 className="mt-6 text-5xl leading-[.92] sm:text-6xl md:text-[3.35rem] lg:text-6xl">It Started<br />on the Bus.</h2>
             <div className="mt-7 space-y-5 text-base leading-7 text-[var(--slate)] sm:text-lg md:text-[0.96rem] md:leading-6 lg:text-lg lg:leading-7">
-              <p>Every contest day begins the same way — loading instruments, finding your seat, and hitting the road with your friends. The bus ride is filled with excitement, nerves, music, inside jokes, and memories that last long after the final performance.</p>
+              <p>Every contest day begins the same way — loading instruments, finding your seat, and hitting the road with your friends. The bus ride is filled with excitement, nerves, music, inside jokes, and the small moments that help a band feel ready.</p>
               <p>On the Bus to Contest was created to celebrate that part of the journey. It’s a space for students to relax, be inspired, have fun, and feel connected before they step onto the field.</p>
             </div>
           </div>
@@ -60,12 +60,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1320px]">
           <div className="max-w-xl">
             <Eyebrow light>Our mission</Eyebrow>
-            <h2 className="mt-7 text-5xl leading-[.94] sm:text-6xl">Make the Time<br />Between Performances<br /><span className="text-[var(--gold)]">Part of the Experience.</span></h2>
-            <p className="mt-8 max-w-lg text-base leading-7 text-white/78 sm:text-lg">We believe that the hours before you arrive at the contest matter. They’re filled with learning, laughter, creativity, and community. Our mission is to give marching band students a place to connect with content made just for them — from articles and games to activities, books, and music.</p>
+            <h2 className="mt-7 text-5xl leading-[.94] sm:text-6xl">Make the Ride<br />to Contest<br /><span className="text-[var(--gold)]">Part of the Experience.</span></h2>
+            <p className="mt-8 max-w-lg text-base leading-7 text-white/78 sm:text-lg">We believe the hours before you arrive at the contest matter. They’re filled with learning, laughter, creativity, nerves, and community. Our mission is to give marching band students a place to connect with content made for the bus ride — from articles and games to activities, books, and music.</p>
           </div>
         </div>
       </section>
 
+      {/*
       <section className="bg-[var(--cream)] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
         <div className="mx-auto max-w-[1320px]">
           <Eyebrow>What you’ll find here</Eyebrow>
@@ -81,6 +82,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      */}
 
       <section className="relative isolate min-h-[430px] overflow-hidden bg-[var(--navy)] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
         <Image src="/images/about/quote-bg.png" alt="Instruments and students on the bus at sunset" fill sizes="100vw" className="-z-10 object-cover object-center" />
@@ -88,7 +90,7 @@ export default function AboutPage() {
         <div className="mx-auto flex max-w-[1320px] justify-end">
           <blockquote className="max-w-md rounded-[24px] bg-[rgba(255,255,255,.9)] p-8 text-[var(--navy)] shadow-[0_20px_55px_rgba(7,26,47,.2)] sm:p-10">
             <span className="font-[family-name:var(--font-display)] text-6xl leading-none text-[var(--gold)]">“</span>
-            <p className="mt-2 font-[family-name:var(--font-display)] text-2xl italic leading-tight sm:text-3xl">The bus ride isn’t just time between performances. It’s where friendships grow, nerves turn into excitement, and memories are made.</p>
+            <p className="mt-2 font-[family-name:var(--font-display)] text-2xl italic leading-tight sm:text-3xl">The bus ride is part of contest day. It’s where friendships grow, nerves turn into excitement, and a band finds its rhythm before the first note.</p>
           </blockquote>
         </div>
       </section>
@@ -99,7 +101,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-3xl">
           <Eyebrow>A community on the move</Eyebrow>
           <h2 className="mt-7 text-4xl leading-[.95] sm:text-5xl">For Every Marching Band Student.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--slate)] sm:text-lg">Whether it’s your first contest or your last, whether you’re a freshman or a senior, whether you’re a musician, color guard member, or part of the drumline — you’re part of the same journey. On the Bus to Contest is for every student who loves the energy, the challenges, and the unforgettable experience of marching band.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--slate)] sm:text-lg">Whether it’s your first contest or your last, whether you’re a freshman or a senior, whether you’re a musician, color guard member, or part of the drumline — you’re part of the same ride. On the Bus to Contest is for every student who wants to feel prepared, connected, and ready before the band steps onto the field.</p>
         </div>
       </section>
 

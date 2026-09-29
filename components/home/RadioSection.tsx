@@ -17,7 +17,7 @@ const FALLBACK_SONGS: RadioSong[] = [
   { id: "ride", title: "On the Bus", artist: "Good vibes for the road ahead.", coverImageUrl: "/images/home/radio/left-card.png", durationSeconds: 236 },
   { id: "hyped", title: "Get Hyped", artist: "High energy for a stronger performance.", coverImageUrl: "/content/images/radio-cover.jpg", durationSeconds: 218 },
   { id: "field", title: "Chill Before the Field", artist: "Set the mood. Focus your mind.", coverImageUrl: "/images/home/hero/bg.png", durationSeconds: 242 },
-  { id: "home", title: "Ride Home", artist: "Reflect. Recharge. Same family.", coverImageUrl: "/images/home/radio/left-card.png", durationSeconds: 204 },
+  { id: "warmup", title: "Before the Field", artist: "Focus. Breathe. Find your rhythm.", coverImageUrl: "/images/home/radio/left-card.png", durationSeconds: 204 },
 ];
 
 function formatTime(seconds = 0) {
@@ -89,7 +89,7 @@ export function RadioSection() {
         <div className="flex flex-col justify-center py-2 lg:py-8">
           <div className="flex items-center gap-4"><p className="text-xs font-bold uppercase tracking-[0.36em] text-[var(--champagne)]">Radio</p><span className="h-px w-12 bg-[var(--gold)]" /></div>
           <h2 className="mt-6 max-w-xl text-5xl leading-[.88] sm:text-6xl lg:text-[4.7rem]">Your Soundtrack<br />for the Ride</h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-white/75 sm:text-lg">Curated songs for the bus ride, downtime, warm-up, and the ride home. Different moments. Same band spirit.</p>
+          <p className="mt-6 max-w-xl text-base leading-7 text-white/75 sm:text-lg">Curated songs for the bus ride, sectionals, warm-up, and the walk to the field. Different moments. Same band spirit.</p>
 
           <div className="mt-8 rounded-[20px] bg-[#f4f5f7] p-5 text-[var(--navy)] shadow-[0_16px_30px_rgba(7,26,47,.18)] sm:p-6">
             <div className="flex items-center gap-4 sm:gap-5">

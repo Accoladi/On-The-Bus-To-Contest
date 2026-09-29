@@ -23,7 +23,7 @@ export function SiteFooter() {
               <Image src="/images/logo/logo.png" alt="" width={78} height={78} className="h-[4.5rem] w-[4.5rem] object-contain drop-shadow-[0_8px_18px_rgba(231,184,75,.2)] transition duration-300 group-hover:-translate-y-1" />
               <span className="font-display text-2xl leading-none text-white/95 sm:text-3xl">On the Bus to Contest</span>
             </Link>
-            <p className="mt-6 max-w-md text-base leading-7 text-white/65">Read, listen, play, and find your rhythm between performances.</p>
+            <p className="mt-6 max-w-md text-base leading-7 text-white/65">Read, listen, play, and find your rhythm on the ride to contest day.</p>
           </div>
           <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-7 gap-y-4 text-sm font-semibold text-white/75 lg:justify-end">
             {footerLinks.map((link) => <Link key={link.href} href={link.href} className="transition hover:text-[var(--gold)]">{link.label}</Link>)}

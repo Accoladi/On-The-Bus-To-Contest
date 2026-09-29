@@ -63,7 +63,7 @@ export function ArticlesSection() {
           <div>
             <div className="flex items-center gap-4"><p className="text-xs font-bold uppercase tracking-[0.24em]">Read</p><span className="h-1 w-20 rounded-full bg-[var(--gold)]" /></div>
             <h2 className="mt-4 max-w-3xl text-5xl leading-[0.95] sm:text-6xl lg:text-7xl">Before You Step Off the Bus</h2>
-            <p className="mt-4 text-base text-[var(--slate)] sm:text-lg">Mindset. Preparation. Real Stories. Everything you need for the ride and beyond.</p>
+            <p className="mt-4 text-base text-[var(--slate)] sm:text-lg">Mindset. Preparation. Real Stories. Everything you need before you step off the bus.</p>
           </div>
           <Link href="/read" className="inline-flex w-fit items-center gap-3 rounded-full bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--navy)] shadow-[0_10px_24px_rgba(231,184,75,.22)] transition hover:-translate-y-0.5 hover:bg-[var(--champagne)] hover:shadow-[0_14px_30px_rgba(231,184,75,.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gold)]">Explore All Reads <ArrowIcon /></Link>
         </div>
