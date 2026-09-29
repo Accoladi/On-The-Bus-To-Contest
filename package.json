@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "amplify-build": "git lfs pull && next build",
     "start": "next start",
     "lint": "eslint"
   },
