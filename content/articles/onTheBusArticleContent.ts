@@ -2,6 +2,18 @@ export type ArticleSection = { type: 'heading' | 'paragraph'; text: string };
 export type OnTheBusArticle = { title: string; sections: ArticleSection[] };
 
 export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
+  "celebrities-marching-band": {
+    "title": "Celebrities Who Once Rode A Marching Band Bus",
+    "sections": [
+      { "type": "paragraph", "text": "Some skills begin on the band bus." },
+      { "type": "paragraph", "text": "Before cameras, world stages, or the Oval Office, these famous band members were sharing rides with their bandmates." },
+      { "type": "paragraph", "text": "Think about your own band bus. A friend asks about your weekend, and you practice telling a story. Someone asks your opinion, and you put your thoughts into words. You introduce yourself, listen to a different perspective, or discover what makes someone laugh." },
+      { "type": "paragraph", "text": "Those conversations can build confidence in answering questions and connecting with others—skills that may serve you in college interviews, auditions, careers, or in front of a camera." },
+      { "type": "paragraph", "text": "On the bus, you have opportunities to find your voice and make room for someone else’s." },
+      { "type": "paragraph", "text": "You may think you are just talking on the way to contest. You could be practicing skills that last long after the ride ends." },
+      { "type": "heading", "text": "Featured Personalities" }
+    ]
+  },
   "job-not-perfect": {
     "title": "Your Job Is Not to Be Perfect",
     "sections": [

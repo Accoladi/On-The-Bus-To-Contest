@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { SiteNav } from "@/components/navigation/SiteNav";
 import { ArticleAd } from "@/components/articles/ArticleAd";
 import { ArticleMusicStrip } from "@/components/articles/ArticleMusicStrip";
+import { CelebritiesArticle } from "@/components/articles/CelebritiesArticle";
 import { articleCatalog } from "@/content/articles/articleCatalog";
 import { onTheBusArticleContent } from "@/content/articles/onTheBusArticleContent";
 import { additionalArticleContent } from "@/content/articles/additionalArticleContent";
@@ -91,9 +92,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {content.sections.map((section, index) => {
               if (section.type === "heading") {
                 const id = section.text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-                return <Fragment key={`${section.type}-${index}`}>{slug === "quiet-before-first-note" && section.text === "When the Music Ends" && <ArticleMusicStrip />}<h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{section.text}</h2></Fragment>;
+                return <Fragment key={`${section.type}-${index}`}><h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{section.text}</h2>{slug === "quiet-before-first-note" && section.text === "When the Music Ends" && <ArticleMusicStrip />}{slug === "celebrities-marching-band" && section.text === "Featured Personalities" && <CelebritiesArticle />}</Fragment>;
               }
-              return <p key={`${section.type}-${index}`} className="mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a]">{section.text}</p>;
+              return <p key={`${section.type}-${index}`} className={`mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a] ${slug === "celebrities-marching-band" && index === 0 ? "font-bold text-[var(--navy)]" : ""}`}>{section.text}</p>;
             })}
             <ArticleAd index={articleIndex} />
             <div className="mt-14 border-t border-[var(--navy)]/10 pt-8">

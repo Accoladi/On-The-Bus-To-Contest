@@ -27,10 +27,10 @@ function MusicCard({ item, track }: { item: MusicItem; track?: Track }) {
 
   return (
     <article className="overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-[#fffdfa] shadow-sm">
-      <div className="relative aspect-[1.45]">
-        <Image src={item.image} alt={item.title} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover" />
-        <button type="button" onClick={toggle} disabled={!track?.audioUrl} aria-label={`${playing ? "Pause" : "Play"} ${item.title}`} className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--gold)] text-xl text-[var(--navy)] shadow-lg transition hover:bg-[var(--soft-champagne)] disabled:cursor-not-allowed disabled:opacity-60">
-          {playing ? "Ⅱ" : "▶"}
+      <div className="relative aspect-square bg-[var(--navy)]">
+        <Image src={item.image} alt={item.title} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-contain" />
+        <button type="button" onClick={toggle} disabled={!track?.audioUrl} aria-label={`${playing ? "Pause" : "Play"} ${item.title}`} className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--navy)] shadow-lg disabled:cursor-not-allowed disabled:opacity-60">
+          {playing ? <span className="text-lg leading-none">Ⅱ</span> : <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 translate-x-px fill-current"><path d="M8 5.2v13.6c0 .8.9 1.3 1.6.9l10-6.8a1.1 1.1 0 0 0 0-1.8l-10-6.8C8.9 3.9 8 4.4 8 5.2Z" /></svg>}
         </button>
       </div>
       <div className="p-4">
