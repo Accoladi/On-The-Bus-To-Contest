@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] ${categoryStyles[article.category] || "bg-[var(--purple)]"}`}>{article.category}</span>
                 <span className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">{article.readingTime}</span>
               </div>
-              <h1 className="max-w-4xl text-[clamp(2.35rem,4.5vw,4.75rem)] leading-[0.98]">{article.title}</h1>
+              <h1 className="max-w-4xl text-[clamp(2.35rem,4.5vw,4.75rem)] leading-[0.98]">{slug === "celebrities-marching-band" ? <>Celebrities Who Once Rode<br />A Marching Band Bus</> : article.title}</h1>
             </div>
           </div>
         </div>
@@ -81,9 +81,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <nav className="mt-5 border-l border-[var(--gold)] pl-4">
               {headings.map((heading) => <a key={heading.text} href={`#${heading.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="mb-3 block text-sm leading-5 text-[var(--slate)] transition hover:text-[var(--purple)]">{heading.text}</a>)}
             </nav>
-            <div className="mt-10 rounded-2xl bg-[var(--navy)] p-5 text-white">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--soft-champagne)]">A note for the ride</p>
-              <p className="mt-3 text-sm leading-6 text-white/75">Read at your own pace. Save a thought that helps, then look up and notice the people sharing the bus with you.</p>
+            <div className="mt-10 rounded-2xl bg-[var(--gold)] p-5 text-[var(--navy)]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--navy)]">A note for the ride</p>
+              <p className="mt-3 text-sm leading-6 text-[var(--navy)]/75">Read at your own pace. Save a thought that helps, then look up and notice the people sharing the bus with you.</p>
             </div>
           </aside>
 
