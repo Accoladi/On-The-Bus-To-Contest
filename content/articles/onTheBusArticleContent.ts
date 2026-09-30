@@ -11,7 +11,8 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       { "type": "paragraph", "text": "Those conversations can build confidence in answering questions and connecting with others—skills that may serve you in college interviews, auditions, careers, or in front of a camera." },
       { "type": "paragraph", "text": "On the bus, you have opportunities to find your voice and make room for someone else’s." },
       { "type": "paragraph", "text": "You may think you are just talking on the way to contest. You could be practicing skills that last long after the ride ends." },
-      { "type": "heading", "text": "Featured Personalities" }
+      { "type": "heading", "text": "Featured Personalities" },
+      { "type": "heading", "text": "Other Famous People Who Were in Band" }
     ]
   },
   "job-not-perfect": {

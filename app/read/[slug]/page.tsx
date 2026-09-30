@@ -92,6 +92,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {content.sections.map((section, index) => {
               if (section.type === "heading") {
                 const id = section.text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+                if (slug === "celebrities-marching-band" && section.text === "Other Famous People Who Were in Band") return <Fragment key={`${section.type}-${index}`} />;
                 return <Fragment key={`${section.type}-${index}`}><h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{section.text}</h2>{slug === "quiet-before-first-note" && section.text === "When the Music Ends" && <ArticleMusicStrip />}{slug === "celebrities-marching-band" && section.text === "Featured Personalities" && <CelebritiesArticle />}</Fragment>;
               }
               return <p key={`${section.type}-${index}`} className={`mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a] ${slug === "celebrities-marching-band" && index === 0 ? "font-bold text-[var(--navy)]" : ""}`}>{section.text}</p>;
