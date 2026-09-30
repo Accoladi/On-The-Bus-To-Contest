@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { FormattedLyrics } from "@/components/radio/RadioExtras";
 import type { RadioSong } from "@/components/radio/types";
 
+const normalizeSongTitle = (value: string) =>
+  value.toLowerCase().replace(/[’']/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+
 export function PersonBesideSongCard({ songTitle = "We Just Need Each Other" }: { songTitle?: string }) {
   const [song, setSong] = useState<RadioSong | null>(null);
   const [open, setOpen] = useState(false);
@@ -14,7 +17,7 @@ export function PersonBesideSongCard({ songTitle = "We Just Need Each Other" }: 
     fetch("/api/radio/songs", { signal: controller.signal })
       .then((response) => response.ok ? response.json() : null)
       .then((payload: { songs?: RadioSong[] } | null) => {
-        const match = payload?.songs?.find((item) => item.title.toLowerCase() === songTitle.toLowerCase());
+        const match = payload?.songs?.find((item) => normalizeSongTitle(item.title) === normalizeSongTitle(songTitle));
         if (match) setSong(match);
       })
       .catch(() => undefined);
