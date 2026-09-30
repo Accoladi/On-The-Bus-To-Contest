@@ -1,12 +1,6 @@
 // Extracted from MAKING FRIENDS.docx.
 export const makingFriendsSections = [
   {
-    "text": "MAKING FRIENDS"
-  },
-  {
-    "text": "ON THE BAND BUS"
-  },
-  {
     "text": "How to Meet People, Make Someone Laugh,\nBe a Good Friend, and Make the Ride Better for Everyone"
   },
   {

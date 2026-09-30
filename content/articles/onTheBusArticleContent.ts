@@ -248,11 +248,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "You know exactly where your horn angle is supposed to be. You know exactly where your"
-      },
-      {
-        "type": "paragraph",
-        "text": "feet should land. You know the note that your director has corrected twelve times this week."
+        "text": "You know exactly where your horn angle is supposed to be. You know exactly where your feet should land. You know the note that your director has corrected twelve times this week."
       },
       {
         "type": "paragraph",
@@ -392,35 +388,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Instead of:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I'm scared."
-      },
-      {
-        "type": "paragraph",
-        "text": "Try:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I'm ready to perform."
-      },
-      {
-        "type": "paragraph",
-        "text": "Instead of:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I hope I don't mess up."
-      },
-      {
-        "type": "paragraph",
-        "text": "Try:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I can't wait to show them what we built."
+        "text": "Instead of: I'm scared.\n\nTry: I'm ready to perform.\n\nInstead of: I hope I don't mess up.\n\nTry: I can't wait to show them what we built."
       },
       {
         "type": "paragraph",
@@ -629,7 +597,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "1. Slow Your Breathing"
+        "text": "Slow Your Breathing"
       },
       {
         "type": "paragraph",
@@ -677,7 +645,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "2. Relax Your Body One Area at a Time"
+        "text": "Relax Your Body One Area at a Time"
       },
       {
         "type": "paragraph",
@@ -733,7 +701,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "3. Name What You Are Feeling"
+        "text": "Name What You Are Feeling"
       },
       {
         "type": "paragraph",
@@ -793,7 +761,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "4. Use the Five-Senses Reset"
+        "text": "Use the Five-Senses Reset"
       },
       {
         "type": "paragraph",
@@ -857,7 +825,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "5. Replace the Worst-Case Story"
+        "text": "Replace the Worst-Case Story"
       },
       {
         "type": "paragraph",
@@ -945,7 +913,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "6. Picture One Successful Moment"
+        "text": "Picture One Successful Moment"
       },
       {
         "type": "paragraph",
@@ -1005,7 +973,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "7. Choose One Word"
+        "text": "Choose One Word"
       },
       {
         "type": "paragraph",
@@ -1124,14 +1092,6 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
   "quiet-before-first-note": {
     "title": "The Quiet Before the First Note: What Meditation Can Give You Before a Marching Band Contest",
     "sections": [
-      {
-        "type": "heading",
-        "text": "What Meditation Can Give You"
-      },
-      {
-        "type": "heading",
-        "text": "Before a Marching Band Contest"
-      },
       {
         "type": "paragraph",
         "text": "The bus is moving."
@@ -1666,11 +1626,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "And then—"
-      },
-      {
-        "type": "paragraph",
-        "text": "make the first note."
+        "text": "And then—make the first note."
       }
     ]
   },
@@ -1791,7 +1747,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "CREATE YOUR OWN PERSONAL LAUGHTER"
+        "text": "Create Your Own Personal Laughter"
       },
       {
         "type": "paragraph",
@@ -1811,7 +1767,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "BREAK GLASS IN CASE OF NERVES"
+        "text": "Break Glass In Case Of Nerves"
       },
       {
         "type": "paragraph",
@@ -1871,7 +1827,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "YOU MAY ACTUALLY NEED A JOKE BOOK"
+        "text": "You May Actually Need A Joke Book"
       },
       {
         "type": "paragraph",
@@ -1979,7 +1935,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "WRITE YOUR OWN TERRIBLE JOKES"
+        "text": "Write Your Own Terrible Jokes"
       },
       {
         "type": "paragraph",
@@ -2027,7 +1983,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "THE BAND BUS LIMERICK CHALLENGE"
+        "text": "The Band Bus Limerick Challenge"
       },
       {
         "type": "paragraph",
@@ -2035,11 +1991,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "The usual pattern is:"
-      },
-      {
-        "type": "paragraph",
-        "text": "A\nA\nB\nB\nA"
+        "text": "The usual pattern is: A A B B A"
       },
       {
         "type": "paragraph",
@@ -2051,23 +2003,11 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "There Once Was a Tuba Player from Tupelo"
-      },
-      {
-        "type": "paragraph",
         "text": "There once was a tuba player from Tupelo,\nWho practiced wherever he'd go.\nHe played such a blast,\nThat windows shook fast,\nAnd traffic moved three blocks below."
       },
       {
         "type": "paragraph",
-        "text": "Peter Paulson Picked the Piccolo"
-      },
-      {
-        "type": "paragraph",
         "text": "Peter Paulson picked the piccolo,\nAnd practiced wherever he'd go.\nHe played it so high,\nThat birds left the sky,\nAnd dogs started walking real slow."
-      },
-      {
-        "type": "paragraph",
-        "text": "When the Color Guard's Guard Is Down"
       },
       {
         "type": "paragraph",
@@ -2111,7 +2051,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "LAUGH AT THE SITUATION — NOT AT THE PERSON"
+        "text": "Laugh At The Situation — Not At The Person"
       },
       {
         "type": "paragraph",
@@ -2952,7 +2892,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "heading",
-        "text": "Band Week — September 20"
+        "text": "Band Week One"
       },
       {
         "type": "paragraph",
@@ -3148,27 +3088,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Write:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I was exhausted when rehearsal started, but by the end I felt better because we finally fixed the closer."
-      },
-      {
-        "type": "paragraph",
-        "text": "Instead of:"
-      },
-      {
-        "type": "paragraph",
-        "text": "We performed halftime."
-      },
-      {
-        "type": "paragraph",
-        "text": "Try:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I was nervous walking onto the field, but once the first chord happened, I stopped thinking and just performed."
+        "text": "Write: I was exhausted when rehearsal started, but by the end I felt better because we finally fixed the closer.\n\nInstead of: We performed halftime.\n\nTry: I was nervous walking onto the field, but once the first chord happened, I stopped thinking and just performed."
       },
       {
         "type": "paragraph",
@@ -3308,35 +3228,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Maybe:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I think we are going to perform with more confidence today."
-      },
-      {
-        "type": "paragraph",
-        "text": "Or:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I am worried about the opener, but I think I am ready."
-      },
-      {
-        "type": "paragraph",
-        "text": "Or:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I want to enjoy today more than I did last week."
-      },
-      {
-        "type": "paragraph",
-        "text": "Or simply:"
-      },
-      {
-        "type": "paragraph",
-        "text": "I have no idea what is going to happen, but I am excited."
+        "text": "Maybe: I think we are going to perform with more confidence today.\n\nOr: I am worried about the opener, but I think I am ready.\n\nOr: I want to enjoy today more than I did last week.\n\nOr simply: I have no idea what is going to happen, but I am excited."
       },
       {
         "type": "paragraph",
@@ -3733,31 +3625,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Sometimes all it takes is:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“You good?”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Or:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“You ready?”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Or:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“You’ve got this.”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Those are small words."
+        "text": "Sometimes all it takes is:  “You good?”\n\nOr: “You ready?”\n\nOr: “You’ve got this.”\n\nThose are small words."
       },
       {
         "type": "paragraph",
@@ -3833,43 +3701,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Instead of:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“You’ll be fine.”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Try:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“You sounded really good in rehearsal yesterday.”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Or:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“That section you were worried about looked a lot better last night.”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Or:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“I’m glad you’re next to me in the opener.”"
-      },
-      {
-        "type": "paragraph",
-        "text": "Or even:"
-      },
-      {
-        "type": "paragraph",
-        "text": "“I’m nervous too.”"
+        "text": "Instead of: “You’ll be fine.”\n\nTry: “You sounded really good in rehearsal yesterday.”\n\nOr: “That section you were worried about looked a lot better last night.”\n\nOr: “I’m glad you’re next to me in the opener.”\n\nOr even: “I’m nervous too.”"
       },
       {
         "type": "paragraph",
@@ -4582,19 +4414,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Maybe they are checking their phone more than usual, talking with staff members,"
-      },
-      {
-        "type": "paragraph",
-        "text": "counting equipment, looking at the clock, or walking through the bus with that expression"
-      },
-      {
-        "type": "paragraph",
-        "text": "that says:"
-      },
-      {
-        "type": "paragraph",
-        "text": "Please do not create one more problem right now."
+        "text": "Maybe they are checking their phone more than usual, talking with staff members, counting equipment, looking at the clock, or walking through the bus with that expression that says: Please do not create one more problem right now."
       },
       {
         "type": "paragraph",
@@ -4610,11 +4430,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Contest day asks something very different of a band director than an ordinary rehearsal"
-      },
-      {
-        "type": "paragraph",
-        "text": "day."
+        "text": "Contest day asks something very different of a band director than an ordinary rehearsal day."
       },
       {
         "type": "paragraph",
@@ -4694,11 +4510,7 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "Where do we warm up?\nHow long do we have?"
-      },
-      {
-        "type": "paragraph",
-        "text": "What happens if traffic slows us down?\nDoes the contest staff have the right information?\nIs anybody sick?"
+        "text": "Where do we warm up?\n\nHow long do we have?\n\nWhat happens if traffic slows us down?\n\nDoes the contest staff have the right information?\n\nIs anybody sick?"
       },
       {
         "type": "paragraph",

@@ -23,8 +23,8 @@ const articleAds = [
   },
 ];
 
-export function ArticleAd({ index }: { index: number }) {
-  const ad = articleAds[index % articleAds.length];
+export function ArticleAd({ index, brand }: { index: number; brand?: string }) {
+  const ad = (brand ? articleAds.find((item) => item.brand === brand) : undefined) || articleAds[index % articleAds.length];
 
   return (
     <aside className="mt-14 border-t border-[var(--navy)]/10 pt-8" aria-label={`${ad.brand} advertisement`}>
@@ -35,4 +35,3 @@ export function ArticleAd({ index }: { index: number }) {
     </aside>
   );
 }
-

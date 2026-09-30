@@ -319,43 +319,43 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Feeling nervous?\nRead You Do Not Have to Be Fearless."
+    "text": "Feeling nervous?\nRead:\nYou Do Not Have to Be Fearless."
   },
   {
     "type": "paragraph",
-    "text": "Everything feels overwhelming?\nRead One Count at a Time."
+    "text": "Everything feels overwhelming?\nRead:\nOne Count at a Time."
   },
   {
     "type": "paragraph",
-    "text": "Warm-up went badly?\nRead When the Warm-Up Is Bad."
+    "text": "Warm-up went badly?\nRead:\nWhen the Warm-Up Is Bad."
   },
   {
     "type": "paragraph",
-    "text": "Made a mistake?\nRead If You Miss."
+    "text": "Made a mistake?\nRead:\nIf You Miss."
   },
   {
     "type": "paragraph",
-    "text": "Playing your final season?\nRead For the Senior."
+    "text": "Playing your final season?\nRead:\nFor the Senior."
   },
   {
     "type": "paragraph",
-    "text": "Playing your first contest?\nRead For the Freshman."
+    "text": "Playing your first contest?\nRead:\nFor the Freshman."
   },
   {
     "type": "paragraph",
-    "text": "Someone beside you seems unusually quiet?\nRead The Quiet Student."
+    "text": "Someone beside you seems unusually quiet?\nRead:\nThe Quiet Student."
   },
   {
     "type": "paragraph",
-    "text": "Disappointed after awards?\nRead If They Don't Call Your Name."
+    "text": "Disappointed after awards?\nRead:\nIf They Don't Call Your Name."
   },
   {
     "type": "paragraph",
-    "text": "Won something?\nRead If They Call Your Name."
+    "text": "Won something?\nRead:\nIf They Call Your Name."
   },
   {
     "type": "paragraph",
-    "text": "Headed home after a very long day?\nRead On the Ride Home."
+    "text": "Headed home after a very long day?\nRead:\nOn the Ride Home."
   },
   {
     "type": "paragraph",
@@ -375,7 +375,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "\u201cCherish your journey, and respect your journey.\u201d\n\u2014 Lizzo UH Stories"
+    "text": "\u201cCherish your journey, and respect your journey.\u201d\n\u2014 Lizzo"
   },
   {
     "type": "paragraph",
@@ -547,7 +547,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "You do not have to know where the road ends to keep traveling it."
+    "text": "“You do not have to know where the road ends to keep traveling it.” — Lizzo"
   },
   {
     "type": "paragraph",
@@ -591,11 +591,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "When your courage\nfeels small,"
-  },
-  {
-    "type": "paragraph",
-    "text": "borrow some."
+    "text": "When your courage\nfeels small,\nborrow some."
   },
   {
     "type": "paragraph",
@@ -635,11 +631,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Sometimes the strongest person\non the bus"
-  },
-  {
-    "type": "paragraph",
-    "text": "needs someone to say:"
+    "text": "Sometimes the strongest person\non the bus needs someone to say:"
   },
   {
     "type": "paragraph",
@@ -779,7 +771,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Great musicians often begin in very ordinary band rooms."
+    "text": "Great musicians often begin in very ordinary band rooms. — Christopher Martin"
   },
   {
     "type": "paragraph",
@@ -947,11 +939,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Before you leave,"
-  },
-  {
-    "type": "paragraph",
-    "text": "say thank you."
+    "text": "Before you leave,\nsay thank you."
   },
   {
     "type": "paragraph",
@@ -963,11 +951,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Before you wear it,"
-  },
-  {
-    "type": "paragraph",
-    "text": "it is fabric."
+    "text": "Before you wear it,\nit is fabric."
   },
   {
     "type": "paragraph",
@@ -1043,11 +1027,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "But even more\u2014"
-  },
-  {
-    "type": "paragraph",
-    "text": "wear it kindly."
+    "text": "But even more\u2014\nwear it kindly."
   },
   {
     "type": "heading",
@@ -1319,7 +1299,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Never become so successful that you forget where somebody first taught you to begin."
+    "text": "Never become so successful that you forget where somebody first taught you to begin. — Dolly Parton"
   },
   {
     "type": "paragraph",
@@ -1443,11 +1423,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "There comes a moment, though,"
-  },
-  {
-    "type": "paragraph",
-    "text": "when all of that stops."
+    "text": "There comes a moment, though,\nwhen all of that stops."
   },
   {
     "type": "paragraph",
@@ -1471,7 +1447,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "John Philip Sousa once described his ensemble by saying he wanted to feel every musician \u201clinked up with me by a cable of magnetism.\u201d Library of Congress"
+    "text": "\u201cI wanted to feel every musician linked up with me by a cable of magnetism.\u201d\n\u2014 John Philip Sousa"
   },
   {
     "type": "paragraph",
@@ -1575,7 +1551,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "The leadership you practice in band may matter long after the uniform is gone."
+    "text": "The leadership you practice in band may matter long after the uniform is gone. — Bill Clinton"
   },
   {
     "type": "paragraph",
@@ -1583,11 +1559,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "If the pressure\nfeels heavy,"
-  },
-  {
-    "type": "paragraph",
-    "text": "play for someone."
+    "text": "If the pressure\nfeels heavy,\nplay for someone."
   },
   {
     "type": "paragraph",
@@ -1687,11 +1659,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Because you worked"
-  },
-  {
-    "type": "paragraph",
-    "text": "for the right\nto stand on this field."
+    "text": "Because you worked\nfor the right\nto stand on this field."
   },
   {
     "type": "paragraph",
@@ -1715,11 +1683,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "But when you walk through it,"
-  },
-  {
-    "type": "paragraph",
-    "text": "something changes."
+    "text": "But when you walk through it,\nsomething changes."
   },
   {
     "type": "paragraph",
@@ -1751,11 +1715,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "When you cross that line,"
-  },
-  {
-    "type": "paragraph",
-    "text": "leave behind\nwhat you cannot use."
+    "text": "When you cross that line,\nleave behind\nwhat you cannot use."
   },
   {
     "type": "paragraph",
@@ -1843,11 +1803,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Someone said:"
-  },
-  {
-    "type": "paragraph",
-    "text": "Try again."
+    "text": "Someone said: Try again."
   },
   {
     "type": "paragraph",
@@ -1907,11 +1863,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Every field"
-  },
-  {
-    "type": "paragraph",
-    "text": "is a beginning."
+    "text": "Every field\nis a beginning."
   },
   {
     "type": "paragraph",
@@ -1943,11 +1895,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Do not stand beside\na mistake"
-  },
-  {
-    "type": "paragraph",
-    "text": "after it has already left."
+    "text": "Do not stand beside\na mistake\nafter it has already left."
   },
   {
     "type": "paragraph",
@@ -2039,7 +1987,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "You are allowed to be more than one thing."
+    "text": "You are allowed to be more than one thing. — Vince Carter"
   },
   {
     "type": "paragraph",
@@ -2095,11 +2043,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "That is enough"
-  },
-  {
-    "type": "paragraph",
-    "text": "to make something\nunforgettable."
+    "text": "That is enough\nto make something\nunforgettable."
   },
   {
     "type": "paragraph",
@@ -2107,11 +2051,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "The band\nacross the parking lot"
-  },
-  {
-    "type": "paragraph",
-    "text": "is not your enemy."
+    "text": "The band\nacross the parking lot\nis not your enemy."
   },
   {
     "type": "paragraph",
@@ -2159,11 +2099,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "There is enough music\nin the world"
-  },
-  {
-    "type": "paragraph",
-    "text": "for all of you."
+    "text": "There is enough music\nin the world\nfor all of you."
   },
   {
     "type": "heading",
@@ -2211,7 +2147,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "The people beside you may become part of your future in ways you cannot yet imagine."
+    "text": "The people beside you may become part of your future in ways you cannot yet imagine. — Pharrell Williams"
   },
   {
     "type": "paragraph",
@@ -2219,11 +2155,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Somewhere in the stadium\nis a person"
-  },
-  {
-    "type": "paragraph",
-    "text": "who has never seen\nyour rehearsal."
+    "text": "Somewhere in the stadium\nis a person\nwho has never seen\nyour rehearsal."
   },
   {
     "type": "paragraph",
@@ -2283,7 +2215,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Leonard Bernstein urged musicians \u201cto make music more intensely, more beautifully, more devotedly than ever before.\u201d Leonard Bernstein"
+    "text": "\u201cMake music more intensely, more beautifully, more devotedly than ever before.\u201d\n\u2014 Leonard Bernstein"
   },
   {
     "type": "paragraph",
@@ -2411,11 +2343,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Great performances\nare often built"
-  },
-  {
-    "type": "paragraph",
-    "text": "in the places\nwhere nobody applauds yet."
+    "text": "Great performances\nare often built\nin the places\nwhere nobody applauds yet."
   },
   {
     "type": "paragraph",
@@ -2627,11 +2555,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "You stood in front\nof thousands of people"
-  },
-  {
-    "type": "paragraph",
-    "text": "and made something\nthat did not exist\nten minutes ago."
+    "text": "You stood in front\nof thousands of people\nand made something\nthat did not exist\nten minutes ago."
   },
   {
     "type": "paragraph",
@@ -2643,11 +2567,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "A beautiful thing"
-  },
-  {
-    "type": "paragraph",
-    "text": "that only gets\nto live once."
+    "text": "A beautiful thing\nthat only gets\nto live once."
   },
   {
     "type": "heading",
@@ -2699,7 +2619,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Sometimes confidence begins long before you know where you will need it."
+    "text": "Sometimes confidence begins long before you know where you will need it. — Eva Longoria"
   },
   {
     "type": "paragraph",
@@ -2743,11 +2663,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "It cannot measure\nthe rehearsal you almost quit"
-  },
-  {
-    "type": "paragraph",
-    "text": "but did not."
+    "text": "It cannot measure\nthe rehearsal you almost quit\nbut did not."
   },
   {
     "type": "paragraph",
@@ -2771,11 +2687,11 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "If they call your name,"
+    "text": "If they call your name..."
   },
   {
     "type": "paragraph",
-    "text": "cheer."
+    "text": "Cheer."
   },
   {
     "type": "paragraph",
@@ -2803,11 +2719,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Somebody else\nworked very hard"
-  },
-  {
-    "type": "paragraph",
-    "text": "and heard another name."
+    "text": "Somebody else\nworked very hard\nand heard another name."
   },
   {
     "type": "paragraph",
@@ -2895,7 +2807,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "The thing that makes you feel different today may someday become part of what makes your voice unmistakably yours."
+    "text": "The thing that makes you feel different today may someday become part of what makes your voice unmistakably yours. — Kesha"
   },
   {
     "type": "paragraph",
@@ -2903,11 +2815,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "If they do not\ncall your name,"
-  },
-  {
-    "type": "paragraph",
-    "text": "the music still happened."
+    "text": "If they do not\ncall your name,\nthe music still happened."
   },
   {
     "type": "paragraph",
@@ -2935,11 +2843,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "But disappointment\ndoes not erase"
-  },
-  {
-    "type": "paragraph",
-    "text": "what was good."
+    "text": "But disappointment\ndoes not erase\nwhat was good."
   },
   {
     "type": "paragraph",
@@ -2955,11 +2859,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "One announcement\ndoes not get to decide"
-  },
-  {
-    "type": "paragraph",
-    "text": "what the whole season meant."
+    "text": "One announcement\ndoes not get to decide\nwhat the whole season meant."
   },
   {
     "type": "heading",
@@ -3339,11 +3239,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "For one season,"
-  },
-  {
-    "type": "paragraph",
-    "text": "this was ours."
+    "text": "For one season,\nthis was ours."
   },
   {
     "type": "paragraph",

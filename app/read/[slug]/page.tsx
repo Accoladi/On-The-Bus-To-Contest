@@ -4,8 +4,9 @@ import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { SiteNav } from "@/components/navigation/SiteNav";
 import { ArticleAd } from "@/components/articles/ArticleAd";
-import { ArticleMusicStrip } from "@/components/articles/ArticleMusicStrip";
 import { CelebritiesArticle } from "@/components/articles/CelebritiesArticle";
+import { MilitaryBandPromo } from "@/components/articles/MilitaryBandPromo";
+import { PersonBesideSongCard } from "@/components/articles/PersonBesideSongCard";
 import { articleCatalog } from "@/content/articles/articleCatalog";
 import { onTheBusArticleContent } from "@/content/articles/onTheBusArticleContent";
 import { additionalArticleContent } from "@/content/articles/additionalArticleContent";
@@ -39,6 +40,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!article || !content) notFound();
 
   const headings = content.sections.filter((section) => section.type === "heading").slice(0, 6);
+  const embeddedSongTitle = slug === "person-beside-you" ? "We Just Need Each Other" : slug === "laughter-best-medicine" ? "Just Laugh A’Little" : null;
+  const embeddedSongIndex = embeddedSongTitle ? content.sections.findIndex((section) => section.text === embeddedSongTitle) : -1;
   const articleIndex = articleCatalog.findIndex((item) => item.slug === article.slug);
   const related = articleCatalog.filter((item) => item.slug !== article.slug).slice(0, 3);
 
@@ -61,7 +64,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] ${categoryStyles[article.category] || "bg-[var(--purple)]"}`}>{article.category}</span>
                 <span className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">{article.readingTime}</span>
               </div>
-              <h1 className="max-w-4xl text-[clamp(2.35rem,4.5vw,4.75rem)] leading-[0.98]">{slug === "celebrities-marching-band" ? <>Celebrities Who Once Rode<br />A Marching Band Bus</> : article.title}</h1>
+              <h1 className="max-w-4xl text-[clamp(2.35rem,4.5vw,4.75rem)] leading-[0.98]">{slug === "celebrities-marching-band" ? <>Celebrities Who Once Rode<br />A Marching Band Bus</> : slug === "who-are-these-people" ? <>Who Are These People<br />Riding the Band Bus With Me?</> : slug === "quiet-before-first-note" ? <>The Quiet Before the First Note:<br />What Meditation Can Give You<br />Before a Marching Band Contest</> : slug === "person-beside-you" ? <>The Person Beside You<br />May Need You</> : slug === "laughter-best-medicine" ? <>Laughter May Be the Best Medicine<br />For a Nervous Condition<br />Before You Perform</> : slug === "your-season-in-your-pocket" ? <>Your Season in Your Pocket:<br />A Band-Bus Diary for the Ride to Contest</> : slug === "all-bands-look-different" ? <>Why Do All These Bands<br />Look So Different?</> : slug === "flute-to-old-guard" ? <>Could My Flute Take Me<br />To The Old Guard?</> : slug === "marching-band-pay-for-college" ? <>Could Marching Band<br />Help Pay for College?</> : slug === "social-media-etiquette" ? <>Social Media Etiquette<br />On Contest Day</> : article.title}</h1>
             </div>
           </div>
         </div>
@@ -89,15 +92,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <article className="max-w-3xl">
             <div className="mb-10 border-b border-[var(--navy)]/10 pb-7 text-sm text-[var(--slate)]">{article.readingTime}</div>
-            {content.sections.map((section, index) => {
-              if (section.type === "heading") {
-                const id = section.text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-                if (slug === "celebrities-marching-band" && section.text === "Other Famous People Who Were in Band") return <Fragment key={`${section.type}-${index}`} />;
-                return <Fragment key={`${section.type}-${index}`}><h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{section.text}</h2>{slug === "quiet-before-first-note" && section.text === "When the Music Ends" && <ArticleMusicStrip />}{slug === "celebrities-marching-band" && section.text === "Featured Personalities" && <CelebritiesArticle />}</Fragment>;
-              }
-              return <p key={`${section.type}-${index}`} className={`mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a] ${slug === "celebrities-marching-band" && index === 0 ? "font-bold text-[var(--navy)]" : ""}`}>{section.text}</p>;
-            })}
-            <ArticleAd index={articleIndex} />
+            <div className={embeddedSongTitle ? "lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-8" : undefined}>
+              {embeddedSongTitle && <div className="order-first mb-8 lg:order-last lg:mb-0 lg:pt-1"><PersonBesideSongCard songTitle={embeddedSongTitle} /></div>}
+              <div>
+                {content.sections.map((section, index) => {
+                  if (embeddedSongIndex >= 0 && index >= embeddedSongIndex) return <Fragment key={`${section.type}-${index}`} />;
+                  if (slug === "laughter-best-medicine" && section.text === "SONG") return <Fragment key={`${section.type}-${index}`} />;
+                  if (section.type === "heading") {
+                    const id = section.text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+                    if (slug === "celebrities-marching-band" && section.text === "Other Famous People Who Were in Band") return <Fragment key={`${section.type}-${index}`} />;
+                    const heading = slug === "person-beside-you" && section.text === "Sometimes the Quiet Person Needs an Invitation" ? <>Sometimes the Quiet Person<br />Needs an Invitation</> : slug === "person-beside-you" && section.text === "Pay Attention to the Person Who Is Usually Strong" ? <>Pay Attention to the Person<br />Who Is Usually Strong</> : slug === "director-seems-different" && section.text === "Your Director Is Thinking About the Entire Band" ? <>Your Director Is Thinking<br />About the Entire Band</> : slug === "director-seems-different" && section.text === "They Are Solving Problems You May Never Know About" ? <>They Are Solving Problems<br />You May Never Know About</> : slug === "social-media-etiquette" && section.text === "Never Post Something to Humiliate Another Band" ? <>Never Post Something<br />To Humiliate Another Band</> : section.text;
+                    return <Fragment key={`${section.type}-${index}`}><h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{heading}</h2>{slug === "celebrities-marching-band" && section.text === "Featured Personalities" && <CelebritiesArticle />}</Fragment>;
+                  }
+                  return <p key={`${section.type}-${index}`} className={`mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a] ${slug === "celebrities-marching-band" && index === 0 ? "font-bold text-[var(--navy)]" : ""}`}>{section.text}</p>;
+                })}
+              </div>
+            </div>
+            {slug === "flute-to-old-guard" ? <MilitaryBandPromo /> : <ArticleAd index={articleIndex} brand={slug === "marching-band-pay-for-college" ? "Accoladi" : undefined} />}
             <div className="mt-14 border-t border-[var(--navy)]/10 pt-8">
               <Link href="/read" className="inline-flex items-center gap-3 rounded-full bg-[var(--gold)] px-5 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--soft-champagne)]">Back to all articles <ArrowIcon /></Link>
             </div>
