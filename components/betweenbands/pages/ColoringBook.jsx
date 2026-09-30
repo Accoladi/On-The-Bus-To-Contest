@@ -281,14 +281,14 @@ function ColoringBook() {
                 </div>
                 <div style={{ display: 'flex', marginTop: '1em', gap: '10px' }}>
                     <div onClick={handleSaveClick} className='save-share-btn'>
-                        <img src={'/images/download-icon.png'} height='17px'></img>
+                        <img src={'/content/images/download-icon.png'} height='17px'></img>
                         <p>Save</p>
                     </div>
                     <div className={`zoom-btn ${activeZoom ? 'zoom-btn-active' : ''}`} onClick={() => setActiveZoom(!activeZoom)}>
-                        <img src={'/images/zoom-in.png'} height='20px'></img>
+                        <img src={'/content/images/zoom-in.png'} height='20px'></img>
                     </div>
                     <div className='zoom-btn' onClick={resetZoom}>
-                        <img src={'/images/zoom-out.png'} height='20px'></img>
+                        <img src={'/content/images/zoom-out.png'} height='20px'></img>
                     </div>
                     <Link style={{ textDecoration: 'none' }} href='/activities/coloring'>
                         <div className='new-temp'>

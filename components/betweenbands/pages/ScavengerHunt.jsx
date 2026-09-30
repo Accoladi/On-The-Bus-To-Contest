@@ -93,9 +93,9 @@ const ScavengerHunt = () => {
 
             {winWidth <= 776 ? (
                 <div className='animate__animated animate__bounce' id='scroll-anim'>
-                    <img src={'images/arrow-left.png'} height='20px'></img>
+                    <img src={'/content/images/arrow-left.png'} height='20px'></img>
                     <p>Scroll</p>
-                    <img src={'images/arrow-right.png'} height='20px'></img>
+                    <img src={'/content/images/arrow-right.png'} height='20px'></img>
                 </div>
             ) : (
                 <div>
@@ -110,7 +110,7 @@ const ScavengerHunt = () => {
                 <p>Scavenger Hunt: Find All of the items</p>
             </div>
             <div id='scav-hunt-container' >
-                <div style={{ backgroundImage: `url(/images/scavenger.png)`, height: picHeight }} id='image-outer'>
+                <div style={{ backgroundImage: `url(/content/images/scavenger.png)`, height: picHeight }} id='image-outer'>
 
                     <div
                         onClick={() => itemClick(0)}
@@ -181,65 +181,65 @@ const ScavengerHunt = () => {
                     <div id='scavenger-control-1'>
                         <div id='items-list'>
 
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/tree.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/tree.png)` }}>
                                 {hunt[0] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
 
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/cake.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/cake.png)` }}>
                                 {hunt[1] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
 
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/glasses.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/glasses.png)` }}>
                                 {hunt[2] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
 
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/pickles.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/pickles.png)` }}>
                                 {hunt[3] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
 
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/lawnmower.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/lawnmower.png)` }}>
                                 {hunt[4] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
 
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/panda.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/panda.png)` }}>
                                 {hunt[5] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/note.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/note.png)` }}>
                                 {hunt[6] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
-                            <div className='item-icon' style={{ backgroundImage: `url(/images/scavenger-hunt/chandlier.png)` }}>
+                            <div className='item-icon' style={{ backgroundImage: `url(/content/images/scavenger-hunt/chandlier.png)` }}>
                                 {hunt[7] === null ? (
                                     <h3></h3>
                                 ) : (
-                                    <img className='check-mark' src={'images/check-mark.png'}></img>
+                                    <img className='check-mark' src={'/content/images/check-mark.png'}></img>
                                 )}
                             </div>
                         </div>
@@ -282,4 +282,3 @@ const ScavengerHunt = () => {
 }
 
 export default ScavengerHunt
-
