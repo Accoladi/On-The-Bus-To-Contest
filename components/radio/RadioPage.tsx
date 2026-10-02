@@ -185,11 +185,11 @@ export function RadioPage() {
       </div>
 
       {featured && (
-        <section className="relative z-20 mx-auto -mt-28 max-w-[1440px] px-4 sm:px-8 lg:px-12">
+        <section className="relative z-20 mx-auto -mt-28 max-w-[1540px] px-4 sm:px-8 lg:px-8">
           <div className="relative overflow-hidden rounded-[26px] border border-white/20 bg-[rgba(25,24,66,.88)] text-white shadow-[0_24px_70px_rgba(7,26,47,0.3)] backdrop-blur-md">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(231,184,75,.2),transparent_32%)]" />
-            <div className="relative grid items-stretch gap-0 p-0 md:grid-cols-[42%_58%] lg:grid-cols-[38%_62%]">
-              <div className="relative aspect-[3/2] overflow-hidden border-b border-white/15 bg-[var(--navy)] md:aspect-auto md:min-h-[250px] md:border-b-0 md:border-r md:border-white/15"><Image src={featured.coverImageUrl || "/content/images/radio-cover.jpg"} alt={featured.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1200px) 42vw, 540px" className="object-cover object-center" /></div>
+            <div className="relative grid items-stretch gap-0 p-0 md:grid-cols-[44%_56%] lg:grid-cols-[42%_58%]">
+              <div className="relative aspect-[16/9] overflow-hidden border-b border-white/15 bg-[var(--navy)] md:aspect-auto md:min-h-[280px] md:border-b-0 md:border-r md:border-white/15"><Image src={featured.coverImageUrl || "/content/images/radio-cover.jpg"} alt={featured.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1200px) 44vw, 640px" className="object-cover object-center" /></div>
               <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                 <span className="inline-flex w-fit rounded-full bg-[var(--gold)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--navy)]">Featured track</span>
                 <h2 className="mt-5 max-w-xl text-4xl leading-[0.95] sm:text-5xl lg:text-6xl">{featured.title}</h2>

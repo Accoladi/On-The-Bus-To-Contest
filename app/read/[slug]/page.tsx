@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { SiteNav } from "@/components/navigation/SiteNav";
 import { ArticleAd } from "@/components/articles/ArticleAd";
+import { ArticleMusicStrip } from "@/components/articles/ArticleMusicStrip";
 import { CelebritiesArticle } from "@/components/articles/CelebritiesArticle";
 import { MilitaryBandPromo } from "@/components/articles/MilitaryBandPromo";
 import { PersonBesideSongCard } from "@/components/articles/PersonBesideSongCard";
@@ -108,7 +109,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     const id = section.text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
                     if (slug === "celebrities-marching-band" && section.text === "Other Famous People Who Were in Band") return <Fragment key={`${section.type}-${index}`} />;
                     const heading = slug === "person-beside-you" && section.text === "Sometimes the Quiet Person Needs an Invitation" ? <>Sometimes the Quiet Person<br />Needs an Invitation</> : slug === "person-beside-you" && section.text === "Pay Attention to the Person Who Is Usually Strong" ? <>Pay Attention to the Person<br />Who Is Usually Strong</> : slug === "director-seems-different" && section.text === "Your Director Is Thinking About the Entire Band" ? <>Your Director Is Thinking<br />About the Entire Band</> : slug === "director-seems-different" && section.text === "They Are Solving Problems You May Never Know About" ? <>They Are Solving Problems<br />You May Never Know About</> : slug === "social-media-etiquette" && section.text === "Never Post Something to Humiliate Another Band" ? <>Never Post Something<br />To Humiliate Another Band</> : headingLabel(section.text);
-                    return <Fragment key={`${section.type}-${index}`}><h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{heading}</h2>{slug === "celebrities-marching-band" && section.text === "Featured Personalities" && <CelebritiesArticle />}</Fragment>;
+                    return <Fragment key={`${section.type}-${index}`}>{slug === "quiet-before-first-note" && section.text === "When the Music Ends" && <ArticleMusicStrip />}<h2 id={id} className="mb-5 mt-12 scroll-mt-8 font-[family-name:var(--font-display)] text-3xl leading-[1.02] sm:text-4xl">{heading}</h2>{slug === "celebrities-marching-band" && section.text === "Featured Personalities" && <CelebritiesArticle />}</Fragment>;
                   }
                   return <p key={`${section.type}-${index}`} className={`mb-6 whitespace-pre-line text-[1.08rem] leading-8 text-[#35465a] ${slug === "celebrities-marching-band" && index === 0 ? "font-bold text-[var(--navy)]" : ""}`}>{section.text}</p>;
                 })}

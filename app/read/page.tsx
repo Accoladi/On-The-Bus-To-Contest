@@ -37,8 +37,30 @@ function CategoryBadge({ category }: { category: string }) {
   return <span className={`absolute bottom-4 left-4 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white shadow-sm ${categoryStyles[category] || "bg-[var(--purple)]"}`}>{category}</span>;
 }
 
+const articleTitleLines: Record<string, string[]> = {
+  "calm-your-mind": ["7 Ways to Calm Your Mind", "Before the Contest"],
+  "job-not-perfect": ["Your Job Is Not to Be", "Perfect"],
+  "who-are-these-people": ["Who Are These People", "Riding the Band Bus With", "Me?"],
+  "celebrities-marching-band": ["Celebrities Who Once Rode", "A Marching Band Bus"],
+  "quiet-before-first-note": ["The Quiet Before the First Note:", "What Meditation Can Give You", "Before a Marching Band Contest"],
+  "person-beside-you": ["The Person Beside You", "May Need You"],
+  "director-seems-different": ["Your Director Seems Different", "Today—There’s a Reason"],
+  "laughter-best-medicine": ["Laughter May Be the Best Medicine", "For a Nervous Condition", "Before You Perform"],
+  "your-season-in-your-pocket": ["Your Season in Your Pocket:", "A Band-Bus Diary for the Ride", "to Contest"],
+  "all-bands-look-different": ["Why Do All These Bands", "Look So Different?"],
+  "flute-to-old-guard": ["Could My Flute Take Me", "to the Old Guard?"],
+  "marching-band-pay-for-college": ["Could Marching Band", "Help Pay for College?"],
+  "social-media-etiquette": ["Social Media Etiquette", "on Contest Day"],
+  "art-of-winning-and-losing": ["The Art of Winning", "and Losing"],
+};
+
+function ArticleTitle({ article }: { article: ArticleSummary }) {
+  const lines = articleTitleLines[article.slug] || [article.title];
+  return <>{lines.map((line, index) => <span key={`${article.slug}-${line}`}>{index > 0 && <br className="hidden sm:block" />}{line}</span>)}</>;
+}
+
 function ArticleCard({ article }: { article: ArticleSummary }) {
-  return <Link href={`/read/${article.slug}`} className="group relative h-full overflow-hidden rounded-xl border border-[var(--navy)]/8 bg-white shadow-[0_8px_22px_rgba(7,26,47,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(7,26,47,0.13)]"><div className="relative aspect-[1.68] overflow-hidden"><Image src={article.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><CategoryBadge category={article.category} /></div><div className="flex min-h-[188px] flex-col p-5"><h2 className="text-[26px] leading-[0.98]">{article.title}</h2><p className="mt-2 line-clamp-2 text-sm leading-5 text-[var(--slate)]">{article.description}</p><div className="mt-auto flex items-center justify-between pt-5 text-xs text-[var(--slate)]"><span>{article.date} <span className="mx-1 text-[var(--gold)]">•</span> {article.readingTime}</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dcecff] text-lg leading-none text-[var(--navy)] transition group-hover:bg-[var(--gold)]"><ArrowIcon /></span></div></div></Link>;
+  return <Link href={`/read/${article.slug}`} className="group relative h-full overflow-hidden rounded-xl border border-[var(--navy)]/8 bg-white shadow-[0_8px_22px_rgba(7,26,47,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(7,26,47,0.13)]"><div className="relative aspect-[1.68] overflow-hidden"><Image src={article.image} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><CategoryBadge category={article.category} /></div><div className="flex min-h-[188px] flex-col p-5"><h2 className="text-[26px] leading-[0.98]"><ArticleTitle article={article} /></h2><p className="mt-2 line-clamp-2 text-sm leading-5 text-[var(--slate)]">{article.description}</p><div className="mt-auto flex items-center justify-between pt-5 text-xs text-[var(--slate)]"><span>{article.date} <span className="mx-1 text-[var(--gold)]">•</span> {article.readingTime}</span><span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dcecff] text-lg leading-none text-[var(--navy)] transition group-hover:bg-[var(--gold)]"><ArrowIcon /></span></div></div></Link>;
 }
 
 export default function ReadPage() {

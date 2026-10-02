@@ -13,8 +13,8 @@ export function BooksSection() {
       <div className="relative mx-auto grid max-w-[1320px] items-center gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
         <div className="max-w-xl">
           <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.28em] text-[var(--gold)]"><span>Books</span><span className="h-px w-10 bg-[var(--gold)]" /></div>
-          <h2 className="mt-6 max-w-lg text-5xl leading-[.94] sm:text-6xl lg:text-[5rem]">A book for the moments before the <span className="text-[var(--gold)]">first note.</span></h2>
-          <p className="mt-7 max-w-md text-base leading-7 text-white/75 sm:text-lg">Poems for marching band members on the way to the field—made for the quiet, nervous, hopeful ride to contest.</p>
+          <h2 className="mt-6 max-w-lg text-5xl leading-[.94] sm:text-6xl lg:text-[5rem]">Books for every part of the <span className="text-[var(--gold)]">ride.</span></h2>
+          <p className="mt-7 max-w-md text-base leading-7 text-white/75 sm:text-lg">Reflection for the nerves, practical help for the journey, and the history behind the music.</p>
           <Link href="/books" className="mt-8 inline-flex items-center gap-4 rounded-full bg-[var(--gold)] px-7 py-4 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--champagne)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gold)]">Explore the books <ArrowIcon /></Link>
         </div>
 
