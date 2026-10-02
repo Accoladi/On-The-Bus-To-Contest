@@ -1831,7 +1831,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Yo-Yo Ma says that when performing, what matters is \u201chow present I am at the moment of performing.\u201d Grammy"
+    "text": "\u201cHow present I am at the moment of performing.\u201d \u2014 Yo-Yo Ma"
   },
   {
     "type": "paragraph",
@@ -2499,7 +2499,7 @@ export const beforeTheFirstNoteSections: BookSection[] = [
   },
   {
     "type": "paragraph",
-    "text": "Quincy Jones remembered learning by surrounding himself with great musicians: \u201cI stood the watch and paid attention, and shut up and listened.\u201d National Endowment for the Arts"
+    "text": "\u201cI stood the watch and paid attention, and shut up and listened.\u201d \u2014 Quincy Jones"
   },
   {
     "type": "paragraph",

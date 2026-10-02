@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!article || !content) notFound();
 
   const headings = content.sections.filter((section) => section.type === "heading").slice(0, 6);
-  const embeddedSongTitle = slug === "person-beside-you" ? "We Just Need Each Other" : slug === "laughter-best-medicine" ? "Just Laugh A’Little" : slug === "speak-to-yourself" ? "Speak to Yourself" : null;
+  const embeddedSongTitle = slug === "person-beside-you" ? "We Just Need Each Other" : slug === "laughter-best-medicine" ? "Just Laugh A’Little" : slug === "speak-to-yourself" ? "Speak to Yourself" : slug === "who-are-these-people" ? "The People on My Band Bus" : null;
   const embeddedSongIndex = embeddedSongTitle ? content.sections.findIndex((section) => section.text === embeddedSongTitle) : -1;
   const articleIndex = articleCatalog.findIndex((item) => item.slug === article.slug);
   const related = articleCatalog.filter((item) => item.slug !== article.slug).slice(0, 3);
@@ -77,10 +77,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <section className="border-b border-[var(--navy)]/10 bg-white px-6 py-8 sm:px-10 lg:px-16">
+      <section className="border-b border-[var(--navy)]/10 bg-[#f4f8fc] px-6 py-8 sm:px-10 lg:px-16">
         <div className="mx-auto grid max-w-[1180px] gap-7 lg:grid-cols-[.78fr_1.22fr] lg:items-center">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--purple)]">On the Bus to Contest</p>
-          <p className="max-w-3xl text-lg leading-8 text-[var(--slate)] sm:text-xl">{article.description}</p>
+          <p className="max-w-3xl text-lg font-bold leading-8 text-[var(--navy)] sm:text-xl">{article.description}</p>
         </div>
       </section>
 

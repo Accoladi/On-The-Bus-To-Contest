@@ -33,7 +33,7 @@ function MusicCard({ item, track }: { item: MusicItem; track?: Track }) {
       <div className="p-4">
         <p className="font-[family-name:var(--font-display)] text-xl leading-tight text-[var(--navy)]">{item.title}</p>
         <p className="mt-2 text-sm leading-5 text-[var(--slate)]">{item.credit}</p>
-        <button type="button" onClick={toggle} disabled={!track?.audioUrl} aria-label={`${playing ? "Pause" : "Play"} ${item.title}`} className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--gold)] px-3 py-3 text-sm font-bold text-[var(--navy)] shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--soft-champagne)] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60">
+        <button type="button" onClick={toggle} disabled={!track?.audioUrl} aria-label={`${playing ? "Pause" : "Play"} ${item.title}`} className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--gold)] px-3 py-3 text-sm font-bold text-[var(--navy)] shadow-sm transition hover:-translate-y-0.5 hover:bg-[var(--purple)] hover:text-white hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60">
           {playing ? <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4 fill-current"><path d="M7 5h3v14H7zm7 0h3v14h-3z" /></svg> : <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4 translate-x-px fill-current"><path d="M8 5.2v13.6c0 .8.9 1.3 1.6.9l10-6.8a1.1 1.1 0 0 0 0-1.8l-10-6.8C8.9 3.9 8 4.4 8 5.2Z" /></svg>}
           {playing ? "Pause song" : "Play song"}
         </button>

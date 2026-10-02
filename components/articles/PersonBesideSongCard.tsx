@@ -56,7 +56,7 @@ export function PersonBesideSongCard({ songTitle = "We Just Need Each Other" }: 
   return (
     <>
       <article className="overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-[#fffdfa] text-left shadow-sm">
-        <div className="relative aspect-[16/9] bg-[var(--navy)]">
+        <div className="relative aspect-[4/3] bg-[#f7f3ea]">
           <Image src={song.coverImageUrl || "/content/images/radio-cover.jpg"} alt={`${song.title} cover`} fill sizes="(max-width: 1024px) 100vw, 320px" className="object-contain" />
         </div>
         <div className="p-4">
