@@ -50,12 +50,12 @@ function BookMusicCard({ aliases }: { aliases: string[] }) {
 function ProfilePage({ title, lines, fontScale }: { title: string; lines: string[]; fontScale: number }) { const celebrity = Object.entries(celebrityImages).find(([name]) => title.startsWith(name))?.[1]; const person = Object.keys(profileTrackAliases).find((name) => title.startsWith(name)); return <section className="my-3 overflow-hidden rounded-[22px] border border-[#d9c7aa] bg-[#f7f1e8]" style={{ fontSize: `${fontScale}em` }}><div className="border-b border-[#d3a43b]/70 bg-[#17233a] px-7 py-5 text-[#f7f1e8] sm:px-9"><div className="flex items-center gap-4"><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#d3a43b]">They were in band too</p><span className="h-px w-12 bg-[#d3a43b]" aria-hidden="true" /></div><h3 className="mt-2 font-[family-name:var(--font-display)] text-3xl leading-tight">{title}</h3></div><div className="p-7 sm:p-9">{celebrity && <div className="relative float-right mb-6 ml-8 h-60 w-60 overflow-hidden rounded-2xl border-2 border-[#d3a43b] shadow-md sm:h-80 sm:w-80"><Image src={celebrity} alt="" fill sizes="320px" className="object-cover" /></div>}{lines.map((line, index) => <p key={`${title}-${index}`} className="mb-5 whitespace-pre-line text-[1.05rem] leading-8 text-[#17233a]">{line}</p>)}<div className="clear-both" />{person && <ProfileMusicCard person={person} />}</div></section>; }
 function JournalPage({ id, title, prompts, fontScale }: { id: string; title: string; prompts: string[]; fontScale: number }) { const storageKey = `before-the-first-note-${slugify(title)}`; const [answers, setAnswers] = useState<Record<string, string>>({}); useEffect(() => { try { setAnswers(JSON.parse(localStorage.getItem(storageKey) || "{}")); } catch { setAnswers({}); } }, [storageKey]); function update(prompt: string, value: string) { const next = { ...answers, [prompt]: value }; setAnswers(next); localStorage.setItem(storageKey, JSON.stringify(next)); } return <section id={id} className="rounded-[22px] border border-[#e2b24f]/60 bg-[#fffdfa] p-7 shadow-[0_12px_35px_rgba(20,27,44,.08)] sm:p-10" style={{ fontSize: `${fontScale}em` }}><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#80558d]">Reflection page</p><h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl leading-none">{title}</h2><p className="mt-4 max-w-2xl text-base leading-7 text-[#536079]">Take a quiet minute to write what you want to remember. Your answers stay on this device.</p><div className="mt-8 grid gap-5">{prompts.map((prompt) => <label key={prompt} className="grid gap-2 text-base font-semibold text-[#27304a]"><span>{prompt}</span><textarea value={answers[prompt] || ""} onChange={(event) => update(prompt, event.target.value)} rows={2} className="w-full resize-y rounded-xl border border-[#14203d]/15 bg-white px-4 py-3 font-sans text-base font-normal outline-none transition focus:border-[#e2b24f] focus:ring-2 focus:ring-[#e2b24f]/20" /></label>)}</div></section>; }
 
-type BookPage = { blocks: ReactNode[]; chapter?: string };
+type BookPage = { blocks: ReactNode[]; chapter?: string; background?: string };
 type BookPages = { pages: BookPage[]; chapterPages: Record<string, number> };
 
 function buildPages(fontScale: number): BookPages {
   const pages: BookPage[] = []; const chapterPages: Record<string, number> = {}; let blocks: ReactNode[] = []; let i = 0; let firstPart = true;
-  const flush = () => { if (blocks.length) { pages.push({ blocks }); blocks = []; } };
+  const flush = (background?: string) => { if (blocks.length) { pages.push({ blocks, background }); blocks = []; } };
   const add = (node: ReactNode, chapter?: string, forceNew = false) => { if (forceNew) flush(); if (chapter && chapterPages[chapter] === undefined) chapterPages[chapter] = pages.length; blocks.push(node); };
   while (i < texts.length) {
     const text = texts[i];
@@ -74,7 +74,7 @@ function buildPages(fontScale: number): BookPages {
         j += 2;
       }
       if (text === "The Director at the Front") companions.push(<BookMusicCard key={`music-${i}`} aliases={sousaTrackAliases} />);
-      flush(); add(<div key={`poem-page-${i}`}><PoemPage title={text} lines={lines} fontScale={fontScale} />{companions}</div>, undefined, true); flush(); i = j; continue;
+      flush(); add(<div key={`poem-page-${i}`}><PoemPage title={text} lines={lines} fontScale={fontScale} />{companions}</div>, undefined, true); flush(text === "The Bus Is Moving" ? "bus-moving" : undefined); i = j; continue;
     }
     if (text === "Dedication" || text === "Preface" || text === "How to Use This Book") { const id = text === "Dedication" ? "introduction" : slugify(text); const next = text === "Dedication" ? 16 : text === "Preface" ? 82 : 91; add(<section key={`front-${i}`} id={id} className={`scroll-mt-8 ${firstPart ? "" : "border-t border-[#14203d]/10 pt-8"}`} style={{ fontSize: `${fontScale}em` }}><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#80558d]">{text}</p><div className="mt-6">{texts.slice(i + 1, next).map((line, index) => <Paragraph key={`${text}-${index}`}>{line}</Paragraph>)}</div></section>, "introduction"); i = next; firstPart = false; continue; }
     if (text.startsWith("“Cherish your journey, and respect your journey.”")) { add(<blockquote key={`quote-${i}`} className="my-7 border-l-4 border-[#e2b24f] bg-[#fff4d8] px-6 py-5 font-[family-name:var(--font-display)] text-2xl italic leading-8 text-[#26304b]">“Cherish your journey, and respect your journey.”<footer className="mt-3 text-sm not-italic text-[#536079]">— Lizzo</footer></blockquote>); i += 1; continue; }
@@ -88,9 +88,20 @@ function buildPages(fontScale: number): BookPages {
 export function ManuscriptContent({ fontScale, pageIndex, onPageCount, onChapterPages }: { fontScale: number; pageIndex: number; onPageCount: (count: number) => void; onChapterPages: (pages: Record<string, number>) => void }) {
   const book = useMemo(() => buildPages(fontScale), [fontScale]); const safeIndex = Math.max(0, Math.min(pageIndex, book.pages.length - 1));
   useEffect(() => { onPageCount(book.pages.length); onChapterPages(book.chapterPages); }, [book, onPageCount, onChapterPages]);
+  const page = book.pages[safeIndex];
+  const isBusMovingPage = page?.background === "bus-moving";
   const pageBackground = `/images/books/book-view/firstnote/page-bgs/${(safeIndex % 6) + 1}.png`;
-  return <div data-book-page={safeIndex} className="relative w-full overflow-hidden rounded-[12px] bg-white bg-top bg-no-repeat px-6 py-8 font-[Georgia,serif] font-normal leading-[1.65] sm:px-10 sm:py-10 lg:px-14 lg:py-12" style={{ backgroundImage: `url(${pageBackground})`, backgroundSize: "100% auto", backgroundRepeat: "repeat-y" }}>
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,250,.96)_0%,rgba(255,253,250,.9)_45%,rgba(255,253,250,.48)_62%,rgba(255,253,250,.08)_78%,transparent_100%)]" />
-    <div className="relative z-10">{book.pages[safeIndex]?.blocks}</div>
+  return <div data-book-page={safeIndex} className={`relative w-full overflow-hidden px-6 py-8 font-[Georgia,serif] font-normal leading-[1.65] sm:px-10 sm:py-10 lg:px-14 lg:py-12 ${isBusMovingPage ? "bg-[#f8f4ec]" : "rounded-[12px] bg-white bg-top bg-no-repeat"}`} style={isBusMovingPage ? undefined : { backgroundImage: `url(${pageBackground})`, backgroundSize: "100% auto", backgroundRepeat: "repeat-y" }}>
+    {!isBusMovingPage && <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,250,.96)_0%,rgba(255,253,250,.9)_45%,rgba(255,253,250,.48)_62%,rgba(255,253,250,.08)_78%,transparent_100%)]" />}
+    {isBusMovingPage && <Image
+      src="/images/books/book-view/firstnote/page-bgs/bus-moving.png"
+      alt=""
+      aria-hidden="true"
+      width={1122}
+      height={1402}
+      sizes="(max-width: 639px) 70vw, (max-width: 1023px) 66vw, 74vw"
+      className="pointer-events-none absolute right-[-20%] top-0 z-0 h-auto w-[70%] select-none object-contain object-top-right opacity-20 sm:right-[-8%] sm:w-[66%] sm:opacity-60 md:right-[-2%] md:w-[74%] md:opacity-95"
+    />}
+    <div className={`relative z-10 ${isBusMovingPage ? "max-w-none md:max-w-[58%]" : ""}`}>{page?.blocks}</div>
   </div>;
 }

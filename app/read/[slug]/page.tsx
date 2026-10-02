@@ -11,6 +11,7 @@ import { articleCatalog } from "@/content/articles/articleCatalog";
 import { onTheBusArticleContent } from "@/content/articles/onTheBusArticleContent";
 import { additionalArticleContent } from "@/content/articles/additionalArticleContent";
 import { collegeArticleContent } from "@/content/articles/collegeArticleContent";
+import { speakToYourselfContent } from "@/content/articles/speakToYourselfContent";
 
 const categoryStyles: Record<string, string> = {
   Mindset: "bg-[#5a2a78]",
@@ -40,12 +41,12 @@ function headingLabel(text: string) {
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = articleCatalog.find((item) => item.slug === slug);
-  const content = onTheBusArticleContent[slug] || additionalArticleContent[slug] || collegeArticleContent[slug];
+  const content = onTheBusArticleContent[slug] || additionalArticleContent[slug] || collegeArticleContent[slug] || (slug === "speak-to-yourself" ? speakToYourselfContent : undefined);
 
   if (!article || !content) notFound();
 
   const headings = content.sections.filter((section) => section.type === "heading").slice(0, 6);
-  const embeddedSongTitle = slug === "person-beside-you" ? "We Just Need Each Other" : slug === "laughter-best-medicine" ? "Just Laugh A’Little" : null;
+  const embeddedSongTitle = slug === "person-beside-you" ? "We Just Need Each Other" : slug === "laughter-best-medicine" ? "Just Laugh A’Little" : slug === "speak-to-yourself" ? "Speak to Yourself" : null;
   const embeddedSongIndex = embeddedSongTitle ? content.sections.findIndex((section) => section.text === embeddedSongTitle) : -1;
   const articleIndex = articleCatalog.findIndex((item) => item.slug === article.slug);
   const related = articleCatalog.filter((item) => item.slug !== article.slug).slice(0, 3);
@@ -95,9 +96,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
           </aside>
 
-          <article className="max-w-3xl">
+          <article className="w-full">
             <div className="mb-10 border-b border-[var(--navy)]/10 pb-7 text-sm text-[var(--slate)]">{article.readingTime}</div>
-            <div className={embeddedSongTitle ? "lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-8" : undefined}>
+            <div className={embeddedSongTitle ? "lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-8" : undefined}>
               {embeddedSongTitle && <div className="order-first mb-8 lg:order-last lg:mb-0 lg:pt-1"><PersonBesideSongCard songTitle={embeddedSongTitle} /></div>}
               <div>
                 {content.sections.map((section, index) => {

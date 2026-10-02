@@ -7,6 +7,7 @@ type Article = {
   readTime: string;
   description: string;
   image: string;
+  href?: string;
   featured?: boolean;
 };
 
@@ -27,11 +28,12 @@ const articles: Article[] = [
     image: "/images/articles/article-title-pics/job-not-perfect.png",
   },
   {
-    category: "People",
-    title: "The Person Beside You May Need You",
+    category: "Mindset",
+    title: "Speak to Yourself",
     readTime: "6 min read",
-    description: "A kind word, a simple conversation, or just being there can make a bigger difference than you realize.",
-    image: "/images/articles/article-title-pics/person-needs-you.png",
+    description: "Finding a quiet place inside on the bus to contest.",
+    image: "/images/articles/article-title-pics/speak-to-yourself.png",
+    href: "/read/speak-to-yourself",
   },
   {
     category: "Directors",
@@ -69,7 +71,7 @@ export function ArticlesSection() {
         </div>
 
         <div className="mt-9 grid gap-5 lg:grid-cols-[1.16fr_0.94fr]">
-          <Link href="/read" className="group relative min-h-[500px] overflow-hidden rounded-[10px] bg-[var(--navy)] text-white shadow-[0_16px_40px_rgba(7,26,47,0.12)] sm:min-h-[580px]">
+          <Link href={featured.href || "/read"} className="group relative min-h-[500px] overflow-hidden rounded-[10px] bg-[var(--navy)] text-white shadow-[0_16px_40px_rgba(7,26,47,0.12)] sm:min-h-[580px]">
             <Image src={featured.image} alt="" fill sizes="(max-width: 1024px) 100vw, 58vw" className="object-cover transition duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,26,47,0.98)] via-[rgba(7,26,47,0.24)] to-[rgba(7,26,47,0.02)]" />
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
@@ -79,7 +81,7 @@ export function ArticlesSection() {
           </Link>
 
           <div className="grid gap-4">
-            {secondary.map((article) => <Link href="/read" key={article.title} className="group grid min-h-[145px] grid-cols-[minmax(130px,38%)_1fr_auto] gap-4 rounded-[10px] bg-white p-2.5 shadow-[0_8px_24px_rgba(7,26,47,0.06)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(7,26,47,0.12)] sm:grid-cols-[minmax(160px,38%)_1fr_auto] sm:gap-5 sm:p-3">
+            {secondary.map((article) => <Link href={article.href || "/read"} key={article.title} className="group grid min-h-[145px] grid-cols-[minmax(130px,38%)_1fr_auto] gap-4 rounded-[10px] bg-white p-2.5 shadow-[0_8px_24px_rgba(7,26,47,0.06)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(7,26,47,0.12)] sm:grid-cols-[minmax(160px,38%)_1fr_auto] sm:gap-5 sm:p-3">
               <div className="relative min-h-[120px] overflow-hidden rounded-md"><Image src={article.image} alt="" fill sizes="(max-width: 640px) 38vw, 220px" className="object-cover transition duration-500 group-hover:scale-105" /></div>
               <div className="flex min-w-0 flex-col justify-center pr-2"><ArticleMeta article={article} /><h3 className="mt-3 text-xl leading-[1.02] sm:text-2xl">{article.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-5 text-[var(--slate)]">{article.description}</p></div>
               <span className="hidden h-9 w-9 self-center rounded-full bg-[#c6e4ff] text-center text-xl leading-9 text-[var(--navy)] sm:block">→</span>
