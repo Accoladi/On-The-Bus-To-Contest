@@ -12,6 +12,7 @@ const links = [
   { label: "Activities", href: "/activities" },
   { label: "Books", href: "/books" },
   { label: "About", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export function SiteNav({ light = false, solid = false }: { light?: boolean; solid?: boolean }) {
@@ -28,7 +29,7 @@ export function SiteNav({ light = false, solid = false }: { light?: boolean; sol
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 lg:flex xl:gap-10">
+        <div className="hidden items-center gap-5 lg:flex xl:gap-8">
           {links.map((link) => {
             const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
