@@ -19,10 +19,6 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
     "title": "Your Job Is Not to Be Perfect",
     "sections": [
       {
-        "type": "heading",
-        "text": "What to Remember on the Bus Ride to the Contest"
-      },
-      {
         "type": "paragraph",
         "text": "You can probably feel it already."
       },
@@ -1633,10 +1629,6 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
   "laughter-best-medicine": {
     "title": "Laughter May Be the Best Medicine for a Nervous Condition Before You Perform",
     "sections": [
-      {
-        "type": "heading",
-        "text": "For A Nervous Condition Before You Perform"
-      },
       {
         "type": "paragraph",
         "text": "You know the feeling."

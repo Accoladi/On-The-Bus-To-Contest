@@ -3246,6 +3246,1010 @@ export const beforeTheFirstNoteSections: BookSection[] = [
     "text": "And we were here."
   },
   {
+    "type": "heading",
+    "text": "PART FIVE"
+  },
+  {
+    "type": "heading",
+    "text": "WHEN THE BUS COMES HOME"
+  },
+  {
+    "type": "paragraph",
+    "text": "When the Bus Pulls In"
+  },
+  {
+    "type": "paragraph",
+    "text": "This morning\nthe parking lot\nwas full of beginnings."
+  },
+  {
+    "type": "paragraph",
+    "text": "Uniform bags."
+  },
+  {
+    "type": "paragraph",
+    "text": "Instrument cases."
+  },
+  {
+    "type": "paragraph",
+    "text": "Coffee cups."
+  },
+  {
+    "type": "paragraph",
+    "text": "Parents waving."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone asking\nif everybody had\ntheir gloves."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone realizing\nthey did not."
+  },
+  {
+    "type": "paragraph",
+    "text": "The bus doors closed."
+  },
+  {
+    "type": "paragraph",
+    "text": "And the whole day\nwas still ahead."
+  },
+  {
+    "type": "paragraph",
+    "text": "Now the bus\nturns back\ninto the same parking lot."
+  },
+  {
+    "type": "paragraph",
+    "text": "But everything\nfeels different."
+  },
+  {
+    "type": "paragraph",
+    "text": "The stadium lights\nare somewhere behind you."
+  },
+  {
+    "type": "paragraph",
+    "text": "The judges\nhave gone home."
+  },
+  {
+    "type": "paragraph",
+    "text": "The scores\nhave already become numbers\non somebody’s phone."
+  },
+  {
+    "type": "paragraph",
+    "text": "The uniforms\nare wrinkled."
+  },
+  {
+    "type": "paragraph",
+    "text": "The hair\nis not what it was\nthis morning."
+  },
+  {
+    "type": "paragraph",
+    "text": "Nobody has quite\nthe same amount\nof energy."
+  },
+  {
+    "type": "paragraph",
+    "text": "And yet—"
+  },
+  {
+    "type": "paragraph",
+    "text": "you are carrying\nsomething back\nthat was not here\nwhen you left."
+  },
+  {
+    "type": "paragraph",
+    "text": "A memory."
+  },
+  {
+    "type": "paragraph",
+    "text": "A story."
+  },
+  {
+    "type": "paragraph",
+    "text": "A disappointment."
+  },
+  {
+    "type": "paragraph",
+    "text": "A victory."
+  },
+  {
+    "type": "paragraph",
+    "text": "A joke\nthat will make no sense\nto anyone who was not there."
+  },
+  {
+    "type": "paragraph",
+    "text": "A moment\nyou will remember\nfor years."
+  },
+  {
+    "type": "paragraph",
+    "text": "This morning\nthe parking lot\nwas the beginning."
+  },
+  {
+    "type": "paragraph",
+    "text": "Tonight"
+  },
+  {
+    "type": "paragraph",
+    "text": "it is the place\nyou bring the day home."
+  },
+  {
+    "type": "paragraph",
+    "text": "Good Night, Band"
+  },
+  {
+    "type": "paragraph",
+    "text": "There should probably\nbe some great speech\nat the end of a day\nlike this."
+  },
+  {
+    "type": "paragraph",
+    "text": "Something profound."
+  },
+  {
+    "type": "paragraph",
+    "text": "Something everybody\nwill remember."
+  },
+  {
+    "type": "paragraph",
+    "text": "There usually is not."
+  },
+  {
+    "type": "paragraph",
+    "text": "Instead:"
+  },
+  {
+    "type": "paragraph",
+    "text": "Good job."
+  },
+  {
+    "type": "paragraph",
+    "text": "See you Monday."
+  },
+  {
+    "type": "paragraph",
+    "text": "Text me when you get home."
+  },
+  {
+    "type": "paragraph",
+    "text": "Did anybody grab my water bottle?"
+  },
+  {
+    "type": "paragraph",
+    "text": "Drive safe."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone carries\na drum toward the band room."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone rolls\na flag a little tighter."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone helps\nwith a case\nthat is too heavy."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone hugs\na friend."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone is already\nhalf asleep."
+  },
+  {
+    "type": "paragraph",
+    "text": "Someone calls across\nthe parking lot:"
+  },
+  {
+    "type": "paragraph",
+    "text": "Good night!"
+  },
+  {
+    "type": "paragraph",
+    "text": "It does not sound\nimportant."
+  },
+  {
+    "type": "paragraph",
+    "text": "Years from now,"
+  },
+  {
+    "type": "paragraph",
+    "text": "you may wish\nyou could hear it again."
+  },
+  {
+    "type": "paragraph",
+    "text": "So before you leave,"
+  },
+  {
+    "type": "paragraph",
+    "text": "look around."
+  },
+  {
+    "type": "paragraph",
+    "text": "These are the people\nwho stood beside you\nwhen the field lights came on."
+  },
+  {
+    "type": "paragraph",
+    "text": "The people\nwho heard your mistakes."
+  },
+  {
+    "type": "paragraph",
+    "text": "The people\nwho knew when you recovered."
+  },
+  {
+    "type": "paragraph",
+    "text": "The people\nwho carried the same show."
+  },
+  {
+    "type": "paragraph",
+    "text": "You do not need\na great speech."
+  },
+  {
+    "type": "paragraph",
+    "text": "Just say:"
+  },
+  {
+    "type": "paragraph",
+    "text": "Good night."
+  },
+  {
+    "type": "paragraph",
+    "text": "And mean:"
+  },
+  {
+    "type": "paragraph",
+    "text": "I’m glad you were there."
+  },
+  {
+    "type": "paragraph",
+    "text": "From the Bus to the Car"
+  },
+  {
+    "type": "paragraph",
+    "text": "You step off the bus"
+  },
+  {
+    "type": "paragraph",
+    "text": "and there they are."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your mother."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your father."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your grandparent."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your brother."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your sister."
+  },
+  {
+    "type": "paragraph",
+    "text": "Whoever came\nto take you home."
+  },
+  {
+    "type": "paragraph",
+    "text": "They have been waiting."
+  },
+  {
+    "type": "paragraph",
+    "text": "Maybe in the car."
+  },
+  {
+    "type": "paragraph",
+    "text": "Maybe beside it."
+  },
+  {
+    "type": "paragraph",
+    "text": "Maybe scrolling\nthrough pictures\nfrom the day."
+  },
+  {
+    "type": "paragraph",
+    "text": "You open the door."
+  },
+  {
+    "type": "paragraph",
+    "text": "Drop the backpack."
+  },
+  {
+    "type": "paragraph",
+    "text": "Set the instrument\ncarefully beside you."
+  },
+  {
+    "type": "paragraph",
+    "text": "And then comes\nthe impossible question:"
+  },
+  {
+    "type": "paragraph",
+    "text": "How did it go?"
+  },
+  {
+    "type": "paragraph",
+    "text": "How do you explain\nan entire day?"
+  },
+  {
+    "type": "paragraph",
+    "text": "The nerves."
+  },
+  {
+    "type": "paragraph",
+    "text": "The warm-up."
+  },
+  {
+    "type": "paragraph",
+    "text": "The gate."
+  },
+  {
+    "type": "paragraph",
+    "text": "The opening note."
+  },
+  {
+    "type": "paragraph",
+    "text": "The person beside you\nwhispering,"
+  },
+  {
+    "type": "paragraph",
+    "text": "We’ve got this."
+  },
+  {
+    "type": "paragraph",
+    "text": "The mistake\nyou thought\nruined everything."
+  },
+  {
+    "type": "paragraph",
+    "text": "The moment\nthe whole band\nsounded exactly\nthe way your director\nhad been asking for."
+  },
+  {
+    "type": "paragraph",
+    "text": "The announcement."
+  },
+  {
+    "type": "paragraph",
+    "text": "The cheering."
+  },
+  {
+    "type": "paragraph",
+    "text": "The quiet ride home."
+  },
+  {
+    "type": "paragraph",
+    "text": "So maybe you say:"
+  },
+  {
+    "type": "paragraph",
+    "text": "Good."
+  },
+  {
+    "type": "paragraph",
+    "text": "Or:"
+  },
+  {
+    "type": "paragraph",
+    "text": "We got second."
+  },
+  {
+    "type": "paragraph",
+    "text": "Or:"
+  },
+  {
+    "type": "paragraph",
+    "text": "We did better."
+  },
+  {
+    "type": "paragraph",
+    "text": "Or:"
+  },
+  {
+    "type": "paragraph",
+    "text": "I’m tired."
+  },
+  {
+    "type": "paragraph",
+    "text": "And the car\npulls away."
+  },
+  {
+    "type": "paragraph",
+    "text": "Streetlights pass\nacross the window."
+  },
+  {
+    "type": "paragraph",
+    "text": "You are no longer\none of a hundred people\non a band bus."
+  },
+  {
+    "type": "paragraph",
+    "text": "For a little while,"
+  },
+  {
+    "type": "paragraph",
+    "text": "you are simply\nsomeone’s child\ngoing home."
+  },
+  {
+    "type": "paragraph",
+    "text": "And maybe that person\nbeside you\nwill never completely know\nwhat happened today."
+  },
+  {
+    "type": "paragraph",
+    "text": "But they came."
+  },
+  {
+    "type": "paragraph",
+    "text": "They waited."
+  },
+  {
+    "type": "paragraph",
+    "text": "They drove."
+  },
+  {
+    "type": "paragraph",
+    "text": "And sometimes love\nlooks exactly like that."
+  },
+  {
+    "type": "paragraph",
+    "text": "The Uniform Comes Off"
+  },
+  {
+    "type": "paragraph",
+    "text": "All day\nthe uniform\nmeant something."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your school."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your band."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your section."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your place\nin the drill."
+  },
+  {
+    "type": "paragraph",
+    "text": "It made you\nstand taller."
+  },
+  {
+    "type": "paragraph",
+    "text": "Walk differently."
+  },
+  {
+    "type": "paragraph",
+    "text": "Check the mirror\none more time."
+  },
+  {
+    "type": "paragraph",
+    "text": "Now you are home."
+  },
+  {
+    "type": "paragraph",
+    "text": "The jacket comes off."
+  },
+  {
+    "type": "paragraph",
+    "text": "The shoes come off."
+  },
+  {
+    "type": "paragraph",
+    "text": "The gloves\ngo somewhere\nthey should probably\nnot go."
+  },
+  {
+    "type": "paragraph",
+    "text": "The uniform\nreturns to a hanger."
+  },
+  {
+    "type": "paragraph",
+    "text": "The instrument\nreturns to its case."
+  },
+  {
+    "type": "paragraph",
+    "text": "The flag\nis rolled."
+  },
+  {
+    "type": "paragraph",
+    "text": "The medal\nmay stay around your neck\na little longer."
+  },
+  {
+    "type": "paragraph",
+    "text": "But eventually"
+  },
+  {
+    "type": "paragraph",
+    "text": "even that comes off."
+  },
+  {
+    "type": "paragraph",
+    "text": "And you are still you."
+  },
+  {
+    "type": "paragraph",
+    "text": "Not the uniform."
+  },
+  {
+    "type": "paragraph",
+    "text": "Not the score."
+  },
+  {
+    "type": "paragraph",
+    "text": "Not the placement."
+  },
+  {
+    "type": "paragraph",
+    "text": "Not the applause."
+  },
+  {
+    "type": "paragraph",
+    "text": "Something happened\ninside all of it."
+  },
+  {
+    "type": "paragraph",
+    "text": "You learned."
+  },
+  {
+    "type": "paragraph",
+    "text": "You endured."
+  },
+  {
+    "type": "paragraph",
+    "text": "You listened."
+  },
+  {
+    "type": "paragraph",
+    "text": "You gave."
+  },
+  {
+    "type": "paragraph",
+    "text": "You became\na little more capable\nthan you were\nthis morning."
+  },
+  {
+    "type": "paragraph",
+    "text": "The uniform\ncan come off."
+  },
+  {
+    "type": "paragraph",
+    "text": "That part"
+  },
+  {
+    "type": "paragraph",
+    "text": "gets to stay."
+  },
+  {
+    "type": "paragraph",
+    "text": "When the House Is Quiet"
+  },
+  {
+    "type": "paragraph",
+    "text": "At last"
+  },
+  {
+    "type": "paragraph",
+    "text": "the house is quiet."
+  },
+  {
+    "type": "paragraph",
+    "text": "No drumline."
+  },
+  {
+    "type": "paragraph",
+    "text": "No buses."
+  },
+  {
+    "type": "paragraph",
+    "text": "No announcer."
+  },
+  {
+    "type": "paragraph",
+    "text": "No crowd."
+  },
+  {
+    "type": "paragraph",
+    "text": "No director saying:"
+  },
+  {
+    "type": "paragraph",
+    "text": "One more time."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your phone\nis charging."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your shoes\nare somewhere\nnear the door."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your instrument\nis closed\ninside its case."
+  },
+  {
+    "type": "paragraph",
+    "text": "And yet"
+  },
+  {
+    "type": "paragraph",
+    "text": "the show\nhas not completely stopped."
+  },
+  {
+    "type": "paragraph",
+    "text": "A phrase\nstill plays\ninside your head."
+  },
+  {
+    "type": "paragraph",
+    "text": "A count."
+  },
+  {
+    "type": "paragraph",
+    "text": "A turn."
+  },
+  {
+    "type": "paragraph",
+    "text": "A chord."
+  },
+  {
+    "type": "paragraph",
+    "text": "A cheer."
+  },
+  {
+    "type": "paragraph",
+    "text": "A laugh\nfrom the seat behind you."
+  },
+  {
+    "type": "paragraph",
+    "text": "Maybe you replay\nthe mistake."
+  },
+  {
+    "type": "paragraph",
+    "text": "Maybe you replay\nthe best moment."
+  },
+  {
+    "type": "paragraph",
+    "text": "Maybe you replay\nboth."
+  },
+  {
+    "type": "paragraph",
+    "text": "That is enough."
+  },
+  {
+    "type": "paragraph",
+    "text": "You do not have\nto understand the day\ntonight."
+  },
+  {
+    "type": "paragraph",
+    "text": "You do not have\nto decide\nwhat it meant."
+  },
+  {
+    "type": "paragraph",
+    "text": "Some memories\nneed darkness."
+  },
+  {
+    "type": "paragraph",
+    "text": "Some need sleep."
+  },
+  {
+    "type": "paragraph",
+    "text": "Some need years."
+  },
+  {
+    "type": "paragraph",
+    "text": "For now,"
+  },
+  {
+    "type": "paragraph",
+    "text": "let the house\nbe quiet."
+  },
+  {
+    "type": "paragraph",
+    "text": "You made enough sound\nfor one day."
+  },
+  {
+    "type": "paragraph",
+    "text": "Tomorrow It Becomes a Memory"
+  },
+  {
+    "type": "paragraph",
+    "text": "Tonight\nit is still happening."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your ears\nstill remember\nthe volume."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your feet\nstill remember\nthe turf."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your hands\nstill remember\nwhat they held."
+  },
+  {
+    "type": "paragraph",
+    "text": "Tomorrow"
+  },
+  {
+    "type": "paragraph",
+    "text": "it becomes:"
+  },
+  {
+    "type": "paragraph",
+    "text": "yesterday."
+  },
+  {
+    "type": "paragraph",
+    "text": "Next week:"
+  },
+  {
+    "type": "paragraph",
+    "text": "that contest."
+  },
+  {
+    "type": "paragraph",
+    "text": "Next year:"
+  },
+  {
+    "type": "paragraph",
+    "text": "remember when?"
+  },
+  {
+    "type": "paragraph",
+    "text": "And one day"
+  },
+  {
+    "type": "paragraph",
+    "text": "you may be somewhere\nfar from this school,"
+  },
+  {
+    "type": "paragraph",
+    "text": "far from this bus,"
+  },
+  {
+    "type": "paragraph",
+    "text": "far from the field,"
+  },
+  {
+    "type": "paragraph",
+    "text": "when someone says:"
+  },
+  {
+    "type": "paragraph",
+    "text": "Were you ever in marching band?"
+  },
+  {
+    "type": "paragraph",
+    "text": "And suddenly"
+  },
+  {
+    "type": "paragraph",
+    "text": "the lights come back."
+  },
+  {
+    "type": "paragraph",
+    "text": "The uniforms."
+  },
+  {
+    "type": "paragraph",
+    "text": "The buses."
+  },
+  {
+    "type": "paragraph",
+    "text": "The ridiculous jokes."
+  },
+  {
+    "type": "paragraph",
+    "text": "The warm-up."
+  },
+  {
+    "type": "paragraph",
+    "text": "The silence\nbefore the first note."
+  },
+  {
+    "type": "paragraph",
+    "text": "The person\nwho stood beside you."
+  },
+  {
+    "type": "paragraph",
+    "text": "You may not remember\nthe score."
+  },
+  {
+    "type": "paragraph",
+    "text": "You may not remember\nthe judge’s comments."
+  },
+  {
+    "type": "paragraph",
+    "text": "You may not remember\nexactly where\nyou placed."
+  },
+  {
+    "type": "paragraph",
+    "text": "But you may remember"
+  },
+  {
+    "type": "paragraph",
+    "text": "how it felt\nto belong\nto something\nthat required\nall of you."
+  },
+  {
+    "type": "paragraph",
+    "text": "That is how\na day becomes\na memory."
+  },
+  {
+    "type": "paragraph",
+    "text": "Not all at once."
+  },
+  {
+    "type": "paragraph",
+    "text": "Slowly."
+  },
+  {
+    "type": "paragraph",
+    "text": "Until someday"
+  },
+  {
+    "type": "paragraph",
+    "text": "you realize\nyou have been carrying it\nfor years."
+  },
+  {
+    "type": "paragraph",
+    "text": "Before the Next First Note"
+  },
+  {
+    "type": "paragraph",
+    "text": "Tonight"
+  },
+  {
+    "type": "paragraph",
+    "text": "you can rest."
+  },
+  {
+    "type": "paragraph",
+    "text": "The horn\ncan stay\nin its case."
+  },
+  {
+    "type": "paragraph",
+    "text": "The flag\ncan stay rolled."
+  },
+  {
+    "type": "paragraph",
+    "text": "The sticks\ncan stay\nin the bag."
+  },
+  {
+    "type": "paragraph",
+    "text": "The shoes\ncan sit\nby the door."
+  },
+  {
+    "type": "paragraph",
+    "text": "The uniform\ncan hang quietly."
+  },
+  {
+    "type": "paragraph",
+    "text": "You have done enough\nfor one day."
+  },
+  {
+    "type": "paragraph",
+    "text": "You traveled."
+  },
+  {
+    "type": "paragraph",
+    "text": "You waited."
+  },
+  {
+    "type": "paragraph",
+    "text": "You worried."
+  },
+  {
+    "type": "paragraph",
+    "text": "You performed."
+  },
+  {
+    "type": "paragraph",
+    "text": "You listened."
+  },
+  {
+    "type": "paragraph",
+    "text": "You recovered."
+  },
+  {
+    "type": "paragraph",
+    "text": "You celebrated."
+  },
+  {
+    "type": "paragraph",
+    "text": "You were disappointed."
+  },
+  {
+    "type": "paragraph",
+    "text": "You laughed."
+  },
+  {
+    "type": "paragraph",
+    "text": "You came home."
+  },
+  {
+    "type": "paragraph",
+    "text": "And now"
+  },
+  {
+    "type": "paragraph",
+    "text": "there is nothing else\nyou need to prove tonight."
+  },
+  {
+    "type": "paragraph",
+    "text": "Sleep."
+  },
+  {
+    "type": "paragraph",
+    "text": "Because somewhere ahead"
+  },
+  {
+    "type": "paragraph",
+    "text": "there will be\nanother rehearsal."
+  },
+  {
+    "type": "paragraph",
+    "text": "Another field."
+  },
+  {
+    "type": "paragraph",
+    "text": "Another audience."
+  },
+  {
+    "type": "paragraph",
+    "text": "Another moment\nwhen everything\nbecomes quiet."
+  },
+  {
+    "type": "paragraph",
+    "text": "Another breath."
+  },
+  {
+    "type": "paragraph",
+    "text": "Another count."
+  },
+  {
+    "type": "paragraph",
+    "text": "Another beginning."
+  },
+  {
+    "type": "paragraph",
+    "text": "And when that moment comes,"
+  },
+  {
+    "type": "paragraph",
+    "text": "you will know\na little more\nthan you knew today."
+  },
+  {
+    "type": "paragraph",
+    "text": "You will stand there"
+  },
+  {
+    "type": "paragraph",
+    "text": "with everything\nyou have learned"
+  },
+  {
+    "type": "paragraph",
+    "text": "inside you."
+  },
+  {
+    "type": "paragraph",
+    "text": "Waiting."
+  },
+  {
+    "type": "paragraph",
+    "text": "Listening."
+  },
+  {
+    "type": "paragraph",
+    "text": "Breathing."
+  },
+  {
+    "type": "paragraph",
+    "text": "Before the next first note."
+  },
+  {
     "type": "paragraph",
     "text": "Before I Step Off This Bus"
   },

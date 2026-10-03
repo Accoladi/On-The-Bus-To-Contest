@@ -48,6 +48,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const headings = content.sections.filter((section) => section.type === "heading").slice(0, 6);
   const embeddedSongTitle = slug === "person-beside-you" ? "We Just Need Each Other" : slug === "laughter-best-medicine" ? "Just Laugh A’Little" : slug === "speak-to-yourself" ? "Speak to Yourself" : slug === "who-are-these-people" ? "The People on My Band Bus" : null;
+  const articleSongTitle = slug === "art-of-winning-and-losing" ? "Ribbon Around Our Necks" : embeddedSongTitle;
   const embeddedSongIndex = embeddedSongTitle ? content.sections.findIndex((section) => section.text === embeddedSongTitle) : -1;
   const articleIndex = articleCatalog.findIndex((item) => item.slug === article.slug);
   const related = articleCatalog.filter((item) => item.slug !== article.slug).slice(0, 3);
@@ -99,8 +100,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <article className="w-full">
             <div className="mb-10 border-b border-[var(--navy)]/10 pb-7 text-sm text-[var(--slate)]">{article.readingTime}</div>
-            <div className={embeddedSongTitle ? "lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-8" : undefined}>
-              {embeddedSongTitle && <div className="order-first mb-8 lg:order-last lg:mb-0 lg:pt-1"><PersonBesideSongCard songTitle={embeddedSongTitle} /></div>}
+            <div className={articleSongTitle ? "lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-8" : undefined}>
+              {articleSongTitle && <div className="order-first mb-8 lg:order-last lg:mb-0 lg:pt-1"><PersonBesideSongCard songTitle={articleSongTitle} /></div>}
               <div>
                 {content.sections.map((section, index) => {
                   if (embeddedSongIndex >= 0 && index >= embeddedSongIndex) return <Fragment key={`${section.type}-${index}`} />;

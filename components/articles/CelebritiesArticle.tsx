@@ -40,6 +40,10 @@ export function CelebritiesArticle() {
     </div>
     <h3 className="mb-5 mt-14 font-[family-name:var(--font-display)] text-3xl leading-tight">Other Famous People Who Were in Band</h3>
     <div className="grid gap-4 sm:grid-cols-2">{instruments.map(([instrument, names]) => <section key={instrument} className="rounded-xl border border-[var(--navy)]/10 bg-[#f7f3ea] p-5"><h4 className="font-[family-name:var(--font-display)] text-xl">{instrument}</h4><p className="mt-2 text-sm leading-6 text-[var(--slate)]">{names}</p></section>)}</div>
-    <p className="mt-10 text-[1.08rem] leading-8 text-[#35465a]">As we look back on the legendary figures who once stood on the same turf as today’s students, a shared path becomes clear. Discipline, teamwork, creativity, and perseverance travel well—and the next remarkable story may already be marching across the field.</p>
+    <div className="mt-10 space-y-6 text-[1.08rem] leading-8 text-[#35465a]">
+      <p>These legendary figures remind us that the path is clear: discipline, teamwork, creativity, and perseverance travel well together. And the next remarkable story may already be about to step off this bus.</p>
+      <p>That story may be yours.</p>
+      <p>But today, when you step onto that field, remember this: you are already a marching, music-making celebrity.</p>
+    </div>
   </div>;
 }

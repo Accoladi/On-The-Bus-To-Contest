@@ -9,8 +9,8 @@ type MusicItem = { title: string; image: string; aliases: string[]; credit: stri
 const items: MusicItem[] = [
   { title: "Before the Stadium Wakes", image: "/images/articles/article_music_pics/Before_the_stadium_wakes.png", aliases: ["before the stadium wakes"], credit: "Accoladi Symphonic Orchestra" },
   { title: "Stillness Between Heartbeats", image: "/images/articles/article_music_pics/atillness_between_heartbeats.png", aliases: ["stillness between heartbeats"], credit: "Accoladi String Quartet · Hyuk Kim Soprano Saxophone Soloist" },
-  { title: "Breath Into the Blue", image: "/images/articles/article_music_pics/breather_into_the blue.png", aliases: ["breath into the blue", "breath into blue"], credit: "Wilkerson McAlister · Euphonium Soloist" },
-  { title: "The Field Is Waiting", image: "/images/articles/article_music_pics/the_field_is_waiting.png", aliases: ["the field is waiting", "field is waiting"], credit: "Accoladi Symphonic Orchestra · Cromer Crain Euphonium Soloist" },
+  { title: "Breath Into the Blue", image: "/images/articles/article_music_pics/breather_into_the blue.png", aliases: ["breath into the blue", "breath into blue"], credit: "Accoladi Symphonic Orchestra with Wilkerson McAlister, Euphonium Soloist" },
+  { title: "The Field Is Waiting", image: "/images/articles/article_music_pics/the_field_is_waiting.png", aliases: ["the field is waiting", "field is waiting"], credit: "Accoladi Symphonic Orchestra with Cromer Crain, Flugelhorn Soloist and Noy, Euphonium Soloist" },
 ];
 
 const normalize = (value: string) => value.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, " ").trim();

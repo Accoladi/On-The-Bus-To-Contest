@@ -43,10 +43,9 @@ function getSongCredit(song: RadioSong) {
   return coverCredits[song.id] || song.artist || "Contest day radio";
 }
 
-function TrackCard({ song, index, active, playing, liked, displayDuration, onDuration, onPlay, onLike, onShare }: { song: RadioSong; index: number; active: boolean; playing: boolean; liked: boolean; displayDuration?: number; onDuration: (duration: number) => void; onPlay: () => void; onLike: () => void; onShare: () => void }) {
+function TrackCard({ song, index, active, playing, liked, displayDuration, onPlay, onLike, onShare }: { song: RadioSong; index: number; active: boolean; playing: boolean; liked: boolean; displayDuration?: number; onPlay: () => void; onLike: () => void; onShare: () => void }) {
   return (
     <article className={`group mx-auto flex h-full w-full max-w-[360px] flex-col overflow-hidden rounded-[22px] border bg-white shadow-[0_12px_32px_rgba(7,26,47,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(7,26,47,0.14)] ${active ? "border-[var(--gold)] ring-2 ring-[var(--gold)]/25" : "border-[var(--navy)]/8"}`}>
-      {song.audioUrl && <audio src={song.audioUrl} preload="metadata" className="hidden" onLoadedMetadata={(event) => { const nextDuration = event.currentTarget.duration; if (Number.isFinite(nextDuration)) onDuration(nextDuration); }} />}
       <button type="button" onClick={onPlay} className="relative aspect-[4/3] overflow-hidden bg-[var(--navy)] text-left">
         <Image src={song.coverImageUrl || "/content/images/radio-cover.jpg"} alt={`${song.title} cover`} fill sizes="(max-width: 768px) 100vw, 33vw" className="bg-[var(--navy)] object-cover object-center transition duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,26,47,.8)] via-transparent to-transparent" />
@@ -94,39 +93,35 @@ export function RadioPage() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch("/api/radio/songs", { signal: controller.signal })
-      .then((response) => { if (!response.ok) throw new Error("Unable to load radio"); return response.json(); })
-      .then((payload: { songs?: RadioSong[] }) => { const nextSongs = filterSongs(payload.songs || []); songsRef.current = nextSongs; setSongs(nextSongs); })
-      .catch((requestError) => { if (requestError.name !== "AbortError") setError("Radio is temporarily unavailable."); })
-      .finally(() => setLoading(false));
+    const loadSongs = async () => {
+      for (let attempt = 0; attempt < 3; attempt += 1) {
+        try {
+          const response = await fetch("/api/radio/songs", { signal: controller.signal, cache: "no-store" });
+          if (!response.ok) throw new Error("Unable to load radio");
+          const payload = await response.json() as { songs?: RadioSong[] };
+          const nextSongs = filterSongs(payload.songs || []);
+          songsRef.current = nextSongs;
+          setSongs(nextSongs);
+          setError("");
+          return;
+        } catch (requestError) {
+          if (requestError instanceof Error && requestError.name === "AbortError") return;
+          if (attempt < 2) await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
+        }
+      }
+
+      if (!controller.signal.aborted) setError("Radio is temporarily unavailable.");
+    };
+
+    void loadSongs().finally(() => {
+      if (!controller.signal.aborted) setLoading(false);
+    });
     return () => controller.abort();
   }, []);
 
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume / 100;
   }, [volume]);
-
-  useEffect(() => {
-    if (!songs.length) return;
-    const metadataPlayers = songs
-      .filter((song) => song.audioUrl && !durations[song.id])
-      .map((song) => {
-        const metadataAudio = new Audio();
-        metadataAudio.preload = "metadata";
-        const onMetadata = () => {
-          if (Number.isFinite(metadataAudio.duration)) {
-            setDurations((previous) => ({ ...previous, [song.id]: metadataAudio.duration }));
-          }
-        };
-        metadataAudio.addEventListener("loadedmetadata", onMetadata);
-        metadataAudio.src = song.audioUrl || "";
-        return { metadataAudio, onMetadata };
-      });
-    return () => metadataPlayers.forEach(({ metadataAudio, onMetadata }) => {
-      metadataAudio.removeEventListener("loadedmetadata", onMetadata);
-      metadataAudio.src = "";
-    });
-  }, [songs, durations]);
 
   useEffect(() => {
     const audio = new Audio();
@@ -219,7 +214,7 @@ export function RadioPage() {
         {loading && <div className="grid gap-5 pt-8 sm:grid-cols-2 lg:grid-cols-3"><div className="h-80 animate-pulse rounded-[22px] bg-white/70" /><div className="h-80 animate-pulse rounded-[22px] bg-white/70" /><div className="h-80 animate-pulse rounded-[22px] bg-white/70" /></div>}
         {error && <div className="mt-8 rounded-[22px] border border-dashed border-[var(--purple)]/30 bg-white p-12 text-center text-[var(--slate)]">{error}</div>}
         {!loading && !error && !songs.length && <div className="mt-8 rounded-[22px] border border-dashed border-[var(--purple)]/30 bg-white p-12 text-center text-[var(--slate)]">The catalog is ready for its first tracks.</div>}
-        {!loading && !error && songs.length > 0 && <div className="grid gap-5 pt-8 sm:grid-cols-2 lg:grid-cols-3">{visibleSongs.map((song, index) => <TrackCard key={song.id} song={song} index={index} displayDuration={durations[song.id]} onDuration={(nextDuration) => setDurations((previous) => ({ ...previous, [song.id]: nextDuration }))} active={currentSong?.id === song.id} playing={playing} liked={liked.has(song.id)} onPlay={() => playSong(song)} onLike={() => toggleLike(song.id)} onShare={() => shareSong(song)} />)}</div>}
+        {!loading && !error && songs.length > 0 && <div className="grid gap-5 pt-8 sm:grid-cols-2 lg:grid-cols-3">{visibleSongs.map((song, index) => <TrackCard key={song.id} song={song} index={index} displayDuration={durations[song.id] || song.durationSeconds} active={currentSong?.id === song.id} playing={playing} liked={liked.has(song.id)} onPlay={() => playSong(song)} onLike={() => toggleLike(song.id)} onShare={() => shareSong(song)} />)}</div>}
         {!loading && visibleCount < sortedSongs.length && <div className="flex justify-center pt-10"><button type="button" onClick={() => setVisibleCount((count) => count + PAGE_SIZE)} className="rounded-full border-2 border-[var(--navy)] px-6 py-3 text-sm font-bold transition hover:bg-[var(--navy)] hover:text-white">Load more tracks</button></div>}
       </section>
 
