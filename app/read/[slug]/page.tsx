@@ -13,6 +13,14 @@ import { onTheBusArticleContent } from "@/content/articles/onTheBusArticleConten
 import { additionalArticleContent } from "@/content/articles/additionalArticleContent";
 import { collegeArticleContent } from "@/content/articles/collegeArticleContent";
 import { speakToYourselfContent } from "@/content/articles/speakToYourselfContent";
+import { pageMetadata, siteUrl } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = articleCatalog.find((item) => item.slug === slug);
+  if (!article) notFound();
+  return pageMetadata(`/read/${slug}`, article.title, article.description, article.image, true);
+}
 
 const categoryStyles: Record<string, string> = {
   Mindset: "bg-[#5a2a78]",
@@ -55,6 +63,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="min-h-screen bg-[#f7f3ea] text-[var(--navy)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: article.title, description: article.description, image: `${siteUrl}${article.image}`, mainEntityOfPage: `${siteUrl}/read/${slug}`, inLanguage: "en" }).replace(/</g, "\\u003c") }} />
       <section className="relative isolate overflow-hidden bg-[var(--navy)] text-white">
         <div className="relative h-[clamp(360px,42vw,780px)] sm:h-[clamp(480px,calc(30vw+260px),780px)]">
           <Image src={article.image} alt="" fill priority sizes="100vw" className="object-cover object-center" />

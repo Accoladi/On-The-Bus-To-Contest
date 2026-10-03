@@ -1,4 +1,7 @@
 import { HomeHero } from "@/components/home/HomeHero";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/");
 import { RadioSection } from "@/components/home/RadioSection";
 import { ArticlesSection } from "@/components/home/ArticlesSection";
 import { GamesSection } from "@/components/home/GamesSection";
