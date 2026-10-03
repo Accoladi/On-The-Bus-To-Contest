@@ -5251,14 +5251,6 @@ export const onTheBusArticleContent: Record<string, OnTheBusArticle> = {
       {
         "type": "paragraph",
         "text": "And watch."
-      },
-      {
-        "type": "paragraph",
-        "text": "Yes. I would now treat this as the complete manuscript draft of the book rather than a collection of pieces. I’ve kept the 36 poems unnumbered, arranged them in four movements of nine poems each, added the eight distinct “They Were in Band Too” stories, incorporated verified quotations and student reflections, and built the back matter."
-      },
-      {
-        "type": "paragraph",
-        "text": "For the printed edition, I would make only the cover full color and use black-and-white photography throughout the interior."
       }
     ]
   }
