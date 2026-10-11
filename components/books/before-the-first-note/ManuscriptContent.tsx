@@ -8,6 +8,47 @@ import type { RadioSong } from "@/components/radio/types";
 
 export const texts = beforeTheFirstNoteSections.map((section) => section.text);
 const poemTitles = new Set(["The Bus Is Moving", "You Do Not Have to Be Fearless", "Look Beside You", "The Person Who Looks Calm", "For the Freshman", "For the Senior", "The Quiet Student", "Thank the Bus Driver", "The Uniform", "Before the First Note", "One Count at a Time", "When the Warm-Up Is Bad", "The Director at the Front", "To the One Who Is Scared", "Play for Someone", "When They Say Your Name", "The Gate", "The Hands That Got You Here", "The Field Is Waiting", "If You Miss", "Your Best Is Not Perfect", "Another Band", "The Person in Row Forty", "Stadium Lights", "The Middle of the Show", "Listen Across the Band", "The Final Chord", "After the Last Note", "The Scoreboard", "If They Call Your Name", "If They Don't Call Your Name", "Whatever the Judge Says", "On the Ride Home", "Tomorrow's Rehearsal", "Leave Something on the Field", "We Were Here", "When the Bus Pulls In", "Good Night, Band", "From the Bus to the Car", "The Uniform Comes Off", "When the House Is Quiet", "Tomorrow It Becomes a Memory", "Before the Next First Note"]);
+const poemBackgrounds: Record<string, string> = {
+  "You Do Not Have to Be Fearless": "you donot have to be fearless",
+  "Look Beside You": "look beside you",
+  "The Person Who Looks Calm": "person who looks calm",
+  "For the Freshman": "for the freshman",
+  "For the Senior": "for the senior",
+  "The Quiet Student": "quiet student",
+  "Thank the Bus Driver": "thank the bus driver",
+  "Before the First Note": "before the first note",
+  "One Count at a Time": "one count at a time",
+  "When the Warm-Up Is Bad": "when the warmup is bad",
+  "The Director at the Front": "the director at the front",
+  "To the One Who Is Scared": "to the one who is scared",
+  "When They Say Your Name": "when they say your name",
+  "The Gate": "the gate",
+  "The Hands That Got You Here": "the hands that got you here",
+  "The Field Is Waiting": "field is waiting",
+  "If You Miss": "if you miss",
+  "Your Best Is Not Perfect": "your best is not perfect",
+  "The Person in Row Forty": "the person in row forty",
+  "Stadium Lights": "stadium lights",
+  "The Middle of the Show": "the middle of the show",
+  "Listen Across the Band": "listen accross the band",
+  "The Final Chord": "the final chord",
+  "After the Last Note": "after the last note",
+  "The Scoreboard": "the finalscoreboard",
+  "If They Call Your Name": "if they call your name",
+  "If They Don't Call Your Name": "if they don't call your name",
+  "Whatever the Judge Says": "whenever the judge says",
+  "On the Ride Home": "on the ride home",
+  "Tomorrow's Rehearsal": "tomorrows reharsal",
+  "Leave Something on the Field": "leave something on the field",
+  "We Were Here": "we were here",
+  "When the Bus Pulls In": "when the bus pulls in",
+  "Good Night, Band": "good night band",
+  "From the Bus to the Car": "from the bus to the car",
+  "The Uniform Comes Off": "the uniform comes off",
+  "When the House Is Quiet": "when the house is quiet",
+  "Tomorrow It Becomes a Memory": "tomorrow it becomes a memory",
+  "Before the Next First Note": "before the next first note",
+};
 const partNames: Record<string, { id: string; subtitle: string }> = { "PART ONE": { id: "part-one", subtitle: "The Ride There" }, "PART TWO": { id: "part-two", subtitle: "Before You Perform" }, "PART THREE": { id: "part-three", subtitle: "On the Field" }, "PART FOUR": { id: "part-four", subtitle: "The Ride Home" }, "PART FIVE": { id: "part-five", subtitle: "When the Bus Comes Home" } };
 const endMarkers = new Set(["Take This With You", "FROM A BAND BUS", "THEY WERE IN BAND TOO", "PART ONE", "PART TWO", "PART THREE", "PART FOUR", "PART FIVE", "A WORD TO THE DIRECTOR", "A WORD TO THE PEOPLE IN THE STANDS", "PEOPLE BEHIND THE WORDS", "About the Band Member Reflections", "About the Quotations"]);
 const journalEnd = new Set(["A WORD TO THE DIRECTOR", "A WORD TO THE PEOPLE IN THE STANDS", "PEOPLE BEHIND THE WORDS"]);
@@ -112,7 +153,7 @@ function buildPages(fontScale: number): BookPages {
         if (texts[j] === "Take This With You") { companions.push(<QuoteCard key={`takeaway-${j}`} className="mt-7">{texts[j + 1]}</QuoteCard>); }
         j += 2;
       }
-      if (!(carryPartHeader || (pageStartsWithPartHeader && blocks.length === 1))) flush(); add(<div key={`poem-page-${i}`}><PoemPage title={text} lines={poemLines} fontScale={fontScale} />{companions}</div>); flush(text === "The Bus Is Moving" ? "bus-moving" : undefined); i = j; continue;
+      if (!(carryPartHeader || (pageStartsWithPartHeader && blocks.length === 1))) flush(); add(<div key={`poem-page-${i}`}><PoemPage title={text} lines={poemLines} fontScale={fontScale} />{companions}</div>); flush(text === "The Bus Is Moving" ? "/images/books/book-view/firstnote/page-bgs/bus-moving.png" : poemBackgrounds[text] ? `/images/books/book-view/firstnote/poem-bgs/${poemBackgrounds[text]}.png` : undefined); i = j; continue;
     }
     if (text === "Dedication" || text === "Preface" || text === "How to Use This Book") { const isHowTo = text === "How to Use This Book"; const id = text === "Dedication" ? "introduction" : slugify(text); const next = text === "Dedication" ? 16 : text === "Preface" ? 82 : 91; add(<section key={`front-${i}`} id={id} className={`scroll-mt-8 ${firstPart ? "" : "border-t border-[#14203d]/10 pt-8"}`} style={{ fontSize: `${fontScale}em` }}><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#80558d]">{text}</p><div className="mt-6">{texts.slice(i + 1, next).map((line, index) => <Paragraph key={`${text}-${index}`}>{line}</Paragraph>)}</div></section>, isHowTo ? id : "introduction", isHowTo); if (isHowTo) flush(); i = next; firstPart = false; continue; }
     if (text.startsWith("“Cherish your journey, and respect your journey.”")) { add(<QuoteCard key={`quote-${i}`} className="my-7">“Cherish your journey, and respect your journey.”<footer className="mt-3 text-sm text-[#536079]">— Lizzo</footer></QuoteCard>); i += 1; continue; }
@@ -128,12 +169,12 @@ export function ManuscriptContent({ fontScale, pageIndex, onPageCount, onChapter
   const book = useMemo(() => buildPages(fontScale), [fontScale]); const safeIndex = Math.max(0, Math.min(pageIndex, book.pages.length - 1));
   useEffect(() => { onPageCount(book.pages.length); onChapterPages(book.chapterPages); }, [book, onPageCount, onChapterPages]);
   const page = book.pages[safeIndex];
-  const isBusMovingPage = page?.background === "bus-moving";
+  const hasPoemBackground = Boolean(page?.background);
   const pageBackground = `/images/books/book-view/firstnote/page-bgs/${(safeIndex % 6) + 1}.png`;
-  return <div data-book-page={safeIndex} className={`relative w-full overflow-hidden px-6 py-8 font-[Georgia,serif] font-normal leading-[1.65] sm:px-10 sm:py-10 lg:px-14 lg:py-12 ${isBusMovingPage ? "bg-[#f8f4ec]" : "rounded-[12px] bg-white bg-top bg-no-repeat"}`} style={isBusMovingPage ? undefined : { backgroundImage: `url(${pageBackground})`, backgroundSize: "100% auto", backgroundRepeat: "repeat-y" }}>
-    {!isBusMovingPage && <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,250,.96)_0%,rgba(255,253,250,.9)_45%,rgba(255,253,250,.48)_62%,rgba(255,253,250,.08)_78%,transparent_100%)]" />}
-    {isBusMovingPage && <Image
-      src="/images/books/book-view/firstnote/page-bgs/bus-moving.png"
+  return <div data-book-page={safeIndex} className={`relative w-full overflow-hidden px-6 py-8 font-[Georgia,serif] font-normal leading-[1.65] sm:px-10 sm:py-10 lg:px-14 lg:py-12 ${hasPoemBackground ? "bg-[#f8f4ec]" : "rounded-[12px] bg-white bg-top bg-no-repeat"}`} style={hasPoemBackground ? undefined : { backgroundImage: `url(${pageBackground})`, backgroundSize: "100% auto", backgroundRepeat: "repeat-y" }}>
+    {!hasPoemBackground && <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,253,250,.96)_0%,rgba(255,253,250,.9)_45%,rgba(255,253,250,.48)_62%,rgba(255,253,250,.08)_78%,transparent_100%)]" />}
+    {page?.background && <Image
+      src={page.background}
       alt=""
       aria-hidden="true"
       width={1122}
@@ -141,6 +182,6 @@ export function ManuscriptContent({ fontScale, pageIndex, onPageCount, onChapter
       sizes="(max-width: 639px) 70vw, (max-width: 1023px) 66vw, 74vw"
       className="pointer-events-none absolute right-[-20%] top-0 z-0 h-auto w-[70%] select-none object-contain object-top-right opacity-20 sm:right-[-8%] sm:w-[66%] sm:opacity-60 md:right-[-2%] md:w-[74%] md:opacity-95"
     />}
-    <div className={`relative z-10 ${isBusMovingPage ? "max-w-none md:max-w-[58%]" : ""}`}>{page?.blocks}</div>
+    <div className={`relative z-10 ${hasPoemBackground ? "max-w-none md:max-w-[58%]" : ""}`}>{page?.blocks}</div>
   </div>;
 }
